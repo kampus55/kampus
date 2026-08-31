@@ -1220,6 +1220,156 @@ font-weight:700
 
 }
 
+/* YENİ PAKET ÖZELLİK ALANLARI */
+
+.locked-feature{
+
+position:relative;
+
+opacity:.62;
+
+background:#f7f8fc;
+
+border:1px dashed #cdd3e3
+
+}
+
+.locked-feature .lock{
+
+float:right;
+
+font-size:16px
+
+}
+
+.package-feature-panel{
+
+margin-top:15px
+
+}
+
+.package-feature-panel h3{
+
+margin:0 0 6px
+
+}
+
+.feature-list{
+
+list-style:none;
+
+padding:0;
+
+margin:12px 0 0
+
+}
+
+.feature-list li{
+
+padding:10px 0;
+
+border-bottom:1px solid var(--line);
+
+font-size:13px
+
+}
+
+.feature-list li:last-child{
+
+border-bottom:0
+
+}
+
+.online-exam{
+
+background:linear-gradient(135deg,#eef2ff,#fff);
+
+border:1px solid #d9e1ff
+
+}
+
+.online-exam-number{
+
+font-size:32px;
+
+font-weight:950;
+
+color:var(--primary);
+
+margin:6px 0
+
+}
+
+.mini-stat-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+
+margin-top:13px
+
+}
+
+.mini-stat{
+
+padding:14px;
+
+border-radius:15px;
+
+background:#f8f9fd;
+
+border:1px solid var(--line)
+
+}
+
+.mini-stat b{
+
+display:block;
+
+font-size:21px;
+
+margin-bottom:3px
+
+}
+
+.mini-stat span{
+
+font-size:11px;
+
+color:var(--muted)
+
+}
+
+.feature-action{
+
+margin-top:12px
+
+}
+
+.package-status{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:6px;
+
+background:#eaf8f1;
+
+color:#148354;
+
+padding:7px 10px;
+
+border-radius:10px;
+
+font-size:11px;
+
+font-weight:900
+
+}
+
 /* TOAST */
 
 .toast{
@@ -1327,6 +1477,12 @@ flex-direction:column
 }
 
 .feature-box{
+
+grid-template-columns:1fr
+
+}
+
+.mini-stat-grid{
 
 grid-template-columns:1fr
 
@@ -1640,7 +1796,7 @@ Sınav değiştir
 
 <p class="muted" style="margin:6px 0 0;font-size:13px">
 
-Seçtiğin paket aktif olduğunda çalışma planın burada açılacak.
+Koçluk paketini seçtiğinde sana uygun özellikler aktif olur.
 
 </p>
 
@@ -1650,11 +1806,7 @@ Seçtiğin paket aktif olduğunda çalışma planın burada açılacak.
 
 <!-- ÜCRETSİZ -->
 
-<div
-
-class="package-card"
-
-id="packageFree">
+<div class="package-card" id="packageFree">
 
 <div class="package-icon">🆓</div>
 
@@ -1662,21 +1814,31 @@ id="packageFree">
 
 <div class="package-price">
 
-₺0 <small>/ ay</small>
+₺0 <small>/ süresiz</small>
 
 </div>
 
 <ul class="package-list">
 
-<li>✓ Temel çalışma planı</li>
+<li>✓ Sınav seçimi</li>
+
+<li>✓ Hedef belirleme</li>
 
 <li>✓ Konu takibi</li>
 
-<li>✓ Günlük hedef</li>
+<li>✓ Günlük çalışma hedefi</li>
+
+<li>✓ Çalışma sayacı</li>
 
 <li>✓ Seri Ateşi</li>
 
 <li>✓ Çözemediğim Sorular</li>
+
+<li>✓ Temel çalışma planı</li>
+
+<li>✓ Temel ilerleme</li>
+
+<li>✓ Profil</li>
 
 </ul>
 
@@ -1694,11 +1856,7 @@ onclick="selectPackage('Ücretsiz')">
 
 <!-- PLUS -->
 
-<div
-
-class="package-card plus"
-
-id="packagePlus">
+<div class="package-card plus" id="packagePlus">
 
 <div class="package-icon">⭐</div>
 
@@ -1706,7 +1864,7 @@ id="packagePlus">
 
 <div class="package-price">
 
-₺99 <small>/ ay</small>
+₺99 <small>/ yıl</small>
 
 </div>
 
@@ -1714,15 +1872,19 @@ id="packagePlus">
 
 <li>✓ Ücretsiz'deki tüm özellikler</li>
 
-<li>✓ Kişisel çalışma planı</li>
+<li>✓ Kişiye özel haftalık çalışma programı</li>
 
-<li>✓ Günlük hedef takibi</li>
+<li>✓ Detaylı ders / konu analizleri</li>
 
-<li>✓ Gelişmiş konu takibi</li>
+<li>✓ Deneme takip sistemi</li>
 
-<li>✓ Çalışma süresi takibi</li>
+<li>✓ Net gelişim grafikleri</li>
 
-<li>✓ Koçluk planı</li>
+<li>✓ Akıllı tekrar planı</li>
+
+<li>✓ Hedefe kalan mesafe</li>
+
+<li>✓ <b>Her ay 2 online deneme</b></li>
 
 </ul>
 
@@ -1740,11 +1902,7 @@ Plus'ı Seç
 
 <!-- PREMIUM -->
 
-<div
-
-class="package-card premium"
-
-id="packagePremium">
+<div class="package-card premium" id="packagePremium">
 
 <div class="package-badge">
 
@@ -1758,7 +1916,7 @@ EN ÇOK TERCİH EDİLEN
 
 <div class="package-price">
 
-₺199 <small>/ ay</small>
+₺199 <small>/ yıl</small>
 
 </div>
 
@@ -1766,15 +1924,23 @@ EN ÇOK TERCİH EDİLEN
 
 <li>✓ Plus'taki tüm özellikler</li>
 
-<li>✓ Gelişmiş çalışma takibi</li>
+<li>✓ Hedef bölüm / puan takibi</li>
 
-<li>✓ Detaylı ilerleme analizi</li>
+<li>✓ Detaylı deneme analizi</li>
 
-<li>✓ <b>Deneme analizleri</b></li>
+<li>✓ Eksik konu ve risk uyarıları</li>
 
-<li>✓ Premium koçluk özellikleri</li>
+<li>✓ Sınava kadar kişisel yol haritası</li>
 
-<li>✓ Öncelikli destek</li>
+<li>✓ Hedef – mevcut durum analizi</li>
+
+<li>✓ Çalışma performansı / verimlilik analizi</li>
+
+<li>✓ Programı yeniden düzenleme</li>
+
+<li>✓ Gerçek koç desteği</li>
+
+<li>✓ <b>Her ay 4 online deneme</b></li>
 
 </ul>
 
@@ -1806,9 +1972,19 @@ Premium'u Seç
 
 </h3>
 
-<p id="activePackageDescription">
+<p id="activePackageDescription"></p>
 
-</p>
+<div
+
+id="activePackageStatus"
+
+class="package-status"
+
+style="margin-top:12px">
+
+✓ Paket aktif
+
+</div>
 
 <div class="feature-box">
 
@@ -1833,6 +2009,238 @@ Premium'u Seç
 <div class="feature-mini">
 
 ⏱️ Çalışma Takibi
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ONLINE DENEME HAKKI -->
+
+<div
+
+id="onlineExamPanel"
+
+class="card online-exam">
+
+<div class="section" style="margin:0">
+
+<div>
+
+<h2>📝 Online Denemeler</h2>
+
+<p id="onlineExamDescription">
+
+</p>
+
+</div>
+
+</div>
+
+<div class="online-exam-number">
+
+<span id="examRemaining">0</span>
+
+<span style="font-size:14px;font-weight:800">
+
+hak kaldı
+
+</span>
+
+</div>
+
+<div class="muted" style="font-size:12px">
+
+Bu ay kullanabileceğin online deneme hakkı.
+
+</div>
+
+<button
+
+id="onlineExamButton"
+
+class="btn"
+
+style="margin-top:13px"
+
+onclick="useOnlineExam()">
+
+Online Denemeye Başla
+
+</button>
+
+</div>
+
+<!-- PLUS ÖZELLİKLERİ -->
+
+<div id="plusFeatures" class="package-feature-panel">
+
+<div class="section">
+
+<div>
+
+<h2>⭐ Plus Özelliklerin</h2>
+
+<p>Koçluk deneyimini güçlendiren özellikler.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<ul class="feature-list">
+
+<li>📅 <b>Kişiye özel haftalık çalışma programı</b><br>
+
+<span class="muted">Haftalık çalışma görevlerini planla ve tamamladıkça takip et.</span>
+
+</li>
+
+<li>📊 <b>Detaylı ders / konu analizleri</b><br>
+
+<span class="muted">Hangi derslerde ilerlediğini gör.</span>
+
+</li>
+
+<li>📝 <b>Deneme takip sistemi</b><br>
+
+<span class="muted">Denemelerini kaydet ve gelişimini takip et.</span>
+
+</li>
+
+<li>📈 <b>Net gelişim grafikleri</b><br>
+
+<span class="muted">Netlerinin zaman içerisindeki değişimini izle.</span>
+
+</li>
+
+<li>🔄 <b>Akıllı tekrar planı</b><br>
+
+<span class="muted">Tamamladığın konular için tekrar düzeni oluştur.</span>
+
+</li>
+
+<li>🎯 <b>Hedefe kalan mesafe</b><br>
+
+<span class="muted">Hedefin ile mevcut durumun arasındaki farkı takip et.</span>
+
+</li>
+
+</ul>
+
+<div class="mini-stat-grid">
+
+<div class="mini-stat">
+
+<b id="plusCompletedTopics">0</b>
+
+<span>Tamamlanan konu</span>
+
+</div>
+
+<div class="mini-stat">
+
+<b id="plusStudyHours">0s</b>
+
+<span>Toplam çalışma</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PREMIUM ÖZELLİKLERİ -->
+
+<div id="premiumFeatures" class="package-feature-panel hidden">
+
+<div class="section">
+
+<div>
+
+<h2>👑 Premium Koçluk</h2>
+
+<p>KAMPÜS'ün en kapsamlı koçluk deneyimi.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<ul class="feature-list">
+
+<li>🎯 <b>Hedef bölüm / puan takibi</b><br>
+
+<span class="muted">Hedeflediğin bölüm veya puana göre ilerlemeni takip et.</span>
+
+</li>
+
+<li>📋 <b>Detaylı deneme analizi</b><br>
+
+<span class="muted">Deneme sonuçlarını daha ayrıntılı değerlendirebil.</span>
+
+</li>
+
+<li>🚨 <b>Eksik konu ve risk uyarıları</b><br>
+
+<span class="muted">Geride kaldığın alanları fark et.</span>
+
+</li>
+
+<li>📆 <b>Sınava kadar kişisel yol haritası</b><br>
+
+<span class="muted">Hedefine kadar olan çalışma sürecini takip et.</span>
+
+</li>
+
+<li>📈 <b>Hedef – mevcut durum analizi</b><br>
+
+<span class="muted">Mevcut performansın ile hedefini karşılaştır.</span>
+
+</li>
+
+<li>🔥 <b>Çalışma performansı ve verimlilik analizi</b><br>
+
+<span class="muted">Çalışma düzenini ve toplam performansını incele.</span>
+
+</li>
+
+<li>🔄 <b>Programı yeniden düzenleme</b><br>
+
+<span class="muted">Çalışma planını gerektiğinde yeniden oluştur.</span>
+
+</li>
+
+<li>👨‍🏫 <b>Gerçek koç desteği</b><br>
+
+<span class="muted">Gerçek koç hizmeti aktif edildiğinde buradan erişilebilir.</span>
+
+</li>
+
+</ul>
+
+<div class="mini-stat-grid">
+
+<div class="mini-stat">
+
+<b id="premiumRiskCount">0</b>
+
+<span>Takip gerektiren konu</span>
+
+</div>
+
+<div class="mini-stat">
+
+<b id="premiumPerformance">0%</b>
+
+<span>Genel ilerleme</span>
+
+</div>
 
 </div>
 
@@ -2042,7 +2450,7 @@ class="btn"
 
 id="timerBtn"
 
-onclick="toggleTimer()">
+onclick="toggleTimer">
 
 Başlat
 
@@ -2256,21 +2664,31 @@ Hedefine uygun paketi seç.
 
 <div class="package-price">
 
-₺0 <small>/ ay</small>
+₺0 <small>/ süresiz</small>
 
 </div>
 
 <ul class="package-list">
 
-<li>✓ Temel çalışma planı</li>
+<li>✓ Sınav seçimi</li>
+
+<li>✓ Hedef belirleme</li>
 
 <li>✓ Konu takibi</li>
 
-<li>✓ Günlük hedef</li>
+<li>✓ Günlük çalışma hedefi</li>
+
+<li>✓ Çalışma sayacı</li>
 
 <li>✓ Seri Ateşi</li>
 
 <li>✓ Çözemediğim Sorular</li>
+
+<li>✓ Temel çalışma planı</li>
+
+<li>✓ Temel ilerleme</li>
+
+<li>✓ Profil</li>
 
 </ul>
 
@@ -2294,7 +2712,7 @@ onclick="selectPackage('Ücretsiz');show('plan')">
 
 <div class="package-price">
 
-₺99 <small>/ ay</small>
+₺99 <small>/ yıl</small>
 
 </div>
 
@@ -2302,15 +2720,19 @@ onclick="selectPackage('Ücretsiz');show('plan')">
 
 <li>✓ Ücretsiz'deki tüm özellikler</li>
 
-<li>✓ Kişisel çalışma planı</li>
+<li>✓ Kişiye özel haftalık çalışma programı</li>
 
-<li>✓ Günlük hedef takibi</li>
+<li>✓ Detaylı ders / konu analizleri</li>
 
-<li>✓ Gelişmiş konu takibi</li>
+<li>✓ Deneme takip sistemi</li>
 
-<li>✓ Çalışma süresi takibi</li>
+<li>✓ Net gelişim grafikleri</li>
 
-<li>✓ Koçluk planı</li>
+<li>✓ Akıllı tekrar planı</li>
+
+<li>✓ Hedefe kalan mesafe</li>
+
+<li>✓ <b>Her ay 2 online deneme</b></li>
 
 </ul>
 
@@ -2340,7 +2762,7 @@ EN ÇOK TERCİH EDİLEN
 
 <div class="package-price">
 
-₺199 <small>/ ay</small>
+₺199 <small>/ yıl</small>
 
 </div>
 
@@ -2348,15 +2770,23 @@ EN ÇOK TERCİH EDİLEN
 
 <li>✓ Plus'taki tüm özellikler</li>
 
-<li>✓ Gelişmiş çalışma takibi</li>
+<li>✓ Hedef bölüm / puan takibi</li>
 
-<li>✓ Detaylı ilerleme analizi</li>
+<li>✓ Detaylı deneme analizi</li>
 
-<li>✓ <b>Deneme analizleri</b></li>
+<li>✓ Eksik konu ve risk uyarıları</li>
 
-<li>✓ Premium koçluk özellikleri</li>
+<li>✓ Sınava kadar kişisel yol haritası</li>
 
-<li>✓ Öncelikli destek</li>
+<li>✓ Hedef – mevcut durum analizi</li>
+
+<li>✓ Çalışma performansı / verimlilik analizi</li>
+
+<li>✓ Programı yeniden düzenleme</li>
+
+<li>✓ Gerçek koç desteği</li>
+
+<li>✓ <b>Her ay 4 online deneme</b></li>
 
 </ul>
 
@@ -3040,9 +3470,51 @@ questions:[],
 
 account:null,
 
-selectedPackage:null
+selectedPackage:null,
+
+/* YENİ PAKET SİSTEMİ */
+
+subscription:{
+
+package:null,
+
+startedAt:"",
+
+expiresAt:"",
+
+examMonth:"",
+
+examUsed:0
+
+}
 
 };
+
+/* Eski kullanıcı verilerini bozmadan yeni alanı oluştur */
+
+if(!S.subscription){
+
+S.subscription={
+
+package:S.selectedPackage||null,
+
+startedAt:"",
+
+expiresAt:"",
+
+examMonth:"",
+
+examUsed:0
+
+};
+
+}
+
+if(!("package" in S.subscription)){
+
+S.subscription.package=S.selectedPackage||null;
+
+}
 
 if(!Array.isArray(S.questions))
 
@@ -3068,6 +3540,20 @@ if(!("selectedPackage" in S))
 
 S.selectedPackage=null;
 
+/* Eski paket seçimi varsa yeni sisteme aktar */
+
+if(!S.subscription.package && S.selectedPackage){
+
+S.subscription.package=S.selectedPackage;
+
+}
+
+/* =========================
+
+   KAYDET
+
+========================= */
+
 const save=()=>{
 
 localStorage.setItem(
@@ -3079,6 +3565,186 @@ JSON.stringify(S)
 );
 
 };
+
+/* =========================
+
+   PAKET YETKİLERİ
+
+========================= */
+
+function getPackage(){
+
+return S.subscription?.package || S.selectedPackage || null;
+
+}
+
+function isPlus(){
+
+return getPackage()==="Plus" || getPackage()==="Premium";
+
+}
+
+function isPremium(){
+
+return getPackage()==="Premium";
+
+}
+
+/* =========================
+
+   PAKET SÜRESİ
+
+========================= */
+
+function addOneYear(date){
+
+let d=new Date(date);
+
+d.setFullYear(d.getFullYear()+1);
+
+return d.toISOString();
+
+}
+
+function isSubscriptionActive(){
+
+let p=getPackage();
+
+if(p==="Ücretsiz")
+
+return true;
+
+if(!p)
+
+return false;
+
+let expiry=S.subscription?.expiresAt;
+
+if(!expiry)
+
+return true;
+
+return new Date(expiry)>new Date();
+
+}
+
+/* =========================
+
+   AYLIK DENEME HAKKI
+
+========================= */
+
+function currentMonthKey(){
+
+let d=new Date();
+
+return d.getFullYear()+"-"+String(
+
+d.getMonth()+1
+
+).padStart(2,"0");
+
+}
+
+function resetMonthlyExamIfNeeded(){
+
+if(!S.subscription)
+
+return;
+
+let month=currentMonthKey();
+
+if(S.subscription.examMonth!==month){
+
+S.subscription.examMonth=month;
+
+S.subscription.examUsed=0;
+
+save();
+
+}
+
+}
+
+function monthlyExamLimit(){
+
+if(getPackage()==="Premium")
+
+return 4;
+
+if(getPackage()==="Plus")
+
+return 2;
+
+return 0;
+
+}
+
+function remainingOnlineExams(){
+
+resetMonthlyExamIfNeeded();
+
+return Math.max(
+
+0,
+
+monthlyExamLimit()-(S.subscription.examUsed||0)
+
+);
+
+}
+
+/* =========================
+
+   ONLINE DENEME KULLAN
+
+========================= */
+
+function useOnlineExam(){
+
+if(!isPlus()){
+
+toast("Online denemeler Plus ve Premium paketlerde.");
+
+return;
+
+}
+
+if(!isSubscriptionActive()){
+
+toast("Paket süren sona ermiş.");
+
+return;
+
+}
+
+resetMonthlyExamIfNeeded();
+
+let remaining=remainingOnlineExams();
+
+if(remaining<=0){
+
+toast("Bu ayki online deneme hakkın bitti.");
+
+return;
+
+}
+
+S.subscription.examUsed++;
+
+save();
+
+renderPlanPage();
+
+toast(
+
+"Online deneme hakkın kullanıldı • Kalan: "+
+
+remainingOnlineExams()
+
+);
+
+}
 
 /* =========================
 
@@ -3756,6 +4422,10 @@ document.getElementById(
 
 op+"%";
 
+updatePremiumStats();
+
+updatePlusStats();
+
 updateStreakUI();
 
 updateQuestionCount();
@@ -3764,13 +4434,61 @@ updateQuestionCount();
 
 /* =========================
 
-   PAKETLER
+   PAKET SEÇİMİ
 
 ========================= */
 
 function selectPackage(packageName){
 
+/*
+
+Gerçek ödeme sistemi henüz bağlı değil.
+
+Bu fonksiyon şimdilik paketi aktif eder.
+
+*/
+
+if(packageName==="Ücretsiz"){
+
+S.selectedPackage="Ücretsiz";
+
+S.subscription.package="Ücretsiz";
+
+S.subscription.startedAt="";
+
+S.subscription.expiresAt="";
+
+save();
+
+renderPlanPage();
+
+toast("Ücretsiz paket aktif edildi");
+
+show("plan");
+
+return;
+
+}
+
+/* Yıllık paket */
+
+let now=new Date();
+
 S.selectedPackage=packageName;
+
+S.subscription.package=packageName;
+
+S.subscription.startedAt=now.toISOString();
+
+S.subscription.expiresAt=
+
+addOneYear(now);
+
+S.subscription.examMonth=
+
+currentMonthKey();
+
+S.subscription.examUsed=0;
 
 save();
 
@@ -3780,7 +4498,7 @@ toast(
 
 packageName+
 
-" paketi aktif edildi"
+" yıllık paket aktif edildi"
 
 );
 
@@ -3792,6 +4510,16 @@ function changePackage(){
 
 S.selectedPackage=null;
 
+S.subscription.package=null;
+
+S.subscription.startedAt="";
+
+S.subscription.expiresAt="";
+
+S.subscription.examMonth="";
+
+S.subscription.examUsed=0;
+
 save();
 
 renderPlanPage();
@@ -3800,29 +4528,41 @@ window.scrollTo(0,0);
 
 }
 
+/* =========================
+
+   PAKET AÇIKLAMASI
+
+========================= */
+
 function getPackageDescription(){
 
-if(S.selectedPackage==="Ücretsiz"){
+if(getPackage()==="Ücretsiz"){
 
-return "Temel çalışma planın aktif. Konularını, hedeflerini ve çalışma serini takip edebilirsin.";
-
-}
-
-if(S.selectedPackage==="Plus"){
-
-return "Plus koçluk paketin aktif. Kişisel çalışma planın ve gelişmiş takip özelliklerin hazır.";
+return "Temel kullanımın aktif. Sınavını, konularını, hedeflerini, çalışma süren ve serini takip edebilirsin.";
 
 }
 
-if(S.selectedPackage==="Premium"){
+if(getPackage()==="Plus"){
 
-return "Premium koçluk paketin aktif. Gelişmiş takip, detaylı ilerleme ve deneme analizleri dahil.";
+return "Plus yıllık koçluk paketin aktif. Kişisel çalışma programı, gelişmiş analizler, deneme takibi ve aylık 2 online deneme hakkın aktif.";
+
+}
+
+if(getPackage()==="Premium"){
+
+return "Premium yıllık koçluk paketin aktif. Plus özelliklerinin tamamı, gelişmiş koçluk analizleri ve aylık 4 online deneme hakkın aktif.";
 
 }
 
 return "";
 
 }
+
+/* =========================
+
+   PLAN SAYFASI
+
+========================= */
 
 function renderPlanPage(){
 
@@ -3834,13 +4574,17 @@ let activeArea=
 
 document.getElementById("activePlanArea");
 
-if(!S.selectedPackage){
+let p=getPackage();
+
+if(!p){
 
 packageArea.classList.remove("hidden");
 
 activeArea.classList.add("hidden");
 
-}else{
+return;
+
+}
 
 packageArea.classList.add("hidden");
 
@@ -3852,7 +4596,7 @@ document.getElementById(
 
 ).textContent=
 
-"🎓 "+S.selectedPackage+" Paket Aktif";
+"🎓 "+p+" Paket Aktif";
 
 document.getElementById(
 
@@ -3862,9 +4606,277 @@ document.getElementById(
 
 getPackageDescription();
 
-renderPlans();
+renderOnlineExamPanel();
+
+let plusBox=
+
+document.getElementById("plusFeatures");
+
+let premiumBox=
+
+document.getElementById("premiumFeatures");
+
+if(plusBox){
+
+if(isPlus())
+
+plusBox.classList.remove("hidden");
+
+else
+
+plusBox.classList.add("hidden");
 
 }
+
+if(premiumBox){
+
+if(isPremium())
+
+premiumBox.classList.remove("hidden");
+
+else
+
+premiumBox.classList.add("hidden");
+
+}
+
+renderPlans();
+
+updatePlusStats();
+
+updatePremiumStats();
+
+}
+
+/* =========================
+
+   ONLINE DENEME PANELİ
+
+========================= */
+
+function renderOnlineExamPanel(){
+
+let panel=
+
+document.getElementById("onlineExamPanel");
+
+if(!panel)
+
+return;
+
+let p=getPackage();
+
+if(!isPlus()){
+
+panel.classList.add("hidden");
+
+return;
+
+}
+
+panel.classList.remove("hidden");
+
+let limit=monthlyExamLimit();
+
+let remaining=remainingOnlineExams();
+
+document.getElementById(
+
+"examRemaining"
+
+).textContent=
+
+remaining;
+
+document.getElementById(
+
+"onlineExamDescription"
+
+).textContent=
+
+p==="Premium"
+
+?
+
+"Premium paketinde her ay 4 online deneme hakkın bulunur."
+
+:
+
+"Plus paketinde her ay 2 online deneme hakkın bulunur.";
+
+let button=
+
+document.getElementById("onlineExamButton");
+
+if(remaining<=0){
+
+button.textContent="Bu Ayki Hakların Bitti";
+
+button.classList.add("ghost");
+
+button.disabled=true;
+
+}else{
+
+button.textContent="Online Denemeye Başla";
+
+button.classList.remove("ghost");
+
+button.disabled=false;
+
+}
+
+}
+
+/* =========================
+
+   PLUS İSTATİSTİKLERİ
+
+========================= */
+
+function updatePlusStats(){
+
+let completed=0;
+
+Object.keys(DATA).forEach(exam=>{
+
+Object.entries(DATA[exam].subs)
+
+.forEach(([sub,topics])=>{
+
+topics.forEach(t=>{
+
+if(
+
+S.done[
+
+exam+"|"+sub+"|"+t
+
+]
+
+)
+
+completed++;
+
+});
+
+});
+
+});
+
+let e=
+
+document.getElementById(
+
+"plusCompletedTopics"
+
+);
+
+if(e)
+
+e.textContent=completed;
+
+let h=
+
+document.getElementById(
+
+"plusStudyHours"
+
+);
+
+if(h)
+
+h.textContent=
+
+Math.floor(S.seconds/3600)+"s";
+
+}
+
+/* =========================
+
+   PREMIUM İSTATİSTİKLERİ
+
+========================= */
+
+function updatePremiumStats(){
+
+let total=0;
+
+let completed=0;
+
+let current=
+
+DATA[S.exam];
+
+if(current){
+
+Object.entries(current.subs)
+
+.forEach(([sub,topics])=>{
+
+topics.forEach(t=>{
+
+total++;
+
+if(
+
+S.done[
+
+S.exam+"|"+sub+"|"+t
+
+]
+
+)
+
+completed++;
+
+});
+
+});
+
+}
+
+let performance=
+
+total?
+
+Math.round(completed/total*100):
+
+0;
+
+let risk=
+
+Math.max(
+
+0,
+
+total-completed
+
+);
+
+let p=
+
+document.getElementById(
+
+"premiumPerformance"
+
+);
+
+if(p)
+
+p.textContent=performance+"%";
+
+let r=
+
+document.getElementById(
+
+"premiumRiskCount"
+
+);
+
+if(r)
+
+r.textContent=risk;
 
 }
 
@@ -3954,7 +4966,7 @@ l.appendChild(d);
 
 function savePlan(){
 
-if(!S.selectedPackage){
+if(!getPackage()){
 
 toast("Önce bir koçluk paketi seç.");
 
@@ -5052,6 +6064,8 @@ let oldExam=S.exam;
 
 let oldAccount=S.account;
 
+let oldPackage=getPackage();
+
 S={
 
 exam:oldExam,
@@ -5076,7 +6090,21 @@ questions:[],
 
 account:oldAccount,
 
-selectedPackage:null
+selectedPackage:oldPackage,
+
+subscription:{
+
+package:oldPackage,
+
+startedAt:S.subscription?.startedAt||"",
+
+expiresAt:S.subscription?.expiresAt||"",
+
+examMonth:S.subscription?.examMonth||"",
+
+examUsed:S.subscription?.examUsed||0
+
+}
 
 };
 
@@ -5113,6 +6141,8 @@ toast(
    BAŞLAT
 
 ========================= */
+
+resetMonthlyExamIfNeeded();
 
 renderHome();
 

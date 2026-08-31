@@ -16,23 +16,27 @@
 
 :root{
 
- --bg:#f4f7ff;
+--bg:#f5f7fb;
 
- --card:#fff;
+--card:#fff;
 
- --text:#17213a;
+--text:#17213a;
 
- --muted:#707a92;
+--muted:#6d7690;
 
- --primary:#3157d5;
+--primary:#3157d5;
 
- --primary2:#6a86f5;
+--primary2:#5273ed;
 
- --line:#e5e9f3;
+--line:#e7eaf2;
 
- --shadow:0 14px 40px rgba(35,55,115,.09);
+--ok:#19a66a;
 
- --radius:22px
+--danger:#e55252;
+
+--fire:#ff7a18;
+
+--shadow:0 10px 30px rgba(25,38,75,.08)
 
 }
 
@@ -40,815 +44,815 @@
 
 html,body{
 
- margin:0;
+margin:0;
 
- background:var(--bg);
+background:var(--bg);
 
- color:var(--text);
+color:var(--text);
 
- font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif
 
 }
+
+body{min-height:100vh}
 
 button,input,select{font:inherit}
 
 button{cursor:pointer;border:0}
 
-.hidden{display:none!important}
-
 .app{
 
- min-height:100vh;
+min-height:100vh;
 
- padding-bottom:88px
+padding-bottom:84px
 
 }
 
 .top{
 
- position:sticky;
+position:sticky;
 
- top:0;
+top:0;
 
- z-index:20;
+z-index:20;
 
- background:rgba(255,255,255,.9);
+background:rgba(255,255,255,.94);
 
- backdrop-filter:blur(18px);
+backdrop-filter:blur(16px);
 
- border-bottom:1px solid var(--line);
+border-bottom:1px solid var(--line);
 
- padding:14px 18px
+padding:14px 18px 12px
 
 }
 
 .topin{
 
- max-width:920px;
+max-width:900px;
 
- margin:auto;
+margin:auto;
 
- display:flex;
+display:flex;
 
- align-items:center;
+align-items:center;
 
- justify-content:space-between
+justify-content:space-between
 
 }
 
 .brand{
 
- font-size:26px;
+font-size:25px;
 
- font-weight:950;
+font-weight:900;
 
- letter-spacing:-1.3px;
+color:var(--primary);
 
- color:var(--primary)
+letter-spacing:-1px
 
 }
 
 .pill{
 
- font-size:12px;
+font-size:12px;
 
- font-weight:850;
+font-weight:800;
 
- background:#edf1ff;
+background:#eef2ff;
 
- color:var(--primary);
+color:var(--primary);
 
- padding:8px 12px;
+padding:7px 11px;
 
- border-radius:30px
+border-radius:20px
 
 }
 
 main{
 
- max-width:920px;
+max-width:900px;
 
- margin:auto;
+margin:auto;
 
- padding:22px 16px
+padding:20px 16px
 
 }
 
+.hidden{display:none!important}
+
 .hero{
 
- position:relative;
+background:linear-gradient(135deg,#1e2d73,#3157d5 60%,#5273ed);
 
- overflow:hidden;
+color:#fff;
 
- background:linear-gradient(
+border-radius:28px;
 
-  135deg,
+padding:27px 24px;
 
-  #1e2d73,
+box-shadow:0 18px 40px rgba(49,87,213,.22);
 
-  #3157d5 62%,
+margin-bottom:18px;
 
-  #6683f4
+position:relative;
 
- );
-
- color:#fff;
-
- border-radius:30px;
-
- padding:28px 25px;
-
- box-shadow:0 20px 45px rgba(49,87,213,.23);
-
- margin-bottom:18px
+overflow:hidden
 
 }
 
 .hero:after{
 
- content:"";
+content:"🎓";
 
- position:absolute;
+position:absolute;
 
- width:180px;
+right:20px;
 
- height:180px;
+bottom:-12px;
 
- border-radius:50%;
+font-size:85px;
 
- right:-55px;
-
- top:-65px;
-
- background:rgba(255,255,255,.12)
-
-}
-
-.hero>*{
-
- position:relative;
-
- z-index:1
+opacity:.13
 
 }
 
 .hero small{
 
- opacity:.8;
+opacity:.82;
 
- font-weight:800;
-
- letter-spacing:.4px
+font-weight:800
 
 }
 
 .hero h1{
 
- font-size:34px;
+font-size:32px;
 
- line-height:1.05;
+line-height:1.08;
 
- margin:9px 0
+margin:8px 0
 
 }
 
 .hero p{
 
- margin:0 0 20px;
+margin:0 0 18px;
 
- opacity:.9;
-
- max-width:570px
+opacity:.9
 
 }
 
 .btn{
 
- padding:12px 16px;
+padding:12px 16px;
 
- border-radius:14px;
+border-radius:13px;
 
- font-weight:850;
+font-weight:800;
 
- background:var(--primary);
+background:var(--primary);
 
- color:#fff;
-
- transition:.18s
-
-}
-
-.btn:hover{
-
- transform:translateY(-1px)
+color:#fff
 
 }
 
 .btn.light{
 
- background:#fff;
+background:#fff;
 
- color:var(--primary)
+color:var(--primary)
 
 }
 
 .btn.ghost{
 
- background:#edf1ff;
+background:#eef2ff;
 
- color:var(--primary)
+color:var(--primary)
 
 }
 
 .btn.danger{
 
- background:#fff0f0;
+background:#fff0f0;
 
- color:#d94d4d
-
-}
-
-.card{
-
- background:var(--card);
-
- border:1px solid var(--line);
-
- border-radius:var(--radius);
-
- padding:18px;
-
- box-shadow:var(--shadow)
+color:var(--danger)
 
 }
 
-.stats{
+.btn.fire{
 
- display:grid;
+background:#fff0e5;
 
- grid-template-columns:repeat(3,1fr);
-
- gap:11px
-
-}
-
-.stat{
-
- text-align:center;
-
- padding:16px 8px
-
-}
-
-.stat b{
-
- display:block;
-
- font-size:25px
-
-}
-
-.stat span{
-
- font-size:12px;
-
- color:var(--muted)
-
-}
-
-.section{
-
- display:flex;
-
- align-items:center;
-
- justify-content:space-between;
-
- gap:10px;
-
- margin:25px 2px 12px
-
-}
-
-.section h2{
-
- font-size:21px;
-
- margin:0
-
-}
-
-.muted{
-
- color:var(--muted)
+color:#ed6910
 
 }
 
 .grid{
 
- display:grid;
+display:grid;
 
- grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(2,1fr);
 
- gap:13px
+gap:13px
+
+}
+
+.card{
+
+background:var(--card);
+
+border:1px solid var(--line);
+
+border-radius:20px;
+
+padding:18px;
+
+box-shadow:var(--shadow)
 
 }
 
 .exam{
 
- min-height:150px;
+min-height:145px;
 
- text-align:left;
+display:flex;
 
- display:flex;
+flex-direction:column;
 
- flex-direction:column;
+justify-content:space-between;
 
- justify-content:space-between;
-
- transition:.18s;
-
- position:relative;
-
- overflow:hidden
-
-}
-
-.exam:hover{
-
- transform:translateY(-3px);
-
- box-shadow:0 18px 35px rgba(35,55,115,.13)
+text-align:left
 
 }
 
 .exam b{
 
- font-size:27px;
+font-size:26px;
 
- color:var(--primary)
+color:var(--primary)
 
 }
 
 .exam strong{
 
- font-size:18px
+font-size:18px
 
 }
 
 .exam span{
 
- font-size:13px;
+color:var(--muted);
 
- color:var(--muted)
+font-size:14px
 
 }
 
-.exam .mark{
+.section{
 
- position:absolute;
+display:flex;
 
- right:16px;
+align-items:center;
 
- top:16px;
+justify-content:space-between;
 
- width:34px;
+gap:10px;
 
- height:34px;
+margin:24px 2px 12px
 
- border-radius:12px;
+}
 
- background:#eef2ff;
+.section h2{
 
- display:grid;
+font-size:21px;
 
- place-items:center;
+margin:0
 
- color:var(--primary);
+}
 
- font-weight:900
+.muted{
+
+color:var(--muted)
+
+}
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:10px;
+
+margin-bottom:18px
+
+}
+
+.stat{
+
+text-align:center
+
+}
+
+.stat b{
+
+display:block;
+
+font-size:24px
+
+}
+
+.stat span{
+
+font-size:12px;
+
+color:var(--muted)
+
+}
+
+/* SERİ ATEŞİ */
+
+.fire-card{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(135deg,#fff8f2,#fff);
+
+border:1px solid #ffd5b8
+
+}
+
+.fire-row{
+
+display:flex;
+
+align-items:center;
+
+gap:15px
+
+}
+
+.fire-icon{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+display:grid;
+
+place-items:center;
+
+font-size:35px;
+
+background:#fff0e5;
+
+flex:none
+
+}
+
+.fire-info{
+
+flex:1
+
+}
+
+.fire-title{
+
+font-size:14px;
+
+font-weight:800;
+
+color:#e86b16
+
+}
+
+.fire-number{
+
+font-size:30px;
+
+font-weight:950;
+
+line-height:1.05;
+
+margin-top:2px
+
+}
+
+.fire-number small{
+
+font-size:14px;
+
+font-weight:800;
+
+color:var(--muted)
+
+}
+
+.fire-best{
+
+font-size:12px;
+
+color:var(--muted);
+
+margin-top:5px
+
+}
+
+.fire-progress{
+
+height:8px;
+
+background:#f5e2d4;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:15px
+
+}
+
+.fire-progress i{
+
+display:block;
+
+height:100%;
+
+width:0;
+
+background:linear-gradient(90deg,#ff9b36,#ff5a16);
+
+border-radius:20px;
+
+transition:.3s
 
 }
 
 .progress{
 
- height:9px;
+height:9px;
 
- background:#e9edf6;
+background:#e9edf6;
 
- border-radius:20px;
+border-radius:20px;
 
- overflow:hidden
+overflow:hidden
 
 }
 
 .progress i{
 
- display:block;
+display:block;
 
- height:100%;
+height:100%;
 
- background:linear-gradient(
+background:linear-gradient(90deg,var(--primary),#6b86f2);
 
-  90deg,
+border-radius:20px;
 
-  var(--primary),
+width:0;
 
-  var(--primary2)
-
- );
-
- border-radius:20px;
-
- width:0;
-
- transition:.3s
+transition:.3s
 
 }
 
 .subject{
 
- display:flex;
+display:flex;
 
- gap:12px;
+gap:12px;
 
- align-items:center;
-
- margin-bottom:8px
+align-items:center
 
 }
 
-.ico{
+.subject .ico{
 
- width:45px;
+width:44px;
 
- height:45px;
+height:44px;
 
- border-radius:14px;
+border-radius:13px;
 
- background:#eef2ff;
+background:#eef2ff;
 
- color:var(--primary);
+color:var(--primary);
 
- display:grid;
+display:grid;
 
- place-items:center;
+place-items:center;
 
- font-weight:900;
+font-weight:900;
 
- flex:none
+flex:none
 
 }
 
 .subject-main{
 
- flex:1
+flex:1
 
 }
 
 .subject-main b{
 
- display:block;
+display:block;
 
- margin-bottom:7px
+margin-bottom:7px
 
 }
 
 .topic{
 
- display:flex;
+display:flex;
 
- align-items:center;
+align-items:center;
 
- gap:10px;
+gap:10px;
 
- padding:13px 0;
+padding:12px 0;
 
- border-bottom:1px solid var(--line)
-
-}
-
-.topic:last-child{
-
- border:0
+border-bottom:1px solid var(--line)
 
 }
+
+.topic:last-child{border:0}
 
 .topic input{
 
- width:20px;
+width:20px;
 
- height:20px;
+height:20px;
 
- accent-color:var(--primary)
+accent-color:var(--primary)
 
 }
 
 .topic label{
 
- flex:1
+flex:1
 
 }
 
 .topic.done label{
 
- text-decoration:line-through;
+text-decoration:line-through;
 
- color:#8d95a8
+color:#8991a5
 
 }
 
 .tag{
 
- font-size:11px;
+font-size:11px;
 
- background:#f0f2f7;
+background:#f0f2f7;
 
- color:var(--muted);
+color:var(--muted);
 
- padding:5px 8px;
+padding:5px 8px;
 
- border-radius:8px
+border-radius:8px
 
 }
 
 .nav{
 
- position:fixed;
+position:fixed;
 
- bottom:0;
+bottom:0;
 
- left:0;
+left:0;
 
- right:0;
+right:0;
 
- z-index:30;
+z-index:30;
 
- background:rgba(255,255,255,.95);
+background:rgba(255,255,255,.96);
 
- backdrop-filter:blur(16px);
+backdrop-filter:blur(15px);
 
- border-top:1px solid var(--line);
+border-top:1px solid var(--line);
 
- padding:8px max(
+padding:8px max(10px,calc((100vw - 900px)/2));
 
-  10px,
+display:grid;
 
-  calc((100vw - 920px)/2)
-
- );
-
- display:grid;
-
- grid-template-columns:repeat(4,1fr)
+grid-template-columns:repeat(4,1fr)
 
 }
 
 .nav button{
 
- background:none;
+background:none;
 
- color:#7b849a;
+color:#7b849a;
 
- padding:8px 2px;
+padding:8px 2px;
 
- font-size:11px;
+font-size:11px;
 
- font-weight:850
+font-weight:800
 
 }
 
 .nav button.active{
 
- color:var(--primary)
+color:var(--primary)
 
 }
 
-.nicon{
+.nav .nicon{
 
- font-size:21px;
+font-size:20px;
 
- display:block;
+display:block;
 
- margin-bottom:2px
+margin-bottom:2px
 
 }
 
 .row{
 
- display:flex;
+display:flex;
 
- gap:9px;
+gap:9px;
 
- align-items:center
-
-}
-
-.row>*{
-
- flex:1
+align-items:center
 
 }
+
+.row>*{flex:1}
 
 .input{
 
- width:100%;
+width:100%;
 
- padding:13px;
+padding:12px;
 
- border:1px solid var(--line);
+border:1px solid var(--line);
 
- border-radius:13px;
+border-radius:12px;
 
- background:#fff;
+background:#fff;
 
- color:var(--text);
+color:var(--text);
 
- outline:none
+outline:none
 
 }
 
 .input:focus{
 
- border-color:var(--primary);
-
- box-shadow:0 0 0 3px #3157d514
-
-}
-
-.planitem{
-
- display:flex;
-
- justify-content:space-between;
-
- gap:12px;
-
- align-items:center;
-
- padding:14px 0;
-
- border-bottom:1px solid var(--line)
-
-}
-
-.planitem:last-child{
-
- border:0
-
-}
-
-.planitem small{
-
- display:block;
-
- color:var(--muted);
-
- margin-top:3px
+border-color:var(--primary)
 
 }
 
 .timer{
 
- font-size:58px;
+font-size:56px;
 
- text-align:center;
+font-variant-numeric:tabular-nums;
 
- font-weight:950;
+text-align:center;
 
- letter-spacing:2px;
+font-weight:900;
 
- margin:16px 0
+letter-spacing:2px;
+
+margin:12px 0
 
 }
 
 .timer-mode{
 
- display:flex;
+display:flex;
 
- gap:8px
+gap:8px
 
 }
 
 .timer-mode button{
 
- flex:1;
+flex:1;
 
- padding:10px;
+padding:9px;
 
- border-radius:11px;
+border-radius:10px;
 
- background:#eef2ff;
+background:#eef2ff;
 
- color:var(--primary);
+color:var(--primary);
 
- font-weight:850
+font-weight:800
 
 }
 
 .timer-mode button.sel{
 
- background:var(--primary);
+background:var(--primary);
 
- color:#fff
+color:#fff
+
+}
+
+.planitem{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:10px;
+
+padding:13px 0;
+
+border-bottom:1px solid var(--line)
+
+}
+
+.planitem:last-child{border:0}
+
+.planitem small{
+
+display:block;
+
+color:var(--muted);
+
+margin-top:3px
 
 }
 
 .empty{
 
- text-align:center;
+text-align:center;
 
- padding:32px 10px;
+padding:30px 10px;
 
- color:var(--muted)
+color:var(--muted)
 
 }
 
 .toast{
 
- position:fixed;
+position:fixed;
 
- left:50%;
+left:50%;
 
- bottom:96px;
+bottom:90px;
 
- transform:translateX(-50%) translateY(15px);
+transform:translateX(-50%) translateY(15px);
 
- background:#17213a;
+background:#17213a;
 
- color:#fff;
+color:#fff;
 
- padding:11px 16px;
+padding:11px 15px;
 
- border-radius:13px;
+border-radius:12px;
 
- font-weight:750;
+font-weight:700;
 
- opacity:0;
+opacity:0;
 
- pointer-events:none;
+pointer-events:none;
 
- transition:.25s;
+transition:.25s;
 
- z-index:50
+z-index:50;
+
+white-space:nowrap
 
 }
 
 .toast.show{
 
- opacity:1;
+opacity:1;
 
- transform:translateX(-50%) translateY(0)
+transform:translateX(-50%) translateY(0)
 
 }
 
 @media(min-width:650px){
 
- .grid{
+.grid{grid-template-columns:repeat(4,1fr)}
 
-  grid-template-columns:repeat(4,1fr)
+.hero{padding:34px}
 
- }
-
- .hero{
-
-  padding:36px
-
- }
-
- .hero h1{
-
-  font-size:43px
-
- }
+.hero h1{font-size:42px}
 
 }
 
 @media(max-width:500px){
 
- .hero h1{
+.hero h1{font-size:29px}
 
-  font-size:30px
-
- }
-
- .grid{
-
-  grid-template-columns:1fr 1fr
-
- }
-
- .stats{
-
-  gap:7px
-
- }
-
- .stat b{
-
-  font-size:22px
-
- }
+.fire-number{font-size:27px}
 
 }
 
@@ -874,23 +878,21 @@ main{
 
 <main>
 
+<!-- ANA SAYFA -->
+
 <section id="home">
 
 <div class="hero">
 
 <small id="heroExam">YKS SINAV KOÇUN</small>
 
-<h1>
-
-Hedefine giden yol burada.
-
-</h1>
+<h1>Hedefine giden yol burada.</h1>
 
 <p>
 
-Planını oluştur, konularını takip et ve çalışmanı ölç.
+Planını oluştur, konularını takip et,
 
-KAMPÜS senin yanında.
+çalışmanı ölç ve serini koru.
 
 </p>
 
@@ -924,7 +926,81 @@ Planımı oluştur →
 
 <b id="streakStat">0</b>
 
-<span>Çalışma serisi</span>
+<span>Günlük seri</span>
+
+</div>
+
+</div>
+
+<!-- SERİ ATEŞİ -->
+
+<div class="section">
+
+<h2>Seri Ateşi</h2>
+
+</div>
+
+<div class="card fire-card">
+
+<div class="fire-row">
+
+<div class="fire-icon">🔥</div>
+
+<div class="fire-info">
+
+<div class="fire-title">
+
+ÇALIŞMA SERİN
+
+</div>
+
+<div class="fire-number">
+
+<span id="fireStreak">0</span>
+
+<small> gün</small>
+
+</div>
+
+<div class="fire-best">
+
+En uzun seri: <b id="bestStreak">0</b> gün
+
+</div>
+
+</div>
+
+<div>
+
+<button
+
+class="btn fire small"
+
+onclick="show('timer')">
+
+Çalış
+
+</button>
+
+</div>
+
+</div>
+
+<div class="fire-progress">
+
+<i id="fireBar"></i>
+
+</div>
+
+<div
+
+class="muted"
+
+id="fireMessage"
+
+style="font-size:12px;margin-top:9px">
+
+Bugün serini başlat.
 
 </div>
 
@@ -933,12 +1009,6 @@ Planımı oluştur →
 <div class="section">
 
 <h2>Sınavını seç</h2>
-
-<span class="muted" style="font-size:13px">
-
-Sana uygun olanı seç
-
-</span>
 
 </div>
 
@@ -966,7 +1036,9 @@ Bugün için hedef belirle
 
 </strong>
 
-<span id="todayPct"
+<span
+
+id="todayPct"
 
 style="text-align:right;font-weight:900">
 
@@ -976,7 +1048,11 @@ style="text-align:right;font-weight:900">
 
 </div>
 
-<div class="progress" style="margin-top:10px">
+<div
+
+class="progress"
+
+style="margin-top:10px">
 
 <i id="todayBar"></i>
 
@@ -986,15 +1062,19 @@ style="text-align:right;font-weight:900">
 
 </section>
 
+<!-- KONULAR -->
+
 <section id="topics" class="hidden">
 
 <div class="section">
 
-<h2 id="topicsTitle">
+<div>
 
-Konular
+<h2 id="topicsTitle">Konular</h2>
 
-</h2>
+<p>İlerledikçe işaretle.</p>
+
+</div>
 
 <button class="btn ghost" onclick="show('home')">
 
@@ -1008,11 +1088,19 @@ Sınav değiştir
 
 </section>
 
+<!-- PLAN -->
+
 <section id="plan" class="hidden">
 
 <div class="section">
 
+<div>
+
 <h2>Çalışma planım</h2>
+
+<p>Bugünkü görevlerini oluştur.</p>
+
+</div>
 
 </div>
 
@@ -1026,9 +1114,7 @@ class="input"
 
 id="planTask"
 
-placeholder="Örn. TYT Matematik — Problemler"
-
->
+placeholder="Örn. TYT Matematik — Problemler">
 
 <input
 
@@ -1042,11 +1128,13 @@ min="5"
 
 value="45"
 
-style="max-width:100px"
+style="max-width:100px">
 
->
+<button
 
-<button class="btn" onclick="savePlan()">
+class="btn"
+
+onclick="savePlan()">
 
 Ekle
 
@@ -1060,6 +1148,8 @@ Ekle
 
 </section>
 
+<!-- SAYAÇ -->
+
 <section id="timer" class="hidden">
 
 <div class="section">
@@ -1072,19 +1162,33 @@ Ekle
 
 <div class="timer-mode">
 
-<button id="m25" class="sel" onclick="setTimer(25)">
+<button
+
+id="m25"
+
+class="sel"
+
+onclick="setTimer(25)">
 
 25 dk
 
 </button>
 
-<button id="m50" onclick="setTimer(50)">
+<button
+
+id="m50"
+
+onclick="setTimer(50)">
 
 50 dk
 
 </button>
 
-<button id="mCustom" onclick="setTimerPrompt()">
+<button
+
+id="mCustom"
+
+onclick="setTimerPrompt()">
 
 Özel
 
@@ -1092,7 +1196,11 @@ Ekle
 
 </div>
 
-<div class="timer" id="timerDisplay">
+<div
+
+class="timer"
+
+id="timerDisplay">
 
 25:00
 
@@ -1100,13 +1208,23 @@ Ekle
 
 <div class="row">
 
-<button class="btn" id="timerBtn" onclick="toggleTimer()">
+<button
+
+class="btn"
+
+id="timerBtn"
+
+onclick="toggleTimer()">
 
 Başlat
 
 </button>
 
-<button class="btn ghost" onclick="resetTimer()">
+<button
+
+class="btn ghost"
+
+onclick="resetTimer()">
 
 Sıfırla
 
@@ -1114,15 +1232,21 @@ Sıfırla
 
 </div>
 
-<p class="muted" style="text-align:center;margin-bottom:0">
+<p
 
-Tamamlanan süre çalışma istatistiğine eklenir.
+class="muted"
+
+style="text-align:center;margin-bottom:0">
+
+Sayaç tamamlandığında çalışma sürene eklenir.
 
 </p>
 
 </div>
 
 </section>
+
+<!-- PROFİL -->
 
 <section id="profile" class="hidden">
 
@@ -1148,9 +1272,9 @@ id="examSelect"
 
 onchange="changeExam(this.value)"
 
-style="margin:7px 0 16px"
+style="margin:7px 0 16px">
 
-></select>
+</select>
 
 <label class="muted">
 
@@ -1172,11 +1296,9 @@ max="30"
 
 style="margin:7px 0 16px"
 
-onchange="saveGoal(this.value)"
+onchange="saveGoal(this.value)">
 
->
-
-<div class="section" style="margin-top:4px">
+<div class="section" style="margin-top:0">
 
 <h2>Genel ilerleme</h2>
 
@@ -1190,15 +1312,53 @@ onchange="saveGoal(this.value)"
 
 </div>
 
+<div class="section">
+
+<h2>Seri Ateşi</h2>
+
+</div>
+
+<div class="fire-card card">
+
+<div class="fire-row">
+
+<div class="fire-icon">🔥</div>
+
+<div class="fire-info">
+
+<div class="fire-title">
+
+MEVCUT SERİ
+
+</div>
+
+<div class="fire-number">
+
+<span id="profileStreak">0</span>
+
+<small> gün</small>
+
+</div>
+
+<div class="fire-best">
+
+Rekor: <b id="profileBest">0</b> gün
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 <button
 
 class="btn danger"
 
 style="margin-top:20px"
 
-onclick="resetAll()"
-
->
+onclick="resetAll()">
 
 Tüm ilerlemeyi sıfırla
 
@@ -1210,9 +1370,15 @@ Tüm ilerlemeyi sıfırla
 
 </main>
 
+<!-- ALT MENÜ -->
+
 <nav class="nav">
 
-<button data-page="home" onclick="show('home')">
+<button
+
+data-page="home"
+
+onclick="show('home')">
 
 <span class="nicon">⌂</span>
 
@@ -1220,7 +1386,11 @@ Ana Sayfa
 
 </button>
 
-<button data-page="topics" onclick="show('topics')">
+<button
+
+data-page="topics"
+
+onclick="show('topics')">
 
 <span class="nicon">✓</span>
 
@@ -1228,7 +1398,11 @@ Konular
 
 </button>
 
-<button data-page="plan" onclick="show('plan')">
+<button
+
+data-page="plan"
+
+onclick="show('plan')">
 
 <span class="nicon">☷</span>
 
@@ -1236,7 +1410,11 @@ Plan
 
 </button>
 
-<button data-page="profile" onclick="show('profile')">
+<button
+
+data-page="profile"
+
+onclick="show('profile')">
 
 <span class="nicon">◎</span>
 
@@ -1252,9 +1430,17 @@ Profil
 
 <script>
 
+/* =========================
+
+   SINAV VERİLERİ
+
+========================= */
+
 const DATA={
 
 YKS:{
+
+name:"YKS",
 
 desc:"Üniversiteye hazırlık",
 
@@ -1408,6 +1594,8 @@ subs:{
 
 KPSS:{
 
+name:"KPSS",
+
 desc:"Kamu sınavı",
 
 subs:{
@@ -1488,6 +1676,8 @@ subs:{
 
 ALES:{
 
+name:"ALES",
+
 desc:"Lisansüstü hazırlık",
 
 subs:{
@@ -1527,6 +1717,8 @@ subs:{
 },
 
 DGS:{
+
+name:"DGS",
 
 desc:"Dikey geçiş",
 
@@ -1568,6 +1760,8 @@ subs:{
 
 LGS:{
 
+name:"LGS",
+
 desc:"Liseye geçiş",
 
 subs:{
@@ -1580,11 +1774,11 @@ subs:{
 
 "Paragraf",
 
-"Fiilimsiler",
+"Fiilimsi",
 
-"Yazım Kuralları",
+"Cümlenin Ögeleri",
 
-"Noktalama"
+"Yazım Kuralları"
 
 ],
 
@@ -1596,13 +1790,15 @@ subs:{
 
 "Kareköklü İfadeler",
 
+"Veri Analizi",
+
+"Basit Olayların Olma Olasılığı",
+
 "Cebirsel İfadeler",
 
 "Doğrusal Denklemler",
 
-"Eşitsizlikler",
-
-"Olasılık"
+"Eşitsizlikler"
 
 ],
 
@@ -1616,6 +1812,8 @@ subs:{
 
 "Madde ve Endüstri",
 
+"Basit Makineler",
+
 "Enerji Dönüşümleri",
 
 "Elektrik"
@@ -1626,15 +1824,15 @@ subs:{
 
 "Bir Kahraman Doğuyor",
 
-"Milli Uyanış",
+"Millî Uyanış",
 
-"Milli Bir Destan",
+"Millî Bir Destan",
 
 "Atatürkçülük",
 
-"Demokratikleşme",
+"Demokratikleşme Çabaları",
 
-"Dış Politika"
+"Atatürk Dönemi Dış Politika"
 
 ],
 
@@ -1646,7 +1844,7 @@ subs:{
 
 "Din ve Hayat",
 
-"Hz. Muhammed",
+"Hz. Muhammed'in Örnekliği",
 
 "Kur'an-ı Kerim"
 
@@ -1662,7 +1860,9 @@ subs:{
 
 "On the Phone",
 
-"The Internet"
+"The Internet",
+
+"Adventures"
 
 ]
 
@@ -1671,6 +1871,12 @@ subs:{
 }
 
 };
+
+/* =========================
+
+   KAYITLI DURUM
+
+========================= */
 
 let S=JSON.parse(
 
@@ -1688,13 +1894,21 @@ seconds:0,
 
 goal:3,
 
+/* SERİ */
+
 streak:0,
 
-lastStudy:""
+bestStreak:0,
+
+lastStudyDate:"",
+
+days:0
 
 };
 
-const save=()=>localStorage.setItem(
+const save=()=>{
+
+localStorage.setItem(
 
 "kampusState",
 
@@ -1702,9 +1916,203 @@ JSON.stringify(S)
 
 );
 
+};
+
+/* =========================
+
+   TARİH
+
+========================= */
+
+function todayKey(){
+
+let d=new Date();
+
+return d.getFullYear()+"-"+
+
+String(d.getMonth()+1).padStart(2,"0")+"-"+
+
+String(d.getDate()).padStart(2,"0");
+
+}
+
+function dateDiff(a,b){
+
+let x=new Date(a+"T00:00:00");
+
+let y=new Date(b+"T00:00:00");
+
+return Math.round(
+
+(y-x)/(1000*60*60*24)
+
+);
+
+}
+
+/* =========================
+
+   SERİ ATEŞİ
+
+========================= */
+
+function registerStudy(){
+
+let today=todayKey();
+
+if(S.lastStudyDate===today){
+
+return;
+
+}
+
+if(!S.lastStudyDate){
+
+S.streak=1;
+
+}else{
+
+let diff=dateDiff(
+
+S.lastStudyDate,
+
+today
+
+);
+
+if(diff===1){
+
+S.streak++;
+
+}else{
+
+S.streak=1;
+
+}
+
+}
+
+S.lastStudyDate=today;
+
+if(S.streak>S.bestStreak){
+
+S.bestStreak=S.streak;
+
+}
+
+S.days=S.streak;
+
+save();
+
+updateStreakUI();
+
+}
+
+function updateStreakUI(){
+
+let streak=S.streak||0;
+
+let best=S.bestStreak||0;
+
+document.getElementById(
+
+"streakStat"
+
+).textContent=streak;
+
+document.getElementById(
+
+"fireStreak"
+
+).textContent=streak;
+
+document.getElementById(
+
+"bestStreak"
+
+).textContent=best;
+
+document.getElementById(
+
+"profileStreak"
+
+).textContent=streak;
+
+document.getElementById(
+
+"profileBest"
+
+).textContent=best;
+
+/* Seri barı */
+
+let progress=
+
+Math.min((streak%7)/7*100,100);
+
+if(streak>0 && streak%7===0){
+
+progress=100;
+
+}
+
+document.getElementById(
+
+"fireBar"
+
+).style.width=progress+"%";
+
+let msg=
+
+document.getElementById("fireMessage");
+
+if(!S.lastStudyDate){
+
+msg.textContent=
+
+"Bugün çalışarak serini başlat.";
+
+return;
+
+}
+
+if(S.lastStudyDate===todayKey()){
+
+if(streak>=7){
+
+msg.textContent=
+
+"Seri ateşin yanıyor. Bugün de devam!";
+
+}else{
+
+msg.textContent=
+
+"Bugünkü çalışmanı tamamladın. Serin korunuyor.";
+
+}
+
+}else{
+
+msg.textContent=
+
+"Bugün çalışarak serini koru.";
+
+}
+
+}
+
+/* =========================
+
+   TOAST
+
+========================= */
+
 function toast(t){
 
-let e=document.getElementById("toast");
+let e=
+
+document.getElementById("toast");
 
 e.textContent=t;
 
@@ -1720,15 +2128,21 @@ setTimeout(
 
 }
 
+/* =========================
+
+   SAYFA
+
+========================= */
+
 function show(page){
 
 document
 
 .querySelectorAll("main>section")
 
-.forEach(
+.forEach(x=>
 
-x=>x.classList.add("hidden")
+x.classList.add("hidden")
 
 );
 
@@ -1742,9 +2156,9 @@ document
 
 .querySelectorAll(".nav button")
 
-.forEach(
+.forEach(b=>
 
-b=>b.classList.toggle(
+b.classList.toggle(
 
 "active",
 
@@ -1768,15 +2182,37 @@ renderProfile();
 
 updateStats();
 
-scrollTo(0,0);
+updateStreakUI();
+
+window.scrollTo(0,0);
 
 }
+
+/* =========================
+
+   SINAV
+
+========================= */
 
 function setExam(x){
 
 S.exam=x;
 
 save();
+
+document.getElementById(
+
+"examPill"
+
+).textContent=x;
+
+document.getElementById(
+
+"heroExam"
+
+).textContent=
+
+x+" SINAV KOÇUN";
 
 renderHome();
 
@@ -1788,15 +2224,19 @@ toast(x+" seçildi");
 
 function renderHome(){
 
-let g=document.getElementById("examGrid");
+let g=
+
+document.getElementById("examGrid");
 
 g.innerHTML="";
 
-Object.entries(DATA).forEach(
+Object.entries(DATA)
 
-([k,v])=>{
+.forEach(([k,v])=>{
 
-let d=document.createElement("button");
+let d=
+
+document.createElement("button");
 
 d.className="card exam";
 
@@ -1810,9 +2250,11 @@ show("topics");
 
 d.innerHTML=`
 
-<span class="mark">→</span>
+<div>
 
 <b>${k}</b>
+
+</div>
 
 <strong>${v.desc}</strong>
 
@@ -1820,7 +2262,7 @@ d.innerHTML=`
 
 ${Object.keys(v.subs).length}
 
-ders • Konuları takip et
+ders • Konuları takip et →
 
 </span>
 
@@ -1846,15 +2288,19 @@ S.exam+" SINAV KOÇUN";
 
 }
 
+/* =========================
+
+   KONULAR
+
+========================= */
+
 function renderTopics(){
 
 let d=DATA[S.exam];
 
-let list=document.getElementById(
+let list=
 
-"topicsList"
-
-);
+document.getElementById("topicsList");
 
 document.getElementById(
 
@@ -1866,29 +2312,19 @@ S.exam+" — Dersler";
 
 list.innerHTML="";
 
-Object.entries(d.subs).forEach(
+Object.entries(d.subs)
 
-([sub,topics])=>{
+.forEach(([sub,topics])=>{
 
-let wrap=document.createElement(
+let wrap=
 
-"div"
-
-);
+document.createElement("div");
 
 wrap.className="subject";
 
-let safeId=
+wrap.style.marginBottom="8px";
 
-btoa(
-
-unescape(
-
-encodeURIComponent(sub)
-
-)
-
-).replace(
+let safe=sub.replace(
 
 /[^a-zA-Z0-9]/g,
 
@@ -1910,9 +2346,7 @@ ${sub[0]}
 
 <div class="progress">
 
-<i id="p-${safeId}">
-
-</i>
+<i id="p-${safe}"></i>
 
 </div>
 
@@ -1928,7 +2362,9 @@ let key=
 
 S.exam+"|"+sub+"|"+t;
 
-let checked=!!S.done[key];
+let checked=
+
+!!S.done[key];
 
 let row=
 
@@ -1958,15 +2394,23 @@ ${checked?"Tamam":"Bekliyor"}
 
 `;
 
-row.querySelector("input")
+row.querySelector(
 
-.onchange=e=>{
+"input"
 
-S.done[key]=e.target.checked;
+).onchange=e=>{
 
-if(e.target.checked)
+S.done[key]=
 
-markStudy();
+e.target.checked;
+
+if(e.target.checked){
+
+registerStudy();
+
+toast("Konu tamamlandı • Seri ateşi +1");
+
+}
 
 save();
 
@@ -1982,9 +2426,9 @@ list.appendChild(row);
 
 let done=
 
-topics.filter(
+topics.filter(t=>
 
-t=>S.done[
+S.done[
 
 S.exam+"|"+sub+"|"+t
 
@@ -1994,67 +2438,33 @@ S.exam+"|"+sub+"|"+t
 
 setTimeout(()=>{
 
-let p=document.getElementById(
+let p=
 
-"p-"+safeId
+document.getElementById(
+
+"p-"+safe
 
 );
 
-if(p)
+if(p){
 
 p.style.width=
 
 (done/topics.length*100)+"%";
 
+}
+
+},0);
+
 });
 
-});
-
 }
 
-function markStudy(){
+/* =========================
 
-let today=
+   İSTATİSTİK
 
-new Date()
-
-.toISOString()
-
-.slice(0,10);
-
-if(S.lastStudy!==today){
-
-let y=new Date();
-
-y.setDate(
-
-y.getDate()-1
-
-);
-
-let prev=
-
-y.toISOString()
-
-.slice(0,10);
-
-S.streak=
-
-S.lastStudy===prev
-
-?
-
-S.streak+1
-
-:
-
-1;
-
-S.lastStudy=today;
-
-}
-
-}
+========================= */
 
 function updateStats(){
 
@@ -2062,13 +2472,13 @@ let all=0;
 
 let done=0;
 
-Object.entries(DATA).forEach(
+Object.values(DATA)
 
-([x,v])=>
+.forEach(x=>
 
-Object.entries(v.subs).forEach(
+Object.entries(x.subs)
 
-([s,ts])=>
+.forEach(([s,ts])=>
 
 ts.forEach(t=>{
 
@@ -2076,11 +2486,17 @@ all++;
 
 if(
 
-S.done[x+"|"+s+"|"+t]
+S.done[
 
-)
+x.name+"|"+s+"|"+t
+
+]
+
+){
 
 done++;
+
+}
 
 })
 
@@ -2100,15 +2516,11 @@ document.getElementById(
 
 ).textContent=
 
-Math.floor(S.seconds/3600)+"s";
+Math.floor(
 
-document.getElementById(
+S.seconds/3600
 
-"streakStat"
-
-).textContent=
-
-S.streak;
+)+"s";
 
 let today=
 
@@ -2116,11 +2528,9 @@ Math.min(done,S.goal);
 
 let pct=
 
-Math.min(
+Math.round(
 
-100,
-
-Math.round(today/S.goal*100)
+today/S.goal*100
 
 );
 
@@ -2150,7 +2560,11 @@ document.getElementById(
 
 let op=
 
-Math.round(done/all*100);
+all?
+
+Math.round(done/all*100):
+
+0;
 
 document.getElementById(
 
@@ -2168,15 +2582,21 @@ document.getElementById(
 
 op+"%";
 
+updateStreakUI();
+
 }
+
+/* =========================
+
+   PLAN
+
+========================= */
 
 function renderPlans(){
 
-let l=document.getElementById(
+let l=
 
-"planList"
-
-);
+document.getElementById("planList");
 
 l.innerHTML="";
 
@@ -2190,9 +2610,7 @@ return;
 
 }
 
-S.plans.forEach(
-
-(p,i)=>{
+S.plans.forEach((p,i)=>{
 
 let d=
 
@@ -2216,39 +2634,15 @@ ${p.done?"Tamamlandı":"Bekliyor"}
 
 </div>
 
-<div
-
-class="row"
-
-style="flex:0 0 auto"
-
->
-
 <button
 
 class="btn ${p.done?"ghost":""}"
 
-onclick="togglePlan(${i})"
-
->
+onclick="togglePlan(${i})">
 
 ${p.done?"Geri al":"Tamamla"}
 
 </button>
-
-<button
-
-class="btn danger"
-
-onclick="deletePlan(${i})"
-
->
-
-Sil
-
-</button>
-
-</div>
 
 `;
 
@@ -2262,25 +2656,23 @@ function savePlan(){
 
 let task=
 
-document
+document.getElementById(
 
-.getElementById("planTask")
+"planTask"
 
-.value.trim();
+).value.trim();
 
 let min=
 
-+document
++document.getElementById(
 
-.getElementById("planMin")
+"planMin"
 
-.value
-
-||45;
+).value||45;
 
 if(!task){
 
-toast("Önce bir görev yaz");
+toast("Bir görev yaz.");
 
 return;
 
@@ -2312,19 +2704,29 @@ toast("Görev eklendi");
 
 function togglePlan(i){
 
+let wasDone=
+
+S.plans[i].done;
+
 S.plans[i].done=
 
-!S.plans[i].done;
+!wasDone;
 
-if(
-
-S.plans[i].done
-
-)
+if(!wasDone){
 
 S.seconds+=
 
 S.plans[i].min*60;
+
+registerStudy();
+
+toast(
+
+"Görev tamamlandı • Seri ateşi devam ediyor"
+
+);
+
+}
 
 save();
 
@@ -2332,33 +2734,13 @@ renderPlans();
 
 updateStats();
 
-toast(
-
-S.plans[i].done
-
-?
-
-"Görev tamamlandı"
-
-:
-
-"Görev geri alındı"
-
-);
-
 }
 
-function deletePlan(i){
+/* =========================
 
-S.plans.splice(i,1);
+   TIMER
 
-save();
-
-renderPlans();
-
-toast("Görev silindi");
-
-}
+========================= */
 
 let timer=1500;
 
@@ -2366,7 +2748,7 @@ let interval=null;
 
 let running=false;
 
-let timerStart=0;
+let currentTimerSeconds=1500;
 
 function fmt(s){
 
@@ -2376,9 +2758,7 @@ Math.floor(s/60)
 
 ).padStart(2,"0")
 
-+
-
-":"+
++":"+
 
 String(
 
@@ -2391,6 +2771,8 @@ s%60
 function setTimer(min){
 
 timer=min*60;
+
+currentTimerSeconds=timer;
 
 running=false;
 
@@ -2406,19 +2788,13 @@ document.getElementById(
 
 "timerDisplay"
 
-).textContent=fmt(timer);
+).textContent=
 
-[
+fmt(timer);
 
-"m25",
+["m25","m50","mCustom"]
 
-"m50",
-
-"mCustom"
-
-].forEach(
-
-x=>
+.forEach(x=>
 
 document.getElementById(x)
 
@@ -2436,7 +2812,9 @@ min===25?"m25":"m50"
 
 function setTimerPrompt(){
 
-let m=+prompt(
+let m=
+
++prompt(
 
 "Kaç dakika çalışmak istiyorsun?",
 
@@ -2447,6 +2825,8 @@ let m=+prompt(
 if(m>0){
 
 timer=m*60;
+
+currentTimerSeconds=timer;
 
 running=false;
 
@@ -2462,19 +2842,13 @@ document.getElementById(
 
 "timerDisplay"
 
-).textContent=fmt(timer);
+).textContent=
 
-[
+fmt(timer);
 
-"m25",
+["m25","m50","mCustom"]
 
-"m50",
-
-"mCustom"
-
-].forEach(
-
-x=>
+.forEach(x=>
 
 document.getElementById(x)
 
@@ -2504,7 +2878,9 @@ document.getElementById(
 
 "timerBtn"
 
-).textContent="Devam et";
+).textContent=
+
+"Devam et";
 
 return;
 
@@ -2512,15 +2888,17 @@ return;
 
 running=true;
 
-timerStart=timer;
-
 document.getElementById(
 
 "timerBtn"
 
-).textContent="Durdur";
+).textContent=
 
-interval=setInterval(()=>{
+"Durdur";
+
+interval=
+
+setInterval(()=>{
 
 timer--;
 
@@ -2528,7 +2906,9 @@ document.getElementById(
 
 "timerDisplay"
 
-).textContent=fmt(timer);
+).textContent=
+
+fmt(timer);
 
 if(timer<=0){
 
@@ -2536,7 +2916,19 @@ clearInterval(interval);
 
 running=false;
 
-S.seconds+=timerStart;
+/* Gerçek çalışılan süre */
+
+S.seconds+=
+
+Math.round(
+
+currentTimerSeconds/60
+
+)*60;
+
+/* SERİ ATEŞİ */
+
+registerStudy();
 
 save();
 
@@ -2544,23 +2936,29 @@ document.getElementById(
 
 "timerBtn"
 
-).textContent="Başlat";
+).textContent=
 
-toast(
+"Başlat";
 
-"Çalışma tamamlandı! 🎉"
+timer=1500;
 
-);
-
-timer=timerStart;
+currentTimerSeconds=1500;
 
 document.getElementById(
 
 "timerDisplay"
 
-).textContent=fmt(timer);
+).textContent=
+
+fmt(timer);
 
 updateStats();
+
+toast(
+
+"Çalışma tamamlandı! 🔥 Seri ateşi güncellendi."
+
+);
 
 }
 
@@ -2576,31 +2974,43 @@ running=false;
 
 timer=1500;
 
+currentTimerSeconds=1500;
+
 document.getElementById(
 
 "timerDisplay"
 
-).textContent="25:00";
+).textContent=
+
+"25:00";
 
 document.getElementById(
 
 "timerBtn"
 
-).textContent="Başlat";
+).textContent=
+
+"Başlat";
 
 }
+
+/* =========================
+
+   PROFİL
+
+========================= */
 
 function changeExam(v){
 
 setExam(v);
 
-show("topics");
-
 }
 
 function renderProfile(){
 
-let s=document.getElementById(
+let s=
+
+document.getElementById(
 
 "examSelect"
 
@@ -2610,25 +3020,13 @@ s.innerHTML=
 
 Object.keys(DATA)
 
-.map(
+.map(x=>
 
-x=>
+`<option ${
 
-`
+x===S.exam?"selected":""
 
-<option
-
-value="${x}"
-
-${x===S.exam?"selected":""}
-
->
-
-${x}
-
-</option>
-
-`
+}>${x}</option>`
 
 )
 
@@ -2640,6 +3038,8 @@ document.getElementById(
 
 ).value=S.goal;
 
+updateStreakUI();
+
 }
 
 function saveGoal(v){
@@ -2650,7 +3050,7 @@ Math.max(
 
 1,
 
-+v||3
+Math.min(30,+v||3)
 
 );
 
@@ -2666,13 +3066,19 @@ toast(
 
 }
 
+/* =========================
+
+   SIFIRLA
+
+========================= */
+
 function resetAll(){
 
 if(
 
 confirm(
 
-"Tüm konu ilerlemesi, planlar ve çalışma süresi silinsin mi?"
+"Tüm konu ilerlemesi, planlar, çalışma süresi ve seri silinsin mi?"
 
 )
 
@@ -2692,15 +3098,23 @@ goal:3,
 
 streak:0,
 
-lastStudy:""
+bestStreak:0,
+
+lastStudyDate:"",
+
+days:0
 
 };
 
 save();
 
+renderHome();
+
 renderTopics();
 
 renderPlans();
+
+renderProfile();
 
 updateStats();
 
@@ -2714,11 +3128,19 @@ toast(
 
 }
 
+/* =========================
+
+   BAŞLAT
+
+========================= */
+
 renderHome();
 
 renderProfile();
 
 updateStats();
+
+updateStreakUI();
 
 show("home");
 

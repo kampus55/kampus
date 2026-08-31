@@ -148,7 +148,7 @@ color:#fff;
 
 border-radius:28px;
 
-padding:27px 24px;
+padding:29px 24px;
 
 box-shadow:0 18px 40px rgba(49,87,213,.22);
 
@@ -198,7 +198,19 @@ margin:8px 0
 
 margin:0 0 18px;
 
-opacity:.9
+opacity:.92
+
+}
+
+.slogan{
+
+font-size:14px;
+
+font-weight:900;
+
+margin:-7px 0 18px;
+
+opacity:.95
 
 }
 
@@ -330,11 +342,17 @@ margin:0
 
 }
 
-.muted{
+.section p{
 
-color:var(--muted)
+margin:5px 0 0;
+
+color:var(--muted);
+
+font-size:13px
 
 }
+
+.muted{color:var(--muted)}
 
 .stats{
 
@@ -348,11 +366,7 @@ margin-bottom:18px
 
 }
 
-.stat{
-
-text-align:center
-
-}
+.stat{text-align:center}
 
 .stat b{
 
@@ -370,7 +384,7 @@ color:var(--muted)
 
 }
 
-/* SERİ ATEŞİ */
+/* SERİ */
 
 .fire-card{
 
@@ -378,9 +392,7 @@ position:relative;
 
 overflow:hidden;
 
-background:
-
-linear-gradient(135deg,#fff8f2,#fff);
+background:linear-gradient(135deg,#fff8f2,#fff);
 
 border:1px solid #ffd5b8
 
@@ -416,11 +428,7 @@ flex:none
 
 }
 
-.fire-info{
-
-flex:1
-
-}
+.fire-info{flex:1}
 
 .fire-title{
 
@@ -491,6 +499,140 @@ background:linear-gradient(90deg,#ff9b36,#ff5a16);
 border-radius:20px;
 
 transition:.3s
+
+}
+
+/* ÇÖZÜLEMEYEN SORULAR */
+
+.question-card{
+
+position:relative;
+
+overflow:hidden
+
+}
+
+.question-image{
+
+width:100%;
+
+max-height:330px;
+
+object-fit:contain;
+
+border-radius:15px;
+
+background:#f3f5fa;
+
+display:block;
+
+margin-bottom:13px
+
+}
+
+.question-meta{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:10px
+
+}
+
+.question-title{
+
+font-weight:900;
+
+font-size:17px
+
+}
+
+.question-date{
+
+font-size:12px;
+
+color:var(--muted);
+
+margin-top:4px
+
+}
+
+.question-actions{
+
+display:flex;
+
+gap:8px;
+
+margin-top:13px
+
+}
+
+.question-actions button{
+
+flex:1
+
+}
+
+.upload-box{
+
+border:2px dashed #cdd5ed;
+
+border-radius:18px;
+
+padding:25px 16px;
+
+text-align:center;
+
+background:#fafbff;
+
+cursor:pointer
+
+}
+
+.upload-icon{
+
+font-size:36px;
+
+margin-bottom:7px
+
+}
+
+.upload-box strong{
+
+display:block;
+
+font-size:16px
+
+}
+
+.upload-box span{
+
+display:block;
+
+color:var(--muted);
+
+font-size:13px;
+
+margin-top:5px
+
+}
+
+.question-count{
+
+background:#eef2ff;
+
+color:var(--primary);
+
+padding:7px 10px;
+
+border-radius:10px;
+
+font-size:12px;
+
+font-weight:900
 
 }
 
@@ -594,11 +736,7 @@ accent-color:var(--primary)
 
 }
 
-.topic label{
-
-flex:1
-
-}
+.topic label{flex:1}
 
 .topic.done label{
 
@@ -644,7 +782,7 @@ padding:8px max(10px,calc((100vw - 900px)/2));
 
 display:grid;
 
-grid-template-columns:repeat(4,1fr)
+grid-template-columns:repeat(5,1fr)
 
 }
 
@@ -656,17 +794,13 @@ color:#7b849a;
 
 padding:8px 2px;
 
-font-size:11px;
+font-size:10px;
 
 font-weight:800
 
 }
 
-.nav button.active{
-
-color:var(--primary)
-
-}
+.nav button.active{color:var(--primary)}
 
 .nav .nicon{
 
@@ -708,11 +842,7 @@ outline:none
 
 }
 
-.input:focus{
-
-border-color:var(--primary)
-
-}
+.input:focus{border-color:var(--primary)}
 
 .timer{
 
@@ -852,7 +982,23 @@ transform:translateX(-50%) translateY(0)
 
 .hero h1{font-size:29px}
 
-.fire-number{font-size:27px}
+.row{
+
+flex-wrap:wrap
+
+}
+
+.row>*{
+
+min-width:0
+
+}
+
+.question-actions{
+
+flex-direction:column
+
+}
 
 }
 
@@ -895,6 +1041,12 @@ Planını oluştur, konularını takip et,
 çalışmanı ölç ve serini koru.
 
 </p>
+
+<div class="slogan">
+
+Hedefine giden yol Kampüs’ten geçer.
+
+</div>
 
 <button class="btn light" onclick="show('plan')">
 
@@ -970,19 +1122,11 @@ En uzun seri: <b id="bestStreak">0</b> gün
 
 </div>
 
-<div>
-
-<button
-
-class="btn fire small"
-
-onclick="show('timer')">
+<button class="btn fire" onclick="show('timer')">
 
 Çalış
 
 </button>
-
-</div>
 
 </div>
 
@@ -1000,7 +1144,53 @@ id="fireMessage"
 
 style="font-size:12px;margin-top:9px">
 
-Bugün serini başlat.
+Bugün çalışarak serini başlat.
+
+</div>
+
+</div>
+
+<!-- SORULAR KISA KART -->
+
+<div class="section">
+
+<div>
+
+<h2>Çözemediğim Sorular</h2>
+
+<p>Takıldığın soruları kaybetme.</p>
+
+</div>
+
+<button class="btn ghost" onclick="show('questions')">
+
+Sorularım
+
+</button>
+
+</div>
+
+<div class="card">
+
+<div class="row">
+
+<div>
+
+<strong id="questionHomeCount">0 soru</strong>
+
+<p class="muted" style="margin:4px 0 0;font-size:13px">
+
+Daha sonra tekrar çöz.
+
+</p>
+
+</div>
+
+<button class="btn" onclick="show('questions')">
+
+Soru ekle
+
+</button>
 
 </div>
 
@@ -1048,11 +1238,7 @@ style="text-align:right;font-weight:900">
 
 </div>
 
-<div
-
-class="progress"
-
-style="margin-top:10px">
+<div class="progress" style="margin-top:10px">
 
 <i id="todayBar"></i>
 
@@ -1130,11 +1316,7 @@ value="45"
 
 style="max-width:100px">
 
-<button
-
-class="btn"
-
-onclick="savePlan()">
+<button class="btn" onclick="savePlan()">
 
 Ekle
 
@@ -1143,6 +1325,74 @@ Ekle
 </div>
 
 <div id="planList"></div>
+
+</div>
+
+</section>
+
+<!-- ÇÖZÜLEMEYEN SORULAR -->
+
+<section id="questions" class="hidden">
+
+<div class="section">
+
+<div>
+
+<h2>Çözemediğim Sorular</h2>
+
+<p>Sorularını kaydet ve sonra tekrar çöz.</p>
+
+</div>
+
+<span class="question-count" id="questionCount">
+
+0 soru
+
+</span>
+
+</div>
+
+<div class="card">
+
+<label
+
+class="upload-box"
+
+for="questionInput">
+
+<div class="upload-icon">📸</div>
+
+<strong>Soru fotoğrafı ekle</strong>
+
+<span>
+
+Galeriden seç veya kamerayla çek
+
+</span>
+
+</label>
+
+<input
+
+id="questionInput"
+
+type="file"
+
+accept="image/*"
+
+capture="environment"
+
+style="display:none"
+
+onchange="addQuestion(this)">
+
+</div>
+
+<div
+
+id="questionsList"
+
+style="margin-top:14px">
 
 </div>
 
@@ -1196,11 +1446,7 @@ onclick="setTimerPrompt()">
 
 </div>
 
-<div
-
-class="timer"
-
-id="timerDisplay">
+<div class="timer" id="timerDisplay">
 
 25:00
 
@@ -1395,6 +1641,18 @@ onclick="show('topics')">
 <span class="nicon">✓</span>
 
 Konular
+
+</button>
+
+<button
+
+data-page="questions"
+
+onclick="show('questions')">
+
+<span class="nicon">📷</span>
+
+Sorular
 
 </button>
 
@@ -1894,17 +2152,31 @@ seconds:0,
 
 goal:3,
 
-/* SERİ */
-
 streak:0,
 
 bestStreak:0,
 
 lastStudyDate:"",
 
-days:0
+days:0,
+
+/* YENİ */
+
+questions:[]
 
 };
+
+/* Eski sürümden gelen kullanıcılar için */
+
+if(!Array.isArray(S.questions)){
+
+S.questions=[];
+
+}
+
+if(typeof S.streak!=="number")S.streak=0;
+
+if(typeof S.bestStreak!=="number")S.bestStreak=0;
 
 const save=()=>{
 
@@ -2014,41 +2286,51 @@ let streak=S.streak||0;
 
 let best=S.bestStreak||0;
 
-document.getElementById(
+let ids=[
 
-"streakStat"
+"streakStat",
 
-).textContent=streak;
-
-document.getElementById(
-
-"fireStreak"
-
-).textContent=streak;
-
-document.getElementById(
-
-"bestStreak"
-
-).textContent=best;
-
-document.getElementById(
+"fireStreak",
 
 "profileStreak"
 
-).textContent=streak;
+];
 
-document.getElementById(
+ids.forEach(id=>{
+
+let e=document.getElementById(id);
+
+if(e)e.textContent=streak;
+
+});
+
+let bestIds=[
+
+"bestStreak",
 
 "profileBest"
 
-).textContent=best;
+];
 
-/* Seri barı */
+bestIds.forEach(id=>{
 
-let progress=
+let e=document.getElementById(id);
 
-Math.min((streak%7)/7*100,100);
+if(e)e.textContent=best;
+
+});
+
+let bar=document.getElementById("fireBar");
+
+if(bar){
+
+let progress=Math.min(
+
+(streak%7)/7*100,
+
+100
+
+);
 
 if(streak>0 && streak%7===0){
 
@@ -2056,15 +2338,13 @@ progress=100;
 
 }
 
-document.getElementById(
+bar.style.width=progress+"%";
 
-"fireBar"
+}
 
-).style.width=progress+"%";
+let msg=document.getElementById("fireMessage");
 
-let msg=
-
-document.getElementById("fireMessage");
+if(!msg)return;
 
 if(!S.lastStudyDate){
 
@@ -2110,9 +2390,7 @@ msg.textContent=
 
 function toast(t){
 
-let e=
-
-document.getElementById("toast");
+let e=document.getElementById("toast");
 
 e.textContent=t;
 
@@ -2180,9 +2458,15 @@ if(page==="profile")
 
 renderProfile();
 
+if(page==="questions")
+
+renderQuestions();
+
 updateStats();
 
 updateStreakUI();
+
+updateQuestionCount();
 
 window.scrollTo(0,0);
 
@@ -2408,7 +2692,11 @@ if(e.target.checked){
 
 registerStudy();
 
-toast("Konu tamamlandı • Seri ateşi +1");
+toast(
+
+"Konu tamamlandı • Seri ateşi güncellendi"
+
+);
 
 }
 
@@ -2584,6 +2872,8 @@ op+"%";
 
 updateStreakUI();
 
+updateQuestionCount();
+
 }
 
 /* =========================
@@ -2622,7 +2912,7 @@ d.innerHTML=`
 
 <div>
 
-<b>${p.task}</b>
+<b>${escapeHTML(p.task)}</b>
 
 <small>
 
@@ -2722,7 +3012,7 @@ registerStudy();
 
 toast(
 
-"Görev tamamlandı • Seri ateşi devam ediyor"
+"Görev tamamlandı • Seri ateşi güncellendi"
 
 );
 
@@ -2733,6 +3023,336 @@ save();
 renderPlans();
 
 updateStats();
+
+}
+
+/* =========================
+
+   ÇÖZÜLEMEYEN SORULAR
+
+========================= */
+
+function addQuestion(input){
+
+let file=input.files[0];
+
+if(!file)return;
+
+/*
+
+   Fotoğrafı Base64 olarak tarayıcıya kaydediyoruz.
+
+   Böylece sunucu olmadan çalışır.
+
+*/
+
+let reader=new FileReader();
+
+reader.onload=function(e){
+
+let question={
+
+id:Date.now(),
+
+image:e.target.result,
+
+title:"Çözülecek soru",
+
+date:new Date().toLocaleDateString("tr-TR"),
+
+solved:false
+
+};
+
+S.questions.unshift(question);
+
+save();
+
+renderQuestions();
+
+updateQuestionCount();
+
+toast("Soru kaydedildi");
+
+input.value="";
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+function renderQuestions(){
+
+let list=
+
+document.getElementById("questionsList");
+
+if(!list)return;
+
+list.innerHTML="";
+
+let active=
+
+S.questions.filter(q=>!q.solved);
+
+let solved=
+
+S.questions.filter(q=>q.solved);
+
+if(!S.questions.length){
+
+list.innerHTML=`
+
+<div class="card empty">
+
+<div style="font-size:35px">📚</div>
+
+<strong>Henüz soru eklemedin.</strong>
+
+<div style="margin-top:7px">
+
+Takıldığın sorunun fotoğrafını ekle.
+
+</div>
+
+</div>
+
+`;
+
+return;
+
+}
+
+/* Çözülmemişler */
+
+if(active.length){
+
+let title=document.createElement("div");
+
+title.className="section";
+
+title.innerHTML=`
+
+<h2>Çözülecekler</h2>
+
+<span class="question-count">${active.length}</span>
+
+`;
+
+list.appendChild(title);
+
+active.forEach(q=>{
+
+list.appendChild(createQuestionCard(q));
+
+});
+
+}
+
+/* Çözülenler */
+
+if(solved.length){
+
+let title=document.createElement("div");
+
+title.className="section";
+
+title.innerHTML=`
+
+<h2>Çözülenler</h2>
+
+<span class="question-count">${solved.length}</span>
+
+`;
+
+list.appendChild(title);
+
+solved.forEach(q=>{
+
+list.appendChild(createQuestionCard(q));
+
+});
+
+}
+
+}
+
+function createQuestionCard(q){
+
+let card=
+
+document.createElement("div");
+
+card.className=
+
+"card question-card";
+
+card.style.marginBottom="13px";
+
+card.innerHTML=`
+
+<img
+
+class="question-image"
+
+src="${q.image}"
+
+alt="Soru">
+
+<div class="question-meta">
+
+<div>
+
+<div class="question-title">
+
+${escapeHTML(q.title)}
+
+</div>
+
+<div class="question-date">
+
+${q.date}
+
+</div>
+
+</div>
+
+<span class="tag">
+
+${q.solved?"Çözüldü":"Bekliyor"}
+
+</span>
+
+</div>
+
+<div class="question-actions">
+
+<button
+
+class="btn ${q.solved?"ghost":""}"
+
+onclick="toggleQuestion(${q.id})">
+
+${q.solved?"Tekrar çöz":"Çözdüm"}
+
+</button>
+
+<button
+
+class="btn danger"
+
+onclick="deleteQuestion(${q.id})">
+
+Sil
+
+</button>
+
+</div>
+
+`;
+
+return card;
+
+}
+
+function toggleQuestion(id){
+
+let q=
+
+S.questions.find(x=>x.id===id);
+
+if(!q)return;
+
+q.solved=!q.solved;
+
+save();
+
+renderQuestions();
+
+updateQuestionCount();
+
+toast(
+
+q.solved?
+
+"Harika, soru çözüldü":
+
+"Soru tekrar çözülecekler listesinde"
+
+);
+
+}
+
+function deleteQuestion(id){
+
+if(!confirm("Bu soru silinsin mi?"))return;
+
+S.questions=
+
+S.questions.filter(q=>q.id!==id);
+
+save();
+
+renderQuestions();
+
+updateQuestionCount();
+
+toast("Soru silindi");
+
+}
+
+function updateQuestionCount(){
+
+let count=
+
+S.questions?
+
+S.questions.filter(q=>!q.solved).length:
+
+0;
+
+let e=
+
+document.getElementById("questionCount");
+
+if(e){
+
+e.textContent=count+" soru";
+
+}
+
+let h=
+
+document.getElementById("questionHomeCount");
+
+if(h){
+
+h.textContent=count+" çözülecek soru";
+
+}
+
+}
+
+/* =========================
+
+   GÜVENLİ YAZI
+
+========================= */
+
+function escapeHTML(str){
+
+return String(str)
+
+.replace(/&/g,"&amp;")
+
+.replace(/</g,"&lt;")
+
+.replace(/>/g,"&gt;")
+
+.replace(/"/g,"&quot;")
+
+.replace(/'/g,"&#039;");
 
 }
 
@@ -2758,7 +3378,9 @@ Math.floor(s/60)
 
 ).padStart(2,"0")
 
-+":"+
++
+
+":"+
 
 String(
 
@@ -2926,7 +3548,7 @@ currentTimerSeconds/60
 
 )*60;
 
-/* SERİ ATEŞİ */
+/* SERİ */
 
 registerStudy();
 
@@ -2956,7 +3578,7 @@ updateStats();
 
 toast(
 
-"Çalışma tamamlandı! 🔥 Seri ateşi güncellendi."
+"Çalışma tamamlandı! Seri ateşi güncellendi."
 
 );
 
@@ -3078,7 +3700,7 @@ if(
 
 confirm(
 
-"Tüm konu ilerlemesi, planlar, çalışma süresi ve seri silinsin mi?"
+"Tüm konu ilerlemesi, planlar, çalışma süresi, sorular ve seri silinsin mi?"
 
 )
 
@@ -3102,7 +3724,9 @@ bestStreak:0,
 
 lastStudyDate:"",
 
-days:0
+days:0,
+
+questions:[]
 
 };
 
@@ -3116,7 +3740,11 @@ renderPlans();
 
 renderProfile();
 
+renderQuestions();
+
 updateStats();
+
+updateQuestionCount();
 
 toast(
 
@@ -3138,9 +3766,13 @@ renderHome();
 
 renderProfile();
 
+renderQuestions();
+
 updateStats();
 
 updateStreakUI();
+
+updateQuestionCount();
 
 show("home");
 

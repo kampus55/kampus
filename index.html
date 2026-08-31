@@ -490,7 +490,7 @@ transition:.3s
 
 }
 
-/* ÇÖZÜLEMEYEN SORULAR */
+/* SORULAR */
 
 .question-card{
 
@@ -830,7 +830,11 @@ outline:none
 
 }
 
-.input:focus{border-color:var(--primary)}
+.input:focus{
+
+border-color:var(--primary)
+
+}
 
 .timer{
 
@@ -956,19 +960,271 @@ transform:translateX(-50%) translateY(0)
 
 }
 
+/* =========================
+
+   YENİ: PROFİL HESAP
+
+========================= */
+
+.account-card{
+
+background:linear-gradient(135deg,#eef2ff,#fff);
+
+border:1px solid #dce3ff
+
+}
+
+.account-title{
+
+font-size:19px;
+
+font-weight:900;
+
+margin-bottom:6px
+
+}
+
+.account-sub{
+
+font-size:13px;
+
+color:var(--muted);
+
+margin-bottom:15px
+
+}
+
+.account-buttons{
+
+display:flex;
+
+gap:9px
+
+}
+
+.account-buttons button{
+
+flex:1
+
+}
+
+.account-form{
+
+margin-top:15px;
+
+padding-top:15px;
+
+border-top:1px solid var(--line)
+
+}
+
+.account-form .input{
+
+margin-bottom:9px
+
+}
+
+.account-status{
+
+font-size:13px;
+
+font-weight:800;
+
+color:var(--ok);
+
+margin-top:10px
+
+}
+
+/* =========================
+
+   YENİ: KOÇLUK PAKETLERİ
+
+========================= */
+
+.package-section{
+
+margin-top:25px
+
+}
+
+.package-title{
+
+font-size:22px;
+
+font-weight:900;
+
+margin:0
+
+}
+
+.package-subtitle{
+
+font-size:13px;
+
+color:var(--muted);
+
+margin:6px 0 15px
+
+}
+
+.package-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:13px
+
+}
+
+.package-card{
+
+position:relative;
+
+overflow:hidden;
+
+background:#fff;
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+padding:20px;
+
+box-shadow:var(--shadow)
+
+}
+
+.package-card.premium{
+
+border:2px solid var(--primary)
+
+}
+
+.package-badge{
+
+position:absolute;
+
+top:13px;
+
+right:13px;
+
+background:var(--primary);
+
+color:#fff;
+
+font-size:10px;
+
+font-weight:900;
+
+padding:6px 9px;
+
+border-radius:20px
+
+}
+
+.package-icon{
+
+font-size:32px;
+
+margin-bottom:8px
+
+}
+
+.package-card h3{
+
+font-size:20px;
+
+margin:0 0 5px
+
+}
+
+.package-price{
+
+font-size:26px;
+
+font-weight:950;
+
+color:var(--primary);
+
+margin:10px 0
+
+}
+
+.package-price small{
+
+font-size:12px;
+
+color:var(--muted);
+
+font-weight:700
+
+}
+
+.package-list{
+
+padding:0;
+
+margin:15px 0;
+
+list-style:none
+
+}
+
+.package-list li{
+
+padding:7px 0;
+
+font-size:13px;
+
+border-bottom:1px solid #f0f1f5
+
+}
+
+.package-list li:last-child{
+
+border-bottom:0
+
+}
+
+.package-button{
+
+width:100%;
+
+margin-top:5px
+
+}
+
 @media(min-width:650px){
 
-.grid{grid-template-columns:repeat(4,1fr)}
+.grid{
 
-.hero{padding:34px}
+grid-template-columns:repeat(4,1fr)
 
-.hero h1{font-size:42px}
+}
+
+.hero{
+
+padding:34px
+
+}
+
+.hero h1{
+
+font-size:42px
+
+}
 
 }
 
 @media(max-width:500px){
 
-.hero h1{font-size:29px}
+.hero h1{
+
+font-size:29px
+
+}
 
 .row{
 
@@ -983,6 +1239,18 @@ min-width:0
 }
 
 .question-actions{
+
+flex-direction:column
+
+}
+
+.package-grid{
+
+grid-template-columns:1fr
+
+}
+
+.account-buttons{
 
 flex-direction:column
 
@@ -1012,7 +1280,11 @@ flex-direction:column
 
 <main>
 
-<!-- ANA SAYFA -->
+<!-- =========================
+
+     ANA SAYFA
+
+========================= -->
 
 <section id="home">
 
@@ -1065,8 +1337,6 @@ Planımı oluştur →
 </div>
 
 </div>
-
-<!-- SERİ ATEŞİ -->
 
 <div class="section">
 
@@ -1131,8 +1401,6 @@ Bugün çalışarak serini başlat.
 </div>
 
 </div>
-
-<!-- SORULAR KISA KART -->
 
 <div class="section">
 
@@ -1230,7 +1498,11 @@ style="text-align:right;font-weight:900">
 
 </section>
 
-<!-- KONULAR -->
+<!-- =========================
+
+     KONULAR
+
+========================= -->
 
 <section id="topics" class="hidden">
 
@@ -1256,7 +1528,11 @@ Sınav değiştir
 
 </section>
 
-<!-- PLAN -->
+<!-- =========================
+
+     PLAN
+
+========================= -->
 
 <section id="plan" class="hidden">
 
@@ -1312,7 +1588,11 @@ Ekle
 
 </section>
 
-<!-- ÇÖZÜLEMEYEN SORULAR -->
+<!-- =========================
+
+     SORULAR
+
+========================= -->
 
 <section id="questions" class="hidden">
 
@@ -1380,7 +1660,11 @@ style="margin-top:14px">
 
 </section>
 
-<!-- SAYAÇ -->
+<!-- =========================
+
+     SAYAÇ
+
+========================= -->
 
 <section id="timer" class="hidden">
 
@@ -1474,7 +1758,11 @@ Sayaç tamamlandığında çalışma sürene eklenir.
 
 </section>
 
-<!-- PROFİL -->
+<!-- =========================
+
+     PROFİL
+
+========================= -->
 
 <section id="profile" class="hidden">
 
@@ -1484,7 +1772,249 @@ Sayaç tamamlandığında çalışma sürene eklenir.
 
 </div>
 
-<div class="card">
+<!-- YENİ GİRİŞ / KAYIT ALANI -->
+
+<div class="card account-card">
+
+<div class="account-title">
+
+👤 Kampüs Hesabım
+
+</div>
+
+<div class="account-sub">
+
+İlerlemeni ve planlarını hesabınla takip et.
+
+</div>
+
+<div id="loggedOutArea">
+
+<div class="account-buttons">
+
+<button
+
+class="btn"
+
+onclick="openAccountForm('login')">
+
+Giriş Yap
+
+</button>
+
+<button
+
+class="btn ghost"
+
+onclick="openAccountForm('register')">
+
+Kayıt Ol
+
+</button>
+
+</div>
+
+<div
+
+id="accountForm"
+
+class="account-form hidden">
+
+<input
+
+class="input"
+
+id="accountEmail"
+
+type="email"
+
+placeholder="E-posta adresin">
+
+<input
+
+class="input"
+
+id="accountPassword"
+
+type="password"
+
+placeholder="Şifren">
+
+<button
+
+class="btn"
+
+style="width:100%"
+
+onclick="submitAccount()"
+
+id="accountSubmit">
+
+Giriş Yap
+
+</button>
+
+<div
+
+style="text-align:center;margin-top:10px;font-size:12px;color:var(--muted)"
+
+id="accountSwitch">
+
+Hesabın yok mu? Kayıt ol
+
+</div>
+
+</div>
+
+</div>
+
+<div
+
+id="loggedInArea"
+
+class="hidden">
+
+<div style="font-weight:900;font-size:17px">
+
+👋 Hoş geldin!
+
+</div>
+
+<div
+
+id="accountEmailText"
+
+class="muted"
+
+style="margin-top:5px">
+
+</div>
+
+<button
+
+class="btn danger"
+
+style="margin-top:14px"
+
+onclick="logoutAccount()">
+
+Çıkış Yap
+
+</button>
+
+</div>
+
+</div>
+
+<!-- KOÇLUK PAKETLERİ -->
+
+<div class="package-section">
+
+<div class="package-title">
+
+🎓 Kampüs Koçluk Paketleri
+
+</div>
+
+<div class="package-subtitle">
+
+Hedefine uygun paketi seç ve Kampüs deneyimini güçlendir.
+
+</div>
+
+<div class="package-grid">
+
+<!-- PLUS -->
+
+<div class="package-card">
+
+<div class="package-icon">⭐</div>
+
+<h3>Plus</h3>
+
+<div class="package-price">
+
+₺99 <small>/ ay</small>
+
+</div>
+
+<ul class="package-list">
+
+<li>✓ Kişisel çalışma planı</li>
+
+<li>✓ Günlük hedef takibi</li>
+
+<li>✓ Seri Ateşi</li>
+
+<li>✓ Konu ilerleme takibi</li>
+
+</ul>
+
+<button
+
+class="btn ghost package-button"
+
+onclick="selectPackage('Plus')">
+
+Plus'ı Seç
+
+</button>
+
+</div>
+
+<!-- PREMIUM -->
+
+<div class="package-card premium">
+
+<div class="package-badge">
+
+EN ÇOK TERCİH EDİLEN
+
+</div>
+
+<div class="package-icon">👑</div>
+
+<h3>Premium</h3>
+
+<div class="package-price">
+
+₺199 <small>/ ay</small>
+
+</div>
+
+<ul class="package-list">
+
+<li>✓ Plus'taki tüm özellikler</li>
+
+<li>✓ Gelişmiş çalışma takibi</li>
+
+<li>✓ Detaylı ilerleme analizi</li>
+
+<li>✓ Premium koçluk özellikleri</li>
+
+<li>✓ Öncelikli destek</li>
+
+</ul>
+
+<button
+
+class="btn package-button"
+
+onclick="selectPackage('Premium')">
+
+Premium'u Seç
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MEVCUT PROFİL AYARLARI -->
+
+<div class="card" style="margin-top:18px">
 
 <label class="muted">
 
@@ -2142,7 +2672,13 @@ lastStudyDate:"",
 
 days:0,
 
-questions:[]
+questions:[],
+
+/* YENİ */
+
+account:null,
+
+selectedPackage:null
 
 };
 
@@ -2155,6 +2691,10 @@ S.questions=[];
 if(typeof S.streak!=="number")S.streak=0;
 
 if(typeof S.bestStreak!=="number")S.bestStreak=0;
+
+if(!("account" in S))S.account=null;
+
+if(!("selectedPackage" in S))S.selectedPackage=null;
 
 const save=()=>{
 
@@ -2445,6 +2985,12 @@ updateStats();
 updateStreakUI();
 
 updateQuestionCount();
+
+if(page==="profile"){
+
+renderAccount();
+
+}
 
 window.scrollTo(0,0);
 
@@ -3006,7 +3552,7 @@ updateStats();
 
 /* =========================
 
-   ÇÖZÜLEMEYEN SORULAR
+   SORULAR
 
 ========================= */
 
@@ -3648,7 +4194,261 @@ document.getElementById(
 
 updateStreakUI();
 
+renderAccount();
+
 }
+
+/* =========================
+
+   YENİ: HESAP SİSTEMİ
+
+   ŞİMDİLİK DEMO / LOCALSTORAGE
+
+========================= */
+
+let accountMode="login";
+
+function openAccountForm(mode){
+
+accountMode=mode;
+
+let form=
+
+document.getElementById("accountForm");
+
+form.classList.remove("hidden");
+
+document.getElementById(
+
+"accountSubmit"
+
+).textContent=
+
+mode==="login"?
+
+"Giriş Yap":
+
+"Kayıt Ol";
+
+document.getElementById(
+
+"accountSwitch"
+
+).textContent=
+
+mode==="login"?
+
+"Hesabın yok mu? Kayıt ol":
+
+"Zaten hesabın var mı? Giriş yap";
+
+document.getElementById(
+
+"accountSwitch"
+
+).onclick=()=>{
+
+openAccountForm(
+
+accountMode==="login"?
+
+"register":
+
+"login"
+
+);
+
+};
+
+}
+
+function submitAccount(){
+
+let email=
+
+document.getElementById(
+
+"accountEmail"
+
+).value.trim();
+
+let password=
+
+document.getElementById(
+
+"accountPassword"
+
+).value;
+
+if(!email || !password){
+
+toast("E-posta ve şifre gir.");
+
+return;
+
+}
+
+if(password.length<4){
+
+toast("Şifre en az 4 karakter olsun.");
+
+return;
+
+}
+
+if(accountMode==="register"){
+
+S.account={
+
+email:email
+
+};
+
+save();
+
+toast("Kayıt oluşturuldu");
+
+}else{
+
+if(
+
+S.account &&
+
+S.account.email===email
+
+){
+
+toast("Giriş başarılı");
+
+}else{
+
+/*
+
+Şimdilik gerçek sunucu olmadığı için
+
+demo olarak hesabı kabul ediyoruz.
+
+Daha sonra gerçek üyelik sistemi
+
+bağlanacak.
+
+*/
+
+S.account={
+
+email:email
+
+};
+
+save();
+
+toast("Giriş yapıldı");
+
+}
+
+}
+
+document.getElementById(
+
+"accountEmail"
+
+).value="";
+
+document.getElementById(
+
+"accountPassword"
+
+).value="";
+
+renderAccount();
+
+}
+
+function renderAccount(){
+
+let out=
+
+document.getElementById(
+
+"loggedOutArea"
+
+);
+
+let logged=
+
+document.getElementById(
+
+"loggedInArea"
+
+);
+
+if(!out || !logged)return;
+
+if(S.account){
+
+out.classList.add("hidden");
+
+logged.classList.remove("hidden");
+
+document.getElementById(
+
+"accountEmailText"
+
+).textContent=
+
+S.account.email;
+
+}else{
+
+out.classList.remove("hidden");
+
+logged.classList.add("hidden");
+
+}
+
+}
+
+function logoutAccount(){
+
+S.account=null;
+
+save();
+
+renderAccount();
+
+toast("Çıkış yapıldı");
+
+}
+
+/* =========================
+
+   YENİ: PAKETLER
+
+========================= */
+
+function selectPackage(packageName){
+
+S.selectedPackage=packageName;
+
+save();
+
+toast(
+
+packageName+
+
+" paketi seçildi"
+
+);
+
+}
+
+ 
+
+/* =========================
+
+   GÜNLÜK HEDEF
+
+========================= */
 
 function saveGoal(v){
 
@@ -3712,7 +4512,13 @@ lastStudyDate:"",
 
 days:0,
 
-questions:[]
+questions:[],
+
+/* Hesap ve paket de sıfırlanıyor */
+
+account:null,
+
+selectedPackage:null
 
 };
 

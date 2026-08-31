@@ -202,18 +202,6 @@ opacity:.92
 
 }
 
-.slogan{
-
-font-size:14px;
-
-font-weight:900;
-
-margin:-7px 0 18px;
-
-opacity:.95
-
-}
-
 .btn{
 
 padding:12px 16px;
@@ -1032,7 +1020,7 @@ flex-direction:column
 
 <small id="heroExam">YKS SINAV KOÇUN</small>
 
-<h1>Hedefine giden yol burada.</h1>
+<h1>Hedefine giden yol Kampüs’ten geçer.</h1>
 
 <p>
 
@@ -1041,12 +1029,6 @@ Planını oluştur, konularını takip et,
 çalışmanı ölç ve serini koru.
 
 </p>
-
-<div class="slogan">
-
-Hedefine giden yol Kampüs’ten geçer.
-
-</div>
 
 <button class="btn light" onclick="show('plan')">
 
@@ -2160,13 +2142,9 @@ lastStudyDate:"",
 
 days:0,
 
-/* YENİ */
-
 questions:[]
 
 };
-
-/* Eski sürümden gelen kullanıcılar için */
 
 if(!Array.isArray(S.questions)){
 
@@ -3038,14 +3016,6 @@ let file=input.files[0];
 
 if(!file)return;
 
-/*
-
-   Fotoğrafı Base64 olarak tarayıcıya kaydediyoruz.
-
-   Böylece sunucu olmadan çalışır.
-
-*/
-
 let reader=new FileReader();
 
 reader.onload=function(e){
@@ -3124,11 +3094,11 @@ return;
 
 }
 
-/* Çözülmemişler */
-
 if(active.length){
 
-let title=document.createElement("div");
+let title=
+
+document.createElement("div");
 
 title.className="section";
 
@@ -3136,7 +3106,11 @@ title.innerHTML=`
 
 <h2>Çözülecekler</h2>
 
-<span class="question-count">${active.length}</span>
+<span class="question-count">
+
+${active.length}
+
+</span>
 
 `;
 
@@ -3144,17 +3118,21 @@ list.appendChild(title);
 
 active.forEach(q=>{
 
-list.appendChild(createQuestionCard(q));
+list.appendChild(
+
+createQuestionCard(q)
+
+);
 
 });
 
 }
 
-/* Çözülenler */
-
 if(solved.length){
 
-let title=document.createElement("div");
+let title=
+
+document.createElement("div");
 
 title.className="section";
 
@@ -3162,7 +3140,11 @@ title.innerHTML=`
 
 <h2>Çözülenler</h2>
 
-<span class="question-count">${solved.length}</span>
+<span class="question-count">
+
+${solved.length}
+
+</span>
 
 `;
 
@@ -3170,7 +3152,11 @@ list.appendChild(title);
 
 solved.forEach(q=>{
 
-list.appendChild(createQuestionCard(q));
+list.appendChild(
+
+createQuestionCard(q)
+
+);
 
 });
 
@@ -3286,7 +3272,9 @@ q.solved?
 
 function deleteQuestion(id){
 
-if(!confirm("Bu soru silinsin mi?"))return;
+if(!confirm("Bu soru silinsin mi?"))
+
+return;
 
 S.questions=
 
@@ -3380,7 +3368,9 @@ Math.floor(s/60)
 
 +
 
-":"+
+":"
+
++
 
 String(
 
@@ -3538,8 +3528,6 @@ clearInterval(interval);
 
 running=false;
 
-/* Gerçek çalışılan süre */
-
 S.seconds+=
 
 Math.round(
@@ -3547,8 +3535,6 @@ Math.round(
 currentTimerSeconds/60
 
 )*60;
-
-/* SERİ */
 
 registerStudy();
 

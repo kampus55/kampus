@@ -14,45 +14,11 @@
 
 <style>
 
-:root{
-
---bg:#f5f7fb;
-
---card:#fff;
-
---text:#17213a;
-
---muted:#6d7690;
-
---primary:#3157d5;
-
---primary2:#5273ed;
-
---line:#e7eaf2;
-
---ok:#19a66a;
-
---danger:#e55252;
-
---fire:#ff7a18;
-
---shadow:0 10px 30px rgba(25,38,75,.08)
-
-}
+:root{--bg:#f5f7fb;--card:#fff;--text:#17213a;--muted:#6d7690;--primary:#3157d5;--primary2:#5273ed;--line:#e7eaf2;--ok:#19a66a;--danger:#e55252;--shadow:0 10px 30px rgba(25,38,75,.08)}
 
 *{box-sizing:border-box}
 
-html,body{
-
-margin:0;
-
-background:var(--bg);
-
-color:var(--text);
-
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif
-
-}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
 
 body{min-height:100vh}
 
@@ -60,1201 +26,143 @@ button,input,select{font:inherit}
 
 button{cursor:pointer;border:0}
 
-.app{
+.app{min-height:100vh;padding-bottom:82px}
 
-min-height:100vh;
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 18px 12px}
 
-padding-bottom:84px
+.topin{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between}
 
-}
+.brand{font-size:25px;font-weight:900;color:var(--primary);letter-spacing:-1px}
 
-.top{
+.pill{font-size:12px;font-weight:700;background:#eef2ff;color:var(--primary);padding:7px 11px;border-radius:20px}
 
-position:sticky;
+main{max-width:900px;margin:auto;padding:20px 16px}
 
-top:0;
+.hero{background:linear-gradient(135deg,#1e2d73,#3157d5 60%,#5273ed);color:#fff;border-radius:28px;padding:26px 24px;box-shadow:0 18px 40px rgba(49,87,213,.22);margin-bottom:20px}
 
-z-index:20;
+.hero small{opacity:.82;font-weight:700}
 
-background:rgba(255,255,255,.94);
+.hero h1{font-size:32px;line-height:1.08;margin:8px 0}
 
-backdrop-filter:blur(16px);
+.hero p{margin:0 0 18px;opacity:.9}
 
-border-bottom:1px solid var(--line);
+.btn{padding:12px 16px;border-radius:13px;font-weight:800;background:var(--primary);color:#fff}
 
-padding:14px 18px 12px
+.btn.light{background:#fff;color:var(--primary)}
 
-}
+.btn.ghost{background:#eef2ff;color:var(--primary)}
 
-.topin{
+.btn.danger{background:#fff0f0;color:var(--danger)}
 
-max-width:900px;
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
 
-margin:auto;
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
 
-display:flex;
+.exam{min-height:145px;display:flex;flex-direction:column;justify-content:space-between;text-align:left}
 
-align-items:center;
+.exam b{font-size:26px;color:var(--primary)}
 
-justify-content:space-between
+.exam strong{font-size:18px}
 
-}
+.exam span{color:var(--muted);font-size:14px}
 
-.brand{
+.section{display:flex;align-items:center;justify-content:space-between;margin:24px 2px 12px}
 
-font-size:25px;
-
-font-weight:900;
-
-color:var(--primary);
-
-letter-spacing:-1px
-
-}
-
-.pill{
-
-font-size:12px;
-
-font-weight:800;
-
-background:#eef2ff;
-
-color:var(--primary);
-
-padding:7px 11px;
-
-border-radius:20px
-
-}
-
-main{
-
-max-width:900px;
-
-margin:auto;
-
-padding:20px 16px
-
-}
-
-.hidden{display:none!important}
-
-.hero{
-
-background:linear-gradient(135deg,#1e2d73,#3157d5 60%,#5273ed);
-
-color:#fff;
-
-border-radius:28px;
-
-padding:29px 24px;
-
-box-shadow:0 18px 40px rgba(49,87,213,.22);
-
-margin-bottom:18px;
-
-position:relative;
-
-overflow:hidden
-
-}
-
-.hero:after{
-
-content:"🎓";
-
-position:absolute;
-
-right:20px;
-
-bottom:-12px;
-
-font-size:85px;
-
-opacity:.13
-
-}
-
-.hero small{
-
-opacity:.82;
-
-font-weight:800
-
-}
-
-.hero h1{
-
-font-size:32px;
-
-line-height:1.08;
-
-margin:8px 0
-
-}
-
-.hero p{
-
-margin:0 0 18px;
-
-opacity:.92
-
-}
-
-.btn{
-
-padding:12px 16px;
-
-border-radius:13px;
-
-font-weight:800;
-
-background:var(--primary);
-
-color:#fff
-
-}
-
-.btn.light{
-
-background:#fff;
-
-color:var(--primary)
-
-}
-
-.btn.ghost{
-
-background:#eef2ff;
-
-color:var(--primary)
-
-}
-
-.btn.danger{
-
-background:#fff0f0;
-
-color:var(--danger)
-
-}
-
-.btn.fire{
-
-background:#fff0e5;
-
-color:#ed6910
-
-}
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:13px
-
-}
-
-.card{
-
-background:var(--card);
-
-border:1px solid var(--line);
-
-border-radius:20px;
-
-padding:18px;
-
-box-shadow:var(--shadow)
-
-}
-
-.exam{
-
-min-height:145px;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:space-between;
-
-text-align:left
-
-}
-
-.exam b{
-
-font-size:26px;
-
-color:var(--primary)
-
-}
-
-.exam strong{
-
-font-size:18px
-
-}
-
-.exam span{
-
-color:var(--muted);
-
-font-size:14px
-
-}
-
-.section{
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:10px;
-
-margin:24px 2px 12px
-
-}
-
-.section h2{
-
-font-size:21px;
-
-margin:0
-
-}
-
-.section p{
-
-margin:5px 0 0;
-
-color:var(--muted);
-
-font-size:13px
-
-}
+.section h2{font-size:21px;margin:0}
 
 .muted{color:var(--muted)}
 
-.stats{
+.hidden{display:none!important}
 
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:10px;
-
-margin-bottom:18px
-
-}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 
 .stat{text-align:center}
 
-.stat b{
+.stat b{display:block;font-size:24px}
 
-display:block;
+.stat span{font-size:12px;color:var(--muted)}
 
-font-size:24px
+.progress{height:9px;background:#e9edf6;border-radius:20px;overflow:hidden}
 
-}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),#6b86f2);border-radius:20px;width:0}
 
-.stat span{
+.subject{display:flex;gap:12px;align-items:center}
 
-font-size:12px;
+.subject .ico{width:44px;height:44px;border-radius:13px;background:#eef2ff;color:var(--primary);display:grid;place-items:center;font-weight:900;flex:none}
 
-color:var(--muted)
+.subject-main{flex:1}
 
-}
+.subject-main b{display:block;margin-bottom:7px}
 
-/* SERİ */
-
-.fire-card{
-
-position:relative;
-
-overflow:hidden;
-
-background:linear-gradient(135deg,#fff8f2,#fff);
-
-border:1px solid #ffd5b8
-
-}
-
-.fire-row{
-
-display:flex;
-
-align-items:center;
-
-gap:15px
-
-}
-
-.fire-icon{
-
-width:62px;
-
-height:62px;
-
-border-radius:18px;
-
-display:grid;
-
-place-items:center;
-
-font-size:35px;
-
-background:#fff0e5;
-
-flex:none
-
-}
-
-.fire-info{flex:1}
-
-.fire-title{
-
-font-size:14px;
-
-font-weight:800;
-
-color:#e86b16
-
-}
-
-.fire-number{
-
-font-size:30px;
-
-font-weight:950;
-
-line-height:1.05;
-
-margin-top:2px
-
-}
-
-.fire-number small{
-
-font-size:14px;
-
-font-weight:800;
-
-color:var(--muted)
-
-}
-
-.fire-best{
-
-font-size:12px;
-
-color:var(--muted);
-
-margin-top:5px
-
-}
-
-.fire-progress{
-
-height:8px;
-
-background:#f5e2d4;
-
-border-radius:20px;
-
-overflow:hidden;
-
-margin-top:15px
-
-}
-
-.fire-progress i{
-
-display:block;
-
-height:100%;
-
-width:0;
-
-background:linear-gradient(90deg,#ff9b36,#ff5a16);
-
-border-radius:20px;
-
-transition:.3s
-
-}
-
-/* SORULAR */
-
-.question-card{
-
-position:relative;
-
-overflow:hidden
-
-}
-
-.question-image{
-
-width:100%;
-
-max-height:330px;
-
-object-fit:contain;
-
-border-radius:15px;
-
-background:#f3f5fa;
-
-display:block;
-
-margin-bottom:13px
-
-}
-
-.question-meta{
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:10px
-
-}
-
-.question-title{
-
-font-weight:900;
-
-font-size:17px
-
-}
-
-.question-date{
-
-font-size:12px;
-
-color:var(--muted);
-
-margin-top:4px
-
-}
-
-.question-actions{
-
-display:flex;
-
-gap:8px;
-
-margin-top:13px
-
-}
-
-.question-actions button{
-
-flex:1
-
-}
-
-.upload-box{
-
-border:2px dashed #cdd5ed;
-
-border-radius:18px;
-
-padding:25px 16px;
-
-text-align:center;
-
-background:#fafbff;
-
-cursor:pointer
-
-}
-
-.upload-icon{
-
-font-size:36px;
-
-margin-bottom:7px
-
-}
-
-.upload-box strong{
-
-display:block;
-
-font-size:16px
-
-}
-
-.upload-box span{
-
-display:block;
-
-color:var(--muted);
-
-font-size:13px;
-
-margin-top:5px
-
-}
-
-.question-count{
-
-background:#eef2ff;
-
-color:var(--primary);
-
-padding:7px 10px;
-
-border-radius:10px;
-
-font-size:12px;
-
-font-weight:900
-
-}
-
-.progress{
-
-height:9px;
-
-background:#e9edf6;
-
-border-radius:20px;
-
-overflow:hidden
-
-}
-
-.progress i{
-
-display:block;
-
-height:100%;
-
-background:linear-gradient(90deg,var(--primary),#6b86f2);
-
-border-radius:20px;
-
-width:0;
-
-transition:.3s
-
-}
-
-.subject{
-
-display:flex;
-
-gap:12px;
-
-align-items:center
-
-}
-
-.subject .ico{
-
-width:44px;
-
-height:44px;
-
-border-radius:13px;
-
-background:#eef2ff;
-
-color:var(--primary);
-
-display:grid;
-
-place-items:center;
-
-font-weight:900;
-
-flex:none
-
-}
-
-.subject-main{
-
-flex:1
-
-}
-
-.subject-main b{
-
-display:block;
-
-margin-bottom:7px
-
-}
-
-.topic{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-padding:12px 0;
-
-border-bottom:1px solid var(--line)
-
-}
+.topic{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
 
 .topic:last-child{border:0}
 
-.topic input{
-
-width:20px;
-
-height:20px;
-
-accent-color:var(--primary)
-
-}
+.topic input{width:20px;height:20px;accent-color:var(--primary)}
 
 .topic label{flex:1}
 
-.topic.done label{
+.topic.done label{text-decoration:line-through;color:#8991a5}
 
-text-decoration:line-through;
+.tag{font-size:11px;background:#f0f2f7;color:var(--muted);padding:5px 8px;border-radius:8px}
 
-color:#8991a5
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(15px);border-top:1px solid var(--line);padding:8px max(10px,calc((100vw - 900px)/2));display:grid;grid-template-columns:repeat(4,1fr)}
 
-}
-
-.tag{
-
-font-size:11px;
-
-background:#f0f2f7;
-
-color:var(--muted);
-
-padding:5px 8px;
-
-border-radius:8px
-
-}
-
-.nav{
-
-position:fixed;
-
-bottom:0;
-
-left:0;
-
-right:0;
-
-z-index:30;
-
-background:rgba(255,255,255,.96);
-
-backdrop-filter:blur(15px);
-
-border-top:1px solid var(--line);
-
-padding:8px max(10px,calc((100vw - 900px)/2));
-
-display:grid;
-
-grid-template-columns:repeat(5,1fr)
-
-}
-
-.nav button{
-
-background:none;
-
-color:#7b849a;
-
-padding:8px 2px;
-
-font-size:10px;
-
-font-weight:800
-
-}
+.nav button{background:none;color:#7b849a;padding:8px 2px;font-size:11px;font-weight:800}
 
 .nav button.active{color:var(--primary)}
 
-.nav .nicon{
+.nav .nicon{font-size:20px;display:block;margin-bottom:2px}
 
-font-size:20px;
-
-display:block;
-
-margin-bottom:2px
-
-}
-
-.row{
-
-display:flex;
-
-gap:9px;
-
-align-items:center
-
-}
+.row{display:flex;gap:9px;align-items:center}
 
 .row>*{flex:1}
 
-.input{
+.input{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--text);outline:none}
 
-width:100%;
+.input:focus{border-color:var(--primary)}
 
-padding:12px;
+.timer{font-size:56px;font-variant-numeric:tabular-nums;text-align:center;font-weight:900;letter-spacing:2px;margin:12px 0}
 
-border:1px solid var(--line);
+.timer-mode{display:flex;gap:8px}
 
-border-radius:12px;
+.timer-mode button{flex:1;padding:9px;border-radius:10px;background:#eef2ff;color:var(--primary);font-weight:800}
 
-background:#fff;
+.timer-mode button.sel{background:var(--primary);color:#fff}
 
-color:var(--text);
+.empty{text-align:center;padding:30px 10px;color:var(--muted)}
 
-outline:none
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(15px);background:#17213a;color:#fff;padding:11px 15px;border-radius:12px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:50}
 
-}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-.input:focus{
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 
-border-color:var(--primary)
+.package-card{position:relative}
 
-}
+.package-card.active{border:2px solid var(--primary)}
 
-.timer{
+.package-icon{font-size:30px}
 
-font-size:56px;
+.package-price{font-size:24px;font-weight:900;color:var(--primary);margin:8px 0}
 
-font-variant-numeric:tabular-nums;
+.package-list{padding-left:20px;line-height:1.8;font-size:13px}
 
-text-align:center;
-
-font-weight:900;
-
-letter-spacing:2px;
-
-margin:12px 0
-
-}
-
-.timer-mode{
-
-display:flex;
-
-gap:8px
-
-}
-
-.timer-mode button{
-
-flex:1;
-
-padding:9px;
-
-border-radius:10px;
-
-background:#eef2ff;
-
-color:var(--primary);
-
-font-weight:800
-
-}
-
-.timer-mode button.sel{
-
-background:var(--primary);
-
-color:#fff
-
-}
-
-.planitem{
-
-display:flex;
-
-justify-content:space-between;
-
-gap:10px;
-
-padding:13px 0;
-
-border-bottom:1px solid var(--line)
-
-}
-
-.planitem:last-child{border:0}
-
-.planitem small{
-
-display:block;
-
-color:var(--muted);
-
-margin-top:3px
-
-}
-
-.empty{
-
-text-align:center;
-
-padding:30px 10px;
-
-color:var(--muted)
-
-}
-
-.toast{
-
-position:fixed;
-
-left:50%;
-
-bottom:90px;
-
-transform:translateX(-50%) translateY(15px);
-
-background:#17213a;
-
-color:#fff;
-
-padding:11px 15px;
-
-border-radius:12px;
-
-font-weight:700;
-
-opacity:0;
-
-pointer-events:none;
-
-transition:.25s;
-
-z-index:50;
-
-white-space:nowrap
-
-}
-
-.toast.show{
-
-opacity:1;
-
-transform:translateX(-50%) translateY(0)
-
-}
-
-/* =========================
-
-   YENİ: PROFİL HESAP
-
-========================= */
-
-.account-card{
-
-background:linear-gradient(135deg,#eef2ff,#fff);
-
-border:1px solid #dce3ff
-
-}
-
-.account-title{
-
-font-size:19px;
-
-font-weight:900;
-
-margin-bottom:6px
-
-}
-
-.account-sub{
-
-font-size:13px;
-
-color:var(--muted);
-
-margin-bottom:15px
-
-}
-
-.account-buttons{
-
-display:flex;
-
-gap:9px
-
-}
-
-.account-buttons button{
-
-flex:1
-
-}
-
-.account-form{
-
-margin-top:15px;
-
-padding-top:15px;
-
-border-top:1px solid var(--line)
-
-}
-
-.account-form .input{
-
-margin-bottom:9px
-
-}
-
-.account-status{
-
-font-size:13px;
-
-font-weight:800;
-
-color:var(--ok);
-
-margin-top:10px
-
-}
-
-/* =========================
-
-   YENİ: KOÇLUK PAKETLERİ
-
-========================= */
-
-.package-section{
-
-margin-top:25px
-
-}
-
-.package-title{
-
-font-size:22px;
-
-font-weight:900;
-
-margin:0
-
-}
-
-.package-subtitle{
-
-font-size:13px;
-
-color:var(--muted);
-
-margin:6px 0 15px
-
-}
-
-.package-grid{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:13px
-
-}
-
-.package-card{
-
-position:relative;
-
-overflow:hidden;
-
-background:#fff;
-
-border:1px solid var(--line);
-
-border-radius:22px;
-
-padding:20px;
-
-box-shadow:var(--shadow)
-
-}
-
-.package-card.premium{
-
-border:2px solid var(--primary)
-
-}
-
-.package-badge{
-
-position:absolute;
-
-top:13px;
-
-right:13px;
-
-background:var(--primary);
-
-color:#fff;
-
-font-size:10px;
-
-font-weight:900;
-
-padding:6px 9px;
-
-border-radius:20px
-
-}
-
-.package-icon{
-
-font-size:32px;
-
-margin-bottom:8px
-
-}
-
-.package-card h3{
-
-font-size:20px;
-
-margin:0 0 5px
-
-}
-
-.package-price{
-
-font-size:26px;
-
-font-weight:950;
-
-color:var(--primary);
-
-margin:10px 0
-
-}
-
-.package-price small{
-
-font-size:12px;
-
-color:var(--muted);
-
-font-weight:700
-
-}
-
-.package-list{
-
-padding:0;
-
-margin:15px 0;
-
-list-style:none
-
-}
-
-.package-list li{
-
-padding:7px 0;
-
-font-size:13px;
-
-border-bottom:1px solid #f0f1f5
-
-}
-
-.package-list li:last-child{
-
-border-bottom:0
-
-}
-
-.package-button{
-
-width:100%;
-
-margin-top:5px
-
-}
+.package-badge{position:absolute;right:10px;top:10px;background:var(--primary);color:#fff;font-size:10px;padding:5px 8px;border-radius:12px;font-weight:800}
 
 @media(min-width:650px){
 
-.grid{
+.grid{grid-template-columns:repeat(4,1fr)}
 
-grid-template-columns:repeat(4,1fr)
+.hero{padding:34px}
 
-}
-
-.hero{
-
-padding:34px
+.hero h1{font-size:42px}
 
 }
 
-.hero h1{
+@media(max-width:650px){
 
-font-size:42px
-
-}
-
-}
-
-@media(max-width:500px){
-
-.hero h1{
-
-font-size:29px
-
-}
-
-.row{
-
-flex-wrap:wrap
-
-}
-
-.row>*{
-
-min-width:0
-
-}
-
-.question-actions{
-
-flex-direction:column
-
-}
-
-.package-grid{
-
-grid-template-columns:1fr
-
-}
-
-.account-buttons{
-
-flex-direction:column
-
-}
+.package-grid{grid-template-columns:1fr}
 
 }
 
@@ -1279,12 +187,6 @@ flex-direction:column
 </header>
 
 <main>
-
-<!-- =========================
-
-     ANA SAYFA
-
-========================= -->
 
 <section id="home">
 
@@ -1340,114 +242,6 @@ Planımı oluştur →
 
 <div class="section">
 
-<h2>Seri Ateşi</h2>
-
-</div>
-
-<div class="card fire-card">
-
-<div class="fire-row">
-
-<div class="fire-icon">🔥</div>
-
-<div class="fire-info">
-
-<div class="fire-title">
-
-ÇALIŞMA SERİN
-
-</div>
-
-<div class="fire-number">
-
-<span id="fireStreak">0</span>
-
-<small> gün</small>
-
-</div>
-
-<div class="fire-best">
-
-En uzun seri: <b id="bestStreak">0</b> gün
-
-</div>
-
-</div>
-
-<button class="btn fire" onclick="show('timer')">
-
-Çalış
-
-</button>
-
-</div>
-
-<div class="fire-progress">
-
-<i id="fireBar"></i>
-
-</div>
-
-<div
-
-class="muted"
-
-id="fireMessage"
-
-style="font-size:12px;margin-top:9px">
-
-Bugün çalışarak serini başlat.
-
-</div>
-
-</div>
-
-<div class="section">
-
-<div>
-
-<h2>Çözemediğim Sorular</h2>
-
-<p>Takıldığın soruları kaybetme.</p>
-
-</div>
-
-<button class="btn ghost" onclick="show('questions')">
-
-Sorularım
-
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="row">
-
-<div>
-
-<strong id="questionHomeCount">0 soru</strong>
-
-<p class="muted" style="margin:4px 0 0;font-size:13px">
-
-Daha sonra tekrar çöz.
-
-</p>
-
-</div>
-
-<button class="btn" onclick="show('questions')">
-
-Soru ekle
-
-</button>
-
-</div>
-
-</div>
-
-<div class="section">
-
 <h2>Sınavını seç</h2>
 
 </div>
@@ -1476,9 +270,7 @@ Bugün için hedef belirle
 
 </strong>
 
-<span
-
-id="todayPct"
+<span id="todayPct"
 
 style="text-align:right;font-weight:900">
 
@@ -1498,23 +290,15 @@ style="text-align:right;font-weight:900">
 
 </section>
 
-<!-- =========================
-
-     KONULAR
-
-========================= -->
-
 <section id="topics" class="hidden">
 
 <div class="section">
 
-<div>
+<h2 id="topicsTitle">
 
-<h2 id="topicsTitle">Konular</h2>
+Konular
 
-<p>İlerledikçe işaretle.</p>
-
-</div>
+</h2>
 
 <button class="btn ghost" onclick="show('home')">
 
@@ -1528,143 +312,33 @@ Sınav değiştir
 
 </section>
 
-<!-- =========================
-
-     PLAN
-
-========================= -->
-
 <section id="plan" class="hidden">
 
 <div class="section">
 
 <div>
 
-<h2>Çalışma planım</h2>
+<h2>Kampüs Koçluk Planları</h2>
 
-<p>Bugünkü görevlerini oluştur.</p>
+<p>
 
-</div>
+Paketini seç, koçluğun başlasın.
 
-</div>
-
-<div class="card">
-
-<div class="row">
-
-<input
-
-class="input"
-
-id="planTask"
-
-placeholder="Örn. TYT Matematik — Problemler">
-
-<input
-
-class="input"
-
-id="planMin"
-
-type="number"
-
-min="5"
-
-value="45"
-
-style="max-width:100px">
-
-<button class="btn" onclick="savePlan()">
-
-Ekle
-
-</button>
+</p>
 
 </div>
 
-<div id="planList"></div>
+</div>
+
+<div id="packageArea"></div>
+
+<div id="activePlanArea"
+
+style="margin-top:15px">
 
 </div>
 
 </section>
-
-<!-- =========================
-
-     SORULAR
-
-========================= -->
-
-<section id="questions" class="hidden">
-
-<div class="section">
-
-<div>
-
-<h2>Çözemediğim Sorular</h2>
-
-<p>Sorularını kaydet ve sonra tekrar çöz.</p>
-
-</div>
-
-<span class="question-count" id="questionCount">
-
-0 soru
-
-</span>
-
-</div>
-
-<div class="card">
-
-<label
-
-class="upload-box"
-
-for="questionInput">
-
-<div class="upload-icon">📸</div>
-
-<strong>Soru fotoğrafı ekle</strong>
-
-<span>
-
-Galeriden seç veya kamerayla çek
-
-</span>
-
-</label>
-
-<input
-
-id="questionInput"
-
-type="file"
-
-accept="image/*"
-
-capture="environment"
-
-style="display:none"
-
-onchange="addQuestion(this)">
-
-</div>
-
-<div
-
-id="questionsList"
-
-style="margin-top:14px">
-
-</div>
-
-</section>
-
-<!-- =========================
-
-     SAYAÇ
-
-========================= -->
 
 <section id="timer" class="hidden">
 
@@ -1712,7 +386,9 @@ onclick="setTimerPrompt()">
 
 </div>
 
-<div class="timer" id="timerDisplay">
+<div class="timer"
+
+id="timerDisplay">
 
 25:00
 
@@ -1748,7 +424,7 @@ Sıfırla
 
 class="muted"
 
-style="text-align:center;margin-bottom:0">
+style="text-align:center">
 
 Sayaç tamamlandığında çalışma sürene eklenir.
 
@@ -1758,12 +434,6 @@ Sayaç tamamlandığında çalışma sürene eklenir.
 
 </section>
 
-<!-- =========================
-
-     PROFİL
-
-========================= -->
-
 <section id="profile" class="hidden">
 
 <div class="section">
@@ -1772,249 +442,57 @@ Sayaç tamamlandığında çalışma sürene eklenir.
 
 </div>
 
-<!-- YENİ GİRİŞ / KAYIT ALANI -->
+<div
 
-<div class="card account-card">
+class="card"
 
-<div class="account-title">
+style="background:linear-gradient(135deg,#eef2ff,#fff);border-color:#dce3ff">
+
+<h3 style="margin:0 0 6px">
 
 👤 Kampüs Hesabım
 
-</div>
+</h3>
 
-<div class="account-sub">
-
-İlerlemeni ve planlarını hesabınla takip et.
-
-</div>
-
-<div id="loggedOutArea">
-
-<div class="account-buttons">
-
-<button
-
-class="btn"
-
-onclick="openAccountForm('login')">
-
-Giriş Yap
-
-</button>
-
-<button
-
-class="btn ghost"
-
-onclick="openAccountForm('register')">
-
-Kayıt Ol
-
-</button>
-
-</div>
-
-<div
-
-id="accountForm"
-
-class="account-form hidden">
-
-<input
-
-class="input"
-
-id="accountEmail"
-
-type="email"
-
-placeholder="E-posta adresin">
-
-<input
-
-class="input"
-
-id="accountPassword"
-
-type="password"
-
-placeholder="Şifren">
-
-<button
-
-class="btn"
-
-style="width:100%"
-
-onclick="submitAccount()"
-
-id="accountSubmit">
-
-Giriş Yap
-
-</button>
-
-<div
-
-style="text-align:center;margin-top:10px;font-size:12px;color:var(--muted)"
-
-id="accountSwitch">
-
-Hesabın yok mu? Kayıt ol
-
-</div>
-
-</div>
-
-</div>
-
-<div
-
-id="loggedInArea"
-
-class="hidden">
-
-<div style="font-weight:900;font-size:17px">
-
-👋 Hoş geldin!
-
-</div>
-
-<div
-
-id="accountEmailText"
+<p
 
 class="muted"
 
-style="margin-top:5px">
+style="font-size:13px">
+
+İlerlemeni ve koçluk paketini
+
+hesabınla takip et.
+
+</p>
+
+<div id="accountArea"></div>
 
 </div>
 
-<button
+<div class="card" style="margin-top:15px">
 
-class="btn danger"
-
-style="margin-top:14px"
-
-onclick="logoutAccount()">
-
-Çıkış Yap
-
-</button>
-
-</div>
-
-</div>
-
-<!-- KOÇLUK PAKETLERİ -->
-
-<div class="package-section">
-
-<div class="package-title">
+<h3 style="margin:0 0 6px">
 
 🎓 Kampüs Koçluk Paketleri
 
-</div>
+</h3>
 
-<div class="package-subtitle">
+<p
 
-Hedefine uygun paketi seç ve Kampüs deneyimini güçlendir.
+class="muted"
 
-</div>
+style="font-size:13px">
 
-<div class="package-grid">
+Paketini seç ve koçluk planını başlat.
 
-<!-- PLUS -->
+</p>
 
-<div class="package-card">
-
-<div class="package-icon">⭐</div>
-
-<h3>Plus</h3>
-
-<div class="package-price">
-
-₺99 <small>/ ay</small>
+<div id="profilePackages"></div>
 
 </div>
 
-<ul class="package-list">
-
-<li>✓ Kişisel çalışma planı</li>
-
-<li>✓ Günlük hedef takibi</li>
-
-<li>✓ Seri Ateşi</li>
-
-<li>✓ Konu ilerleme takibi</li>
-
-</ul>
-
-<button
-
-class="btn ghost package-button"
-
-onclick="selectPackage('Plus')">
-
-Plus'ı Seç
-
-</button>
-
-</div>
-
-<!-- PREMIUM -->
-
-<div class="package-card premium">
-
-<div class="package-badge">
-
-EN ÇOK TERCİH EDİLEN
-
-</div>
-
-<div class="package-icon">👑</div>
-
-<h3>Premium</h3>
-
-<div class="package-price">
-
-₺199 <small>/ ay</small>
-
-</div>
-
-<ul class="package-list">
-
-<li>✓ Plus'taki tüm özellikler</li>
-
-<li>✓ Gelişmiş çalışma takibi</li>
-
-<li>✓ Detaylı ilerleme analizi</li>
-
-<li>✓ Premium koçluk özellikleri</li>
-
-<li>✓ Öncelikli destek</li>
-
-</ul>
-
-<button
-
-class="btn package-button"
-
-onclick="selectPackage('Premium')">
-
-Premium'u Seç
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- MEVCUT PROFİL AYARLARI -->
-
-<div class="card" style="margin-top:18px">
+<div class="card" style="margin-top:15px">
 
 <label class="muted">
 
@@ -2060,53 +538,17 @@ onchange="saveGoal(this.value)">
 
 <h2>Genel ilerleme</h2>
 
-<b id="overallPct">0%</b>
+<b id="overallPct">
+
+0%
+
+</b>
 
 </div>
 
 <div class="progress">
 
 <i id="overallBar"></i>
-
-</div>
-
-<div class="section">
-
-<h2>Seri Ateşi</h2>
-
-</div>
-
-<div class="fire-card card">
-
-<div class="fire-row">
-
-<div class="fire-icon">🔥</div>
-
-<div class="fire-info">
-
-<div class="fire-title">
-
-MEVCUT SERİ
-
-</div>
-
-<div class="fire-number">
-
-<span id="profileStreak">0</span>
-
-<small> gün</small>
-
-</div>
-
-<div class="fire-best">
-
-Rekor: <b id="profileBest">0</b> gün
-
-</div>
-
-</div>
-
-</div>
 
 </div>
 
@@ -2127,8 +569,6 @@ Tüm ilerlemeyi sıfırla
 </section>
 
 </main>
-
-<!-- ALT MENÜ -->
 
 <nav class="nav">
 
@@ -2153,18 +593,6 @@ onclick="show('topics')">
 <span class="nicon">✓</span>
 
 Konular
-
-</button>
-
-<button
-
-data-page="questions"
-
-onclick="show('questions')">
-
-<span class="nicon">📷</span>
-
-Sorular
 
 </button>
 
@@ -2199,12 +627,6 @@ Profil
 </div>
 
 <script>
-
-/* =========================
-
-   SINAV VERİLERİ
-
-========================= */
 
 const DATA={
 
@@ -2644,7 +1066,95 @@ subs:{
 
 /* =========================
 
-   KAYITLI DURUM
+   KOÇLUK PAKETLERİ
+
+========================= */
+
+const PACKAGES={
+
+"Ücretsiz":{
+
+icon:"🎒",
+
+price:"₺0",
+
+plan:"Kampüs'ün temel özellikleriyle çalışmaya başla.",
+
+features:[
+
+"Temel konu takibi",
+
+"Günlük hedef",
+
+"Çalışma sayacı",
+
+"Temel ilerleme takibi"
+
+]
+
+},
+
+"Plus":{
+
+icon:"⭐",
+
+price:"₺99",
+
+plan:"Daha düzenli ve planlı çalış.",
+
+features:[
+
+"Ücretsiz paketteki tüm özellikler",
+
+"Kişisel çalışma planı",
+
+"Günlük hedef takibi",
+
+"Seri Ateşi",
+
+"Konu ilerleme takibi",
+
+"Haftalık çalışma özeti"
+
+]
+
+},
+
+"Premium":{
+
+icon:"👑",
+
+price:"₺199",
+
+plan:"Kampüs'ün gelişmiş koçluk deneyimi.",
+
+features:[
+
+"Plus'taki tüm özellikler",
+
+"Gelişmiş çalışma takibi",
+
+"Detaylı ilerleme analizi",
+
+"Deneme analizleri",
+
+"Net değişim takibi",
+
+"Konu bazlı deneme analizi",
+
+"Premium koçluk özellikleri",
+
+"Öncelikli destek"
+
+]
+
+}
+
+};
+
+/* =========================
+
+   DURUM
 
 ========================= */
 
@@ -2658,43 +1168,29 @@ exam:"YKS",
 
 done:{},
 
-plans:[],
-
 seconds:0,
 
 goal:3,
 
-streak:0,
-
-bestStreak:0,
-
-lastStudyDate:"",
-
 days:0,
-
-questions:[],
-
-/* YENİ */
 
 account:null,
 
-selectedPackage:null
+selectedPackage:null,
+
+trialAnalyses:[]
 
 };
 
-if(!Array.isArray(S.questions)){
+if(!S.done)S.done={};
 
-S.questions=[];
-
-}
-
-if(typeof S.streak!=="number")S.streak=0;
-
-if(typeof S.bestStreak!=="number")S.bestStreak=0;
+if(!S.trialAnalyses)S.trialAnalyses=[];
 
 if(!("account" in S))S.account=null;
 
 if(!("selectedPackage" in S))S.selectedPackage=null;
+
+if(typeof S.days!=="number")S.days=0;
 
 const save=()=>{
 
@@ -2707,198 +1203,6 @@ JSON.stringify(S)
 );
 
 };
-
-/* =========================
-
-   TARİH
-
-========================= */
-
-function todayKey(){
-
-let d=new Date();
-
-return d.getFullYear()+"-"+
-
-String(d.getMonth()+1).padStart(2,"0")+"-"+
-
-String(d.getDate()).padStart(2,"0");
-
-}
-
-function dateDiff(a,b){
-
-let x=new Date(a+"T00:00:00");
-
-let y=new Date(b+"T00:00:00");
-
-return Math.round(
-
-(y-x)/(1000*60*60*24)
-
-);
-
-}
-
-/* =========================
-
-   SERİ ATEŞİ
-
-========================= */
-
-function registerStudy(){
-
-let today=todayKey();
-
-if(S.lastStudyDate===today){
-
-return;
-
-}
-
-if(!S.lastStudyDate){
-
-S.streak=1;
-
-}else{
-
-let diff=dateDiff(
-
-S.lastStudyDate,
-
-today
-
-);
-
-if(diff===1){
-
-S.streak++;
-
-}else{
-
-S.streak=1;
-
-}
-
-}
-
-S.lastStudyDate=today;
-
-if(S.streak>S.bestStreak){
-
-S.bestStreak=S.streak;
-
-}
-
-S.days=S.streak;
-
-save();
-
-updateStreakUI();
-
-}
-
-function updateStreakUI(){
-
-let streak=S.streak||0;
-
-let best=S.bestStreak||0;
-
-let ids=[
-
-"streakStat",
-
-"fireStreak",
-
-"profileStreak"
-
-];
-
-ids.forEach(id=>{
-
-let e=document.getElementById(id);
-
-if(e)e.textContent=streak;
-
-});
-
-let bestIds=[
-
-"bestStreak",
-
-"profileBest"
-
-];
-
-bestIds.forEach(id=>{
-
-let e=document.getElementById(id);
-
-if(e)e.textContent=best;
-
-});
-
-let bar=document.getElementById("fireBar");
-
-if(bar){
-
-let progress=Math.min(
-
-(streak%7)/7*100,
-
-100
-
-);
-
-if(streak>0 && streak%7===0){
-
-progress=100;
-
-}
-
-bar.style.width=progress+"%";
-
-}
-
-let msg=document.getElementById("fireMessage");
-
-if(!msg)return;
-
-if(!S.lastStudyDate){
-
-msg.textContent=
-
-"Bugün çalışarak serini başlat.";
-
-return;
-
-}
-
-if(S.lastStudyDate===todayKey()){
-
-if(streak>=7){
-
-msg.textContent=
-
-"Seri ateşin yanıyor. Bugün de devam!";
-
-}else{
-
-msg.textContent=
-
-"Bugünkü çalışmanı tamamladın. Serin korunuyor.";
-
-}
-
-}else{
-
-msg.textContent=
-
-"Bugün çalışarak serini koru.";
-
-}
-
-}
 
 /* =========================
 
@@ -2970,27 +1274,13 @@ renderTopics();
 
 if(page==="plan")
 
-renderPlans();
+renderPlanPackages();
 
 if(page==="profile")
 
 renderProfile();
 
-if(page==="questions")
-
-renderQuestions();
-
 updateStats();
-
-updateStreakUI();
-
-updateQuestionCount();
-
-if(page==="profile"){
-
-renderAccount();
-
-}
 
 window.scrollTo(0,0);
 
@@ -3032,9 +1322,11 @@ toast(x+" seçildi");
 
 function renderHome(){
 
-let g=
+let g=document.getElementById(
 
-document.getElementById("examGrid");
+"examGrid"
+
+);
 
 g.innerHTML="";
 
@@ -3042,9 +1334,11 @@ Object.entries(DATA)
 
 .forEach(([k,v])=>{
 
-let d=
+let d=document.createElement(
 
-document.createElement("button");
+"button"
+
+);
 
 d.className="card exam";
 
@@ -3058,13 +1352,13 @@ show("topics");
 
 d.innerHTML=`
 
-<div>
-
 <b>${k}</b>
 
-</div>
+<strong>
 
-<strong>${v.desc}</strong>
+${v.desc}
+
+</strong>
 
 <span>
 
@@ -3106,9 +1400,11 @@ function renderTopics(){
 
 let d=DATA[S.exam];
 
-let list=
+let list=document.getElementById(
 
-document.getElementById("topicsList");
+"topicsList"
+
+);
 
 document.getElementById(
 
@@ -3124,9 +1420,11 @@ Object.entries(d.subs)
 
 .forEach(([sub,topics])=>{
 
-let wrap=
+let wrap=document.createElement(
 
-document.createElement("div");
+"div"
+
+);
 
 wrap.className="subject";
 
@@ -3170,13 +1468,13 @@ let key=
 
 S.exam+"|"+sub+"|"+t;
 
-let checked=
+let checked=!!S.done[key];
 
-!!S.done[key];
+let row=document.createElement(
 
-let row=
+"div"
 
-document.createElement("div");
+);
 
 row.className=
 
@@ -3192,7 +1490,11 @@ ${checked?"checked":""}
 
 >
 
-<label>${t}</label>
+<label>
+
+${t}
+
+</label>
 
 <span class="tag">
 
@@ -3208,19 +1510,11 @@ row.querySelector(
 
 ).onchange=e=>{
 
-S.done[key]=
-
-e.target.checked;
+S.done[key]=e.target.checked;
 
 if(e.target.checked){
 
-registerStudy();
-
-toast(
-
-"Konu tamamlandı • Seri ateşi güncellendi"
-
-);
+S.days++;
 
 }
 
@@ -3236,11 +1530,9 @@ list.appendChild(row);
 
 });
 
-let done=
+let done=topics.filter(
 
-topics.filter(t=>
-
-S.done[
+t=>S.done[
 
 S.exam+"|"+sub+"|"+t
 
@@ -3250,17 +1542,15 @@ S.exam+"|"+sub+"|"+t
 
 setTimeout(()=>{
 
-let p=
-
-document.getElementById(
+let q=document.getElementById(
 
 "p-"+safe
 
 );
 
-if(p){
+if(q){
 
-p.style.width=
+q.style.width=
 
 (done/topics.length*100)+"%";
 
@@ -3334,6 +1624,12 @@ S.seconds/3600
 
 )+"s";
 
+document.getElementById(
+
+"streakStat"
+
+).textContent=S.days;
+
 let today=
 
 Math.min(done,S.goal);
@@ -3394,243 +1690,159 @@ document.getElementById(
 
 op+"%";
 
-updateStreakUI();
-
-updateQuestionCount();
-
 }
 
 /* =========================
 
-   PLAN
+   PAKET KARTI
 
 ========================= */
 
-function renderPlans(){
+function packageCard(name){
 
-let l=
+let p=PACKAGES[name];
 
-document.getElementById("planList");
+let active=
 
-l.innerHTML="";
+S.selectedPackage===name;
 
-if(!S.plans.length){
+return `
 
-l.innerHTML=
+<div class="card package-card ${active?"active":""}">
 
-'<div class="empty">Henüz görev yok. İlk görevini ekle.</div>';
+${name==="Premium"
 
-return;
+?'<div class="package-badge">EN ÇOK TERCİH EDİLEN</div>'
 
-}
+:""}
 
-S.plans.forEach((p,i)=>{
+<div class="package-icon">
 
-let d=
+${p.icon}
 
-document.createElement("div");
+</div>
 
-d.className="planitem";
+<h3>
 
-d.innerHTML=`
+${name}
 
-<div>
+${active?
 
-<b>${escapeHTML(p.task)}</b>
+' <span class="tag">AKTİF</span>':
 
-<small>
+""}
 
-${p.min} dakika •
+</h3>
 
-${p.done?"Tamamlandı":"Bekliyor"}
+<div class="package-price">
+
+${p.price}
+
+<small
+
+style="font-size:12px;color:var(--muted)">
+
+${name==="Ücretsiz"?"":" / ay"}
 
 </small>
 
 </div>
 
+<ul class="package-list">
+
+${p.features
+
+.map(x=>`<li>✓ ${x}</li>`)
+
+.join("")}
+
+</ul>
+
 <button
 
-class="btn ${p.done?"ghost":""}"
+class="btn ${active?"ghost":""}"
 
-onclick="togglePlan(${i})">
+style="width:100%"
 
-${p.done?"Geri al":"Tamamla"}
+onclick="selectPackage('${name}')">
+
+${active?
+
+"Aktif Paket":
+
+name==="Ücretsiz"?
+
+"Ücretsiz Başla":
+
+"Bu Paketi Seç"}
 
 </button>
 
+</div>
+
 `;
-
-l.appendChild(d);
-
-});
-
-}
-
-function savePlan(){
-
-let task=
-
-document.getElementById(
-
-"planTask"
-
-).value.trim();
-
-let min=
-
-+document.getElementById(
-
-"planMin"
-
-).value||45;
-
-if(!task){
-
-toast("Bir görev yaz.");
-
-return;
-
-}
-
-S.plans.push({
-
-task,
-
-min,
-
-done:false
-
-});
-
-save();
-
-document.getElementById(
-
-"planTask"
-
-).value="";
-
-renderPlans();
-
-toast("Görev eklendi");
-
-}
-
-function togglePlan(i){
-
-let wasDone=
-
-S.plans[i].done;
-
-S.plans[i].done=
-
-!wasDone;
-
-if(!wasDone){
-
-S.seconds+=
-
-S.plans[i].min*60;
-
-registerStudy();
-
-toast(
-
-"Görev tamamlandı • Seri ateşi güncellendi"
-
-);
-
-}
-
-save();
-
-renderPlans();
-
-updateStats();
 
 }
 
 /* =========================
 
-   SORULAR
+   PLAN / KOÇLUK
 
 ========================= */
 
-function addQuestion(input){
+function renderPlanPackages(){
 
-let file=input.files[0];
+let area=
 
-if(!file)return;
+document.getElementById(
 
-let reader=new FileReader();
+"packageArea"
 
-reader.onload=function(e){
-
-let question={
-
-id:Date.now(),
-
-image:e.target.result,
-
-title:"Çözülecek soru",
-
-date:new Date().toLocaleDateString("tr-TR"),
-
-solved:false
-
-};
-
-S.questions.unshift(question);
-
-save();
-
-renderQuestions();
-
-updateQuestionCount();
-
-toast("Soru kaydedildi");
-
-input.value="";
-
-};
-
-reader.readAsDataURL(file);
-
-}
-
-function renderQuestions(){
-
-let list=
-
-document.getElementById("questionsList");
-
-if(!list)return;
-
-list.innerHTML="";
+);
 
 let active=
 
-S.questions.filter(q=>!q.solved);
+document.getElementById(
 
-let solved=
+"activePlanArea"
 
-S.questions.filter(q=>q.solved);
+);
 
-if(!S.questions.length){
+if(!area)return;
 
-list.innerHTML=`
+area.innerHTML=`
+
+<div class="package-grid">
+
+${Object.keys(PACKAGES)
+
+.map(packageCard)
+
+.join("")}
+
+</div>
+
+`;
+
+if(!S.selectedPackage){
+
+active.innerHTML=`
 
 <div class="card empty">
 
-<div style="font-size:35px">📚</div>
+Henüz bir paket seçmedin.
 
-<strong>Henüz soru eklemedin.</strong>
+<br><br>
 
-<div style="margin-top:7px">
+<b>
 
-Takıldığın sorunun fotoğrafını ekle.
+Ücretsiz, Plus veya Premium
 
-</div>
+</b>
+
+paketlerinden birini seçerek
+
+koçluğu başlat.
 
 </div>
 
@@ -3640,143 +1852,403 @@ return;
 
 }
 
-if(active.length){
+let p=PACKAGES[
 
-let title=
+S.selectedPackage
 
-document.createElement("div");
+];
 
-title.className="section";
+let extra="";
 
-title.innerHTML=`
+if(
 
-<h2>Çözülecekler</h2>
+S.selectedPackage==="Premium"
 
-<span class="question-count">
+){
 
-${active.length}
+extra=`
 
-</span>
+<div
 
-`;
+class="card"
 
-list.appendChild(title);
+style="margin-top:12px;background:#f8f9ff">
 
-active.forEach(q=>{
+<h3>
 
-list.appendChild(
+📊 Deneme Analizleri
 
-createQuestionCard(q)
+</h3>
 
-);
+<p
 
-});
+class="muted"
 
-}
+style="font-size:13px">
 
-if(solved.length){
+Deneme sonuçlarını ekle,
 
-let title=
+net değişimini ve konu bazlı
 
-document.createElement("div");
+ilerlemeni takip et.
 
-title.className="section";
-
-title.innerHTML=`
-
-<h2>Çözülenler</h2>
-
-<span class="question-count">
-
-${solved.length}
-
-</span>
-
-`;
-
-list.appendChild(title);
-
-solved.forEach(q=>{
-
-list.appendChild(
-
-createQuestionCard(q)
-
-);
-
-});
-
-}
-
-}
-
-function createQuestionCard(q){
-
-let card=
-
-document.createElement("div");
-
-card.className=
-
-"card question-card";
-
-card.style.marginBottom="13px";
-
-card.innerHTML=`
-
-<img
-
-class="question-image"
-
-src="${q.image}"
-
-alt="Soru">
-
-<div class="question-meta">
-
-<div>
-
-<div class="question-title">
-
-${escapeHTML(q.title)}
-
-</div>
-
-<div class="question-date">
-
-${q.date}
-
-</div>
-
-</div>
-
-<span class="tag">
-
-${q.solved?"Çözüldü":"Bekliyor"}
-
-</span>
-
-</div>
-
-<div class="question-actions">
+</p>
 
 <button
 
-class="btn ${q.solved?"ghost":""}"
+class="btn ghost"
 
-onclick="toggleQuestion(${q.id})">
+onclick="addTrialAnalysis()">
 
-${q.solved?"Tekrar çöz":"Çözdüm"}
++ Deneme analizi ekle
 
 </button>
+
+<div id="trialList"></div>
+
+</div>
+
+`;
+
+}
+
+active.innerHTML=`
+
+<div
+
+class="card"
+
+style="border:2px solid var(--primary)">
+
+<h3>
+
+🚀 Aktif Koçluğun:
+
+${S.selectedPackage}
+
+</h3>
+
+<p class="muted">
+
+${p.plan}
+
+</p>
+
+<div style="margin-top:12px">
+
+<b>
+
+Bu koçlukta takip edilenler
+
+</b>
+
+<ul
+
+style="padding-left:20px;line-height:1.8;font-size:13px">
+
+${p.features
+
+.map(x=>`<li>${x}</li>`)
+
+.join("")}
+
+</ul>
+
+</div>
+
+</div>
+
+${extra}
+
+`;
+
+if(
+
+S.selectedPackage==="Premium"
+
+){
+
+renderTrialList();
+
+}
+
+}
+
+/* =========================
+
+   PAKET SEÇ
+
+========================= */
+
+function selectPackage(name){
+
+S.selectedPackage=name;
+
+save();
+
+toast(
+
+name+" paketi aktif edildi"
+
+);
+
+renderPlanPackages();
+
+renderProfile();
+
+}
+
+/* =========================
+
+   DENEME ANALİZİ
+
+========================= */
+
+function addTrialAnalysis(){
+
+if(
+
+S.selectedPackage!=="Premium"
+
+)return;
+
+let name=prompt(
+
+"Deneme adı / tarihi:",
+
+new Date().toLocaleDateString("tr-TR")
+
+);
+
+if(name===null)return;
+
+let net=prompt(
+
+"Deneme netini gir:"
+
+);
+
+if(net===null)return;
+
+S.trialAnalyses.unshift({
+
+name:name,
+
+net:net
+
+});
+
+save();
+
+renderPlanPackages();
+
+toast(
+
+"Deneme analizi eklendi"
+
+);
+
+}
+
+function renderTrialList(){
+
+let l=
+
+document.getElementById(
+
+"trialList"
+
+);
+
+if(!l)return;
+
+if(
+
+!S.trialAnalyses.length
+
+){
+
+l.innerHTML=`
+
+<div
+
+class="empty"
+
+style="padding:15px 0">
+
+Henüz deneme analizi
+
+eklenmedi.
+
+</div>
+
+`;
+
+return;
+
+}
+
+l.innerHTML=
+
+S.trialAnalyses
+
+.map(x=>`
+
+<div
+
+style="padding:10px 0;border-bottom:1px solid var(--line)">
+
+<b>
+
+${escapeHTML(x.name)}
+
+</b>
+
+<span class="muted">
+
+— ${escapeHTML(x.net)} net
+
+</span>
+
+</div>
+
+`)
+
+.join("");
+
+}
+
+/* =========================
+
+   HESAP
+
+========================= */
+
+let accountMode="login";
+
+function renderAccount(){
+
+let a=
+
+document.getElementById(
+
+"accountArea"
+
+);
+
+if(!a)return;
+
+if(S.account){
+
+a.innerHTML=`
+
+<div
+
+style="font-weight:900">
+
+👋 Hoş geldin!
+
+</div>
+
+<div
+
+class="muted"
+
+style="margin-top:5px">
+
+${escapeHTML(
+
+S.account.email
+
+)}
+
+</div>
 
 <button
 
 class="btn danger"
 
-onclick="deleteQuestion(${q.id})">
+style="margin-top:12px"
 
-Sil
+onclick="logoutAccount()">
+
+Çıkış Yap
+
+</button>
+
+`;
+
+}else{
+
+a.innerHTML=`
+
+<div class="row">
+
+<button
+
+class="btn"
+
+onclick="openAccountForm('login')">
+
+Giriş Yap
+
+</button>
+
+<button
+
+class="btn ghost"
+
+onclick="openAccountForm('register')">
+
+Kayıt Ol
+
+</button>
+
+</div>
+
+<div
+
+id="accountForm"
+
+class="hidden"
+
+style="margin-top:12px">
+
+<input
+
+class="input"
+
+id="accountEmail"
+
+type="email"
+
+placeholder="E-posta adresin"
+
+style="margin-bottom:9px">
+
+<input
+
+class="input"
+
+id="accountPassword"
+
+type="password"
+
+placeholder="Şifren"
+
+style="margin-bottom:9px">
+
+<button
+
+class="btn"
+
+style="width:100%"
+
+id="accountSubmit"
+
+onclick="submitAccount()">
+
+Giriş Yap
 
 </button>
 
@@ -3784,109 +2256,127 @@ Sil
 
 `;
 
-return card;
+}
 
 }
 
-function toggleQuestion(id){
+function openAccountForm(mode){
 
-let q=
+accountMode=mode;
 
-S.questions.find(x=>x.id===id);
+let f=
 
-if(!q)return;
+document.getElementById(
 
-q.solved=!q.solved;
+"accountForm"
 
-save();
+);
 
-renderQuestions();
+if(!f)return;
 
-updateQuestionCount();
+f.classList.remove("hidden");
+
+document.getElementById(
+
+"accountSubmit"
+
+).textContent=
+
+mode==="login"?
+
+"Giriş Yap":
+
+"Kayıt Ol";
+
+}
+
+function submitAccount(){
+
+let email=
+
+document.getElementById(
+
+"accountEmail"
+
+).value.trim();
+
+let password=
+
+document.getElementById(
+
+"accountPassword"
+
+).value;
+
+if(
+
+!email||
+
+!password
+
+){
 
 toast(
 
-q.solved?
+"E-posta ve şifre gir."
 
-"Harika, soru çözüldü":
+);
 
-"Soru tekrar çözülecekler listesinde"
+return;
+
+}
+
+if(
+
+password.length<4
+
+){
+
+toast(
+
+"Şifre en az 4 karakter olsun."
+
+);
+
+return;
+
+}
+
+S.account={
+
+email:email
+
+};
+
+save();
+
+renderAccount();
+
+toast(
+
+accountMode==="register"?
+
+"Kayıt oluşturuldu":
+
+"Giriş yapıldı"
 
 );
 
 }
 
-function deleteQuestion(id){
+function logoutAccount(){
 
-if(!confirm("Bu soru silinsin mi?"))
-
-return;
-
-S.questions=
-
-S.questions.filter(q=>q.id!==id);
+S.account=null;
 
 save();
 
-renderQuestions();
+renderAccount();
 
-updateQuestionCount();
+toast(
 
-toast("Soru silindi");
+"Çıkış yapıldı"
 
-}
-
-function updateQuestionCount(){
-
-let count=
-
-S.questions?
-
-S.questions.filter(q=>!q.solved).length:
-
-0;
-
-let e=
-
-document.getElementById("questionCount");
-
-if(e){
-
-e.textContent=count+" soru";
-
-}
-
-let h=
-
-document.getElementById("questionHomeCount");
-
-if(h){
-
-h.textContent=count+" çözülecek soru";
-
-}
-
-}
-
-/* =========================
-
-   GÜVENLİ YAZI
-
-========================= */
-
-function escapeHTML(str){
-
-return String(str)
-
-.replace(/&/g,"&amp;")
-
-.replace(/</g,"&lt;")
-
-.replace(/>/g,"&gt;")
-
-.replace(/"/g,"&quot;")
-
-.replace(/'/g,"&#039;");
+);
 
 }
 
@@ -3901,8 +2391,6 @@ let timer=1500;
 let interval=null;
 
 let running=false;
-
-let currentTimerSeconds=1500;
 
 function fmt(s){
 
@@ -3930,8 +2418,6 @@ function setTimer(min){
 
 timer=min*60;
 
-currentTimerSeconds=timer;
-
 running=false;
 
 clearInterval(interval);
@@ -3950,11 +2436,19 @@ document.getElementById(
 
 fmt(timer);
 
-["m25","m50","mCustom"]
+[
 
-.forEach(x=>
+"m25",
 
-document.getElementById(x)
+"m50",
+
+"mCustom"
+
+].forEach(x=>
+
+document
+
+.getElementById(x)
 
 .classList.remove("sel")
 
@@ -3970,9 +2464,7 @@ min===25?"m25":"m50"
 
 function setTimerPrompt(){
 
-let m=
-
-+prompt(
+let m=+prompt(
 
 "Kaç dakika çalışmak istiyorsun?",
 
@@ -3983,8 +2475,6 @@ let m=
 if(m>0){
 
 timer=m*60;
-
-currentTimerSeconds=timer;
 
 running=false;
 
@@ -4004,11 +2494,19 @@ document.getElementById(
 
 fmt(timer);
 
-["m25","m50","mCustom"]
+[
 
-.forEach(x=>
+"m25",
 
-document.getElementById(x)
+"m50",
+
+"mCustom"
+
+].forEach(x=>
+
+document
+
+.getElementById(x)
 
 .classList.remove("sel")
 
@@ -4054,9 +2552,7 @@ document.getElementById(
 
 "Durdur";
 
-interval=
-
-setInterval(()=>{
+interval=setInterval(()=>{
 
 timer--;
 
@@ -4074,15 +2570,7 @@ clearInterval(interval);
 
 running=false;
 
-S.seconds+=
-
-Math.round(
-
-currentTimerSeconds/60
-
-)*60;
-
-registerStudy();
+S.seconds+=1500;
 
 save();
 
@@ -4096,21 +2584,19 @@ document.getElementById(
 
 timer=1500;
 
-currentTimerSeconds=1500;
-
 document.getElementById(
 
 "timerDisplay"
 
 ).textContent=
 
-fmt(timer);
+"25:00";
 
 updateStats();
 
 toast(
 
-"Çalışma tamamlandı! Seri ateşi güncellendi."
+"Çalışma tamamlandı! 🎉"
 
 );
 
@@ -4127,8 +2613,6 @@ clearInterval(interval);
 running=false;
 
 timer=1500;
-
-currentTimerSeconds=1500;
 
 document.getElementById(
 
@@ -4157,6 +2641,30 @@ document.getElementById(
 function changeExam(v){
 
 setExam(v);
+
+}
+
+function saveGoal(v){
+
+S.goal=
+
+Math.max(
+
+1,
+
+Math.min(30,+v||3)
+
+);
+
+save();
+
+updateStats();
+
+toast(
+
+"Günlük hedef güncellendi"
+
+);
 
 }
 
@@ -4192,7 +2700,31 @@ document.getElementById(
 
 ).value=S.goal;
 
-updateStreakUI();
+let pp=
+
+document.getElementById(
+
+"profilePackages"
+
+);
+
+if(pp){
+
+pp.innerHTML=`
+
+<div class="package-grid">
+
+${Object.keys(PACKAGES)
+
+.map(packageCard)
+
+.join("")}
+
+</div>
+
+`;
+
+}
 
 renderAccount();
 
@@ -4200,277 +2732,23 @@ renderAccount();
 
 /* =========================
 
-   YENİ: HESAP SİSTEMİ
-
-   ŞİMDİLİK DEMO / LOCALSTORAGE
+   GÜVENLİ YAZI
 
 ========================= */
 
-let accountMode="login";
+function escapeHTML(str){
 
-function openAccountForm(mode){
+return String(str)
 
-accountMode=mode;
+.replace(/&/g,"&amp;")
 
-let form=
+.replace(/</g,"&lt;")
 
-document.getElementById("accountForm");
+.replace(/>/g,"&gt;")
 
-form.classList.remove("hidden");
+.replace(/"/g,"&quot;")
 
-document.getElementById(
-
-"accountSubmit"
-
-).textContent=
-
-mode==="login"?
-
-"Giriş Yap":
-
-"Kayıt Ol";
-
-document.getElementById(
-
-"accountSwitch"
-
-).textContent=
-
-mode==="login"?
-
-"Hesabın yok mu? Kayıt ol":
-
-"Zaten hesabın var mı? Giriş yap";
-
-document.getElementById(
-
-"accountSwitch"
-
-).onclick=()=>{
-
-openAccountForm(
-
-accountMode==="login"?
-
-"register":
-
-"login"
-
-);
-
-};
-
-}
-
-function submitAccount(){
-
-let email=
-
-document.getElementById(
-
-"accountEmail"
-
-).value.trim();
-
-let password=
-
-document.getElementById(
-
-"accountPassword"
-
-).value;
-
-if(!email || !password){
-
-toast("E-posta ve şifre gir.");
-
-return;
-
-}
-
-if(password.length<4){
-
-toast("Şifre en az 4 karakter olsun.");
-
-return;
-
-}
-
-if(accountMode==="register"){
-
-S.account={
-
-email:email
-
-};
-
-save();
-
-toast("Kayıt oluşturuldu");
-
-}else{
-
-if(
-
-S.account &&
-
-S.account.email===email
-
-){
-
-toast("Giriş başarılı");
-
-}else{
-
-/*
-
-Şimdilik gerçek sunucu olmadığı için
-
-demo olarak hesabı kabul ediyoruz.
-
-Daha sonra gerçek üyelik sistemi
-
-bağlanacak.
-
-*/
-
-S.account={
-
-email:email
-
-};
-
-save();
-
-toast("Giriş yapıldı");
-
-}
-
-}
-
-document.getElementById(
-
-"accountEmail"
-
-).value="";
-
-document.getElementById(
-
-"accountPassword"
-
-).value="";
-
-renderAccount();
-
-}
-
-function renderAccount(){
-
-let out=
-
-document.getElementById(
-
-"loggedOutArea"
-
-);
-
-let logged=
-
-document.getElementById(
-
-"loggedInArea"
-
-);
-
-if(!out || !logged)return;
-
-if(S.account){
-
-out.classList.add("hidden");
-
-logged.classList.remove("hidden");
-
-document.getElementById(
-
-"accountEmailText"
-
-).textContent=
-
-S.account.email;
-
-}else{
-
-out.classList.remove("hidden");
-
-logged.classList.add("hidden");
-
-}
-
-}
-
-function logoutAccount(){
-
-S.account=null;
-
-save();
-
-renderAccount();
-
-toast("Çıkış yapıldı");
-
-}
-
-/* =========================
-
-   YENİ: PAKETLER
-
-========================= */
-
-function selectPackage(packageName){
-
-S.selectedPackage=packageName;
-
-save();
-
-toast(
-
-packageName+
-
-" paketi seçildi"
-
-);
-
-}
-
- 
-
-/* =========================
-
-   GÜNLÜK HEDEF
-
-========================= */
-
-function saveGoal(v){
-
-S.goal=
-
-Math.max(
-
-1,
-
-Math.min(30,+v||3)
-
-);
-
-save();
-
-updateStats();
-
-toast(
-
-"Günlük hedef güncellendi"
-
-);
+.replace(/'/g,"&#039;");
 
 }
 
@@ -4486,7 +2764,7 @@ if(
 
 confirm(
 
-"Tüm konu ilerlemesi, planlar, çalışma süresi, sorular ve seri silinsin mi?"
+"Tüm konu ilerlemesi, çalışma süresi ve koçluk paketi silinsin mi?"
 
 )
 
@@ -4498,27 +2776,17 @@ exam:S.exam,
 
 done:{},
 
-plans:[],
-
 seconds:0,
 
 goal:3,
 
-streak:0,
-
-bestStreak:0,
-
-lastStudyDate:"",
-
 days:0,
-
-questions:[],
-
-/* Hesap ve paket de sıfırlanıyor */
 
 account:null,
 
-selectedPackage:null
+selectedPackage:null,
+
+trialAnalyses:[]
 
 };
 
@@ -4528,15 +2796,11 @@ renderHome();
 
 renderTopics();
 
-renderPlans();
-
 renderProfile();
 
-renderQuestions();
+renderPlanPackages();
 
 updateStats();
-
-updateQuestionCount();
 
 toast(
 
@@ -4558,13 +2822,7 @@ renderHome();
 
 renderProfile();
 
-renderQuestions();
-
 updateStats();
-
-updateStreakUI();
-
-updateQuestionCount();
 
 show("home");
 

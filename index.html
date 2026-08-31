@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KAMPÜS</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{
+
+  margin:0;
+
+  font-family:Arial,sans-serif;
+
+  background:#f5f7fb;
+
+  color:#172033
+
+}
+
+header{
+
+  background:#fff;
+
+  padding:18px 7%;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  box-shadow:0 2px 12px #00000010;
+
+  position:sticky;
+
+  top:0;
+
+  z-index:10
+
+}
+
+.logo{
+
+  font-size:27px;
+
+  font-weight:900;
+
+  color:#315bea
+
+}
+
+nav a{
+
+  margin-left:20px;
+
+  text-decoration:none;
+
+  color:#333
+
+}
+
+.hero{
+
+  margin:25px auto;
+
+  max-width:1100px;
+
+  padding:55px 8%;
+
+  border-radius:30px;
+
+  color:white;
+
+  background:linear-gradient(135deg,#17275d,#315bea);
+
+}
+
+.hero h1{
+
+  font-size:48px;
+
+  margin:10px 0
+
+}
+
+.hero p{
+
+  font-size:20px;
+
+  opacity:.9
+
+}
+
+.btn{
+
+  border:0;
+
+  padding:15px 24px;
+
+  border-radius:12px;
+
+  background:white;
+
+  color:#315bea;
+
+  font-weight:bold;
+
+  font-size:16px;
+
+  cursor:pointer
+
+}
+
+.container{
+
+  max-width:1100px;
+
+  margin:auto;
+
+  padding:20px
+
+}
+
+h2{font-size:30px}
+
+.grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+
+  gap:18px
+
+}
+
+.card{
+
+  background:white;
+
+  padding:25px;
+
+  border-radius:20px;
+
+  box-shadow:0 5px 20px #0000000d;
+
+  transition:.2s
+
+}
+
+.card:hover{transform:translateY(-4px)}
+
+.card h3{margin-top:5px}
+
+.exam{
+
+  font-size:25px;
+
+  font-weight:bold;
+
+  color:#315bea
+
+}
+
+.features{
+
+  margin-top:35px
+
+}
+
+footer{
+
+  margin-top:50px;
+
+  padding:30px;
+
+  text-align:center;
+
+  background:#172033;
+
+  color:white
+
+}
+
+@media(max-width:600px){
+
+  .hero h1{font-size:36px}
+
+  nav{display:none}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">KAMPÜS</div>
+
+  <nav>
+
+    <a href="#sinavlar">Sınavlar</a>
+
+    <a href="#kocluk">Koçluk</a>
+
+    <a href="#dersler">Dersler</a>
+
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <p>KAMPÜS</p>
+
+  <h1>Hedefine giden yol burada.</h1>
+
+  <p>Sınavına hazırlan. Planını yönet. Hedefine ulaş.</p>
+
+  <button class="btn" onclick="basla()">Başlayalım →</button>
+
+</section>
+
+<div class="container" id="sinavlar">
+
+  <h2>Sınavını seç</h2>
+
+  <div class="grid">
+
+    <div class="card">
+
+      <div class="exam">YKS</div>
+
+      <h3>Üniversiteye hazırlık</h3>
+
+      <p>TYT ve AYT çalışmalarını planla.</p>
+
+    </div>
+
+    <div class="card">
+
+      <div class="exam">KPSS</div>
+
+      <h3>Kamu sınavı</h3>
+
+      <p>Genel yetenek ve genel kültür çalışmalarını yönet.</p>
+
+    </div>
+
+    <div class="card">
+
+      <div class="exam">ALES</div>
+
+      <h3>Lisansüstü hazırlık</h3>
+
+      <p>Sayısal ve sözel çalışmalarını takip et.</p>
+
+    </div>
+
+    <div class="card">
+
+      <div class="exam">DGS</div>
+
+      <h3>Dikey geçiş</h3>
+
+      <p>Hedefine uygun çalışma planı oluştur.</p>
+
+    </div>
+
+    <div class="card">
+
+      <div class="exam">LGS</div>
+
+      <h3>Liseye geçiş</h3>
+
+      <p>Derslerini ve denemelerini takip et.</p>
+
+    </div>
+
+  </div>
+
+  <section class="features" id="kocluk">
+
+    <h2>Online Koçluk</h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>📅 Çalışma Planı</h3>
+
+        <p>Sana uygun günlük ve haftalık çalışma planı oluştur.</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>📊 İlerleme Takibi</h3>
+
+        <p>Çözdüğün soruları ve denemelerini takip et.</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>🎯 Hedef Takibi</h3>
+
+        <p>Hedeflerini belirle ve gelişimini izle.</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>👨‍🏫 Özel Ders</h3>
+
+        <p>Online özel ders seçeneklerine ulaş.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="features" id="dersler">
+
+    <h2>Dersler</h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>Matematik</h3>
+
+        <p>Konu anlatımı, soru çözümü ve özel ders.</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Türkçe</h3>
+
+        <p>Konu çalışmaları ve soru takibi.</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Fen Bilimleri</h3>
+
+        <p>Fen derslerine yönelik çalışmalar.</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Sosyal Bilimler</h3>
+
+        <p>Tarih, coğrafya ve diğer alanlar.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<footer>
+
+  © 2026 KAMPÜS — Hedefine giden yol burada.
+
+</footer>
+
+<script>
+
+function basla(){
+
+  document.getElementById("sinavlar").scrollIntoView({
+
+    behavior:"smooth"
+
+  });
+
+}
+
+</script>
+
+</body>
+
+</html>

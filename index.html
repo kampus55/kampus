@@ -1,901 +1,2220 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#3157d5">
-<title>KAMPÜS — Sınav Koçun</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KAMPÜS</title>
+
 <style>
-:root{--bg:#f5f7fb;--card:#fff;--text:#17213a;--muted:#6d7690;--primary:#3157d5;--primary2:#5273ed;--line:#e7eaf2;--ok:#19a66a;--danger:#e55252;--shadow:0 10px 30px rgba(25,38,75,.08)}
-*{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
-body{min-height:100vh}
-button,input,select{font:inherit}
-button{cursor:pointer;border:0}
-.app{min-height:100vh;padding-bottom:82px}
-.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 18px 12px}
-.topin{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between}
-.brand{font-size:25px;font-weight:900;color:var(--primary);letter-spacing:-1px}
-.pill{font-size:12px;font-weight:700;background:#eef2ff;color:var(--primary);padding:7px 11px;border-radius:20px}
-main{max-width:900px;margin:auto;padding:20px 16px}
-.hero{background:linear-gradient(135deg,#1e2d73,#3157d5 60%,#5273ed);color:#fff;border-radius:28px;padding:26px 24px;box-shadow:0 18px 40px rgba(49,87,213,.22);margin-bottom:20px}
-.hero small{opacity:.82;font-weight:700}
-.hero h1{font-size:32px;line-height:1.08;margin:8px 0}
-.hero p{margin:0 0 18px;opacity:.9}
-.btn{padding:12px 16px;border-radius:13px;font-weight:800;background:var(--primary);color:#fff}
-.btn.light{background:#fff;color:var(--primary)}
-.btn.ghost{background:#eef2ff;color:var(--primary)}
-.btn.danger{background:#fff0f0;color:var(--danger)}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
-.exam{min-height:145px;display:flex;flex-direction:column;justify-content:space-between;text-align:left}
-.exam b{font-size:26px;color:var(--primary)}
-.exam strong{font-size:18px}
-.exam span{color:var(--muted);font-size:14px}
-.section{display:flex;align-items:center;justify-content:space-between;margin:24px 2px 12px}
-.section h2{font-size:21px;margin:0}
-.muted{color:var(--muted)}
-.hidden{display:none!important}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.stat{text-align:center}
-.stat b{display:block;font-size:24px}
-.stat span{font-size:12px;color:var(--muted)}
-.progress{height:9px;background:#e9edf6;border-radius:20px;overflow:hidden}
-.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),#6b86f2);border-radius:20px;width:0}
-.subject{display:flex;gap:12px;align-items:center}
-.subject .ico{width:44px;height:44px;border-radius:13px;background:#eef2ff;color:var(--primary);display:grid;place-items:center;font-weight:900;flex:none}
-.subject-main{flex:1}
-.subject-main b{display:block;margin-bottom:7px}
-.topic{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
-.topic:last-child{border:0}
-.topic input{width:20px;height:20px;accent-color:var(--primary)}
-.topic label{flex:1}
-.topic.done label{text-decoration:line-through;color:#8991a5}
-.tag{font-size:11px;background:#f0f2f7;color:var(--muted);padding:5px 8px;border-radius:8px}
-.nav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(15px);border-top:1px solid var(--line);padding:8px max(10px,calc((100vw - 900px)/2));display:grid;grid-template-columns:repeat(4,1fr)}
-.nav button{background:none;color:#7b849a;padding:8px 2px;font-size:11px;font-weight:800}
-.nav button.active{color:var(--primary)}
-.nav .nicon{font-size:20px;display:block;margin-bottom:2px}
-.row{display:flex;gap:9px;align-items:center}
-.row>*{flex:1}
-.input{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--text);outline:none}
-.input:focus{border-color:var(--primary)}
-.timer{font-size:56px;font-variant-numeric:tabular-nums;text-align:center;font-weight:900;letter-spacing:2px;margin:12px 0}
-.timer-mode{display:flex;gap:8px}
-.timer-mode button{flex:1;padding:9px;border-radius:10px;background:#eef2ff;color:var(--primary);font-weight:800}
-.timer-mode button.sel{background:var(--primary);color:#fff}
-.planitem{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}
-.planitem:last-child{border:0}
-.planitem small{display:block;color:var(--muted);margin-top:3px}
-.empty{text-align:center;padding:30px 10px;color:var(--muted)}
-.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(15px);background:#17213a;color:#fff;padding:11px 15px;border-radius:12px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:50}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-@media(min-width:650px){
-.grid{grid-template-columns:repeat(4,1fr)}
-.hero{padding:34px}
-.hero h1{font-size:42px}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
+
+body{
+    font-family:Arial, sans-serif;
+    background:#03051d;
+    color:white;
+}
+
+/* =========================
+   GENEL
+========================= */
+
+.screen{
+    min-height:100vh;
+    background:
+    radial-gradient(
+        circle at 85% 8%,
+        rgba(162,28,255,.35),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 10% 40%,
+        rgba(8,116,255,.25),
+        transparent 38%
+    ),
+    linear-gradient(
+        180deg,
+        #050426 0%,
+        #06174c 58%,
+        #02051d 100%
+    );
+}
+
+.hidden{
+    display:none !important;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+/* =========================
+   GİRİŞ
+========================= */
+
+.login-screen{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.login-art{
+    width:min(100vw,711px);
+    height:100vh;
+    min-height:720px;
+    position:relative;
+}
+
+.login-art img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.login-hit{
+    position:absolute;
+    left:7%;
+    width:86%;
+    height:8.2%;
+    background:transparent;
+    border:0;
+}
+
+.login-hit.one{
+    top:73.3%;
+}
+
+.login-hit.two{
+    top:82.7%;
+}
+
+
+/* =========================
+   UYGULAMA
+========================= */
+
+.app{
+    min-height:100vh;
+    padding:20px 20px 105px;
+}
+
+.topbar{
+    max-width:1060px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    62px
+    1fr
+    62px;
+
+    align-items:center;
+    gap:14px;
+}
+
+.icon-btn{
+    height:62px;
+    border-radius:19px;
+
+    border:1px solid #6937a8;
+
+    background:#0b0d2d;
+
+    color:white;
+
+    font-size:35px;
+
+    box-shadow:
+    0 0 18px
+    rgba(99,23,170,.2);
+}
+
+.brand{
+    text-align:center;
+
+    font-size:44px;
+
+    font-weight:900;
+
+    letter-spacing:-2px;
+}
+
+.brand .a{
+    color:#1687ff;
+}
+
+.brand .p{
+    color:#b92cff;
+}
+
+
+/* =========================
+   KOÇLUK BAŞLIK
+========================= */
+
+.coach-title{
+
+    text-align:center;
+
+    margin:
+    15px
+    0
+    22px;
+
+    font-size:42px;
+
+    font-weight:900;
+
+    color:#b72dff;
+
+    text-shadow:
+    0 0 18px
+    #8221ff;
+}
+
+
+/* =========================
+   ADIMLAR
+========================= */
+
+.steps{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+}
+
+.step{
+
+    position:relative;
+
+    text-align:center;
+
+    color:#aeb0c7;
+
+    font-size:17px;
+}
+
+.step:not(:last-child)::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:27px;
+
+    left:60%;
+
+    right:-40%;
+
+    height:3px;
+
+    background:#28294e;
+}
+
+.step.active{
+
+    color:#c62fff;
+}
+
+.step.active:not(:last-child)::after{
+
+    background:
+    linear-gradient(
+        90deg,
+        #9a27ff,
+        #302e55
+    );
+}
+
+.circle{
+
+    position:relative;
+
+    z-index:2;
+
+    margin:
+    0
+    auto
+    12px;
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+    3px solid
+    #303158;
+
+    background:#080a28;
+
+    font-size:23px;
+
+    font-weight:bold;
+}
+
+.step.active .circle{
+
+    border-color:#9134ff;
+
+    box-shadow:
+    0 0 20px
+    #8125ff;
+
+    background:#11103d;
+}
+
+
+/* =========================
+   İÇERİK
+========================= */
+
+.content{
+
+    max-width:1050px;
+
+    margin:
+    42px
+    auto
+    0;
+}
+
+.hero-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.hero h1{
+
+    font-size:46px;
+
+    margin-bottom:10px;
+
+    line-height:1.12;
+}
+
+.gradient{
+
+    background:
+    linear-gradient(
+        90deg,
+        #008dff,
+        #c22cff
+    );
+
+    color:transparent;
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+}
+
+.hero p{
+
+    font-size:21px;
+
+    color:#c7cadb;
+
+    line-height:1.55;
+}
+
+.target{
+
+    width:190px;
+
+    height:190px;
+
+    flex:0 0 190px;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:105px;
+
+    background:
+    radial-gradient(
+        circle,
+        #291067,
+        #100a3b
+    );
+
+    box-shadow:
+    0 0 35px
+    #8d21ff66;
+
+    border:
+    2px solid
+    #8e28ff;
+}
+
+
+/* =========================
+   SINAV KARTLARI
+========================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(6,1fr);
+
+    gap:16px;
+
+    margin-top:25px;
+}
+
+.card{
+
+    grid-column:span 2;
+
+    min-height:280px;
+
+    padding:20px;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #07173c,
+        #09091f
+    );
+
+    border:
+    1px solid
+    #097aff;
+
+    position:relative;
+
+    overflow:hidden;
+
+    color:white;
+
+    text-align:left;
+}
+
+.card:nth-child(2){
+
+    border-color:#9d24ff;
+
+    background:
+    linear-gradient(
+        145deg,
+        #16093c,
+        #08091f
+    );
+}
+
+.card:nth-child(3){
+
+    border-color:#008edc;
+}
+
+.card:nth-child(4){
+
+    grid-column:span 3;
+
+    border-color:#08a849;
+
+    background:
+    linear-gradient(
+        145deg,
+        #042d20,
+        #07151b
+    );
+}
+
+.card:nth-child(5){
+
+    grid-column:span 3;
+
+    border-color:#bd6412;
+
+    background:
+    linear-gradient(
+        145deg,
+        #30150b,
+        #0d0b13
+    );
+}
+
+.card.selected{
+
+    box-shadow:
+    0 0 0 2px white,
+    0 0 28px
+    #8529ff88;
+}
+
+.card .icon{
+
+    width:62px;
+
+    height:62px;
+
+    border-radius:14px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:31px;
+
+    background:#0b6cff;
+}
+
+.card:nth-child(2) .icon{
+    background:#8f1fe8;
+}
+
+.card:nth-child(3) .icon{
+    background:#087fd0;
+}
+
+.card:nth-child(4) .icon{
+    background:#08a846;
+}
+
+.card:nth-child(5) .icon{
+    background:#e66d08;
+}
+
+.card h2{
+
+    font-size:31px;
+
+    margin:
+    17px
+    0
+    8px;
+}
+
+.card p{
+
+    font-size:17px;
+
+    line-height:1.5;
+
+    color:#d0d2df;
+}
+
+.card .arrow{
+
+    position:absolute;
+
+    right:18px;
+
+    bottom:18px;
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:31px;
+
+    background:#1168ed;
+}
+
+.card:nth-child(2) .arrow{
+    background:#8c20e6;
+}
+
+.card:nth-child(3) .arrow{
+    background:#087ed0;
+}
+
+.card:nth-child(4) .arrow{
+    background:#08a846;
+}
+
+.card:nth-child(5) .arrow{
+    background:#e56d0a;
+}
+
+
+/* =========================
+   BİLGİ
+========================= */
+
+.info{
+
+    margin-top:18px;
+
+    padding:21px 24px;
+
+    border-radius:20px;
+
+    border:
+    1px solid
+    #6e30c4;
+
+    background:#10082f99;
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:center;
+}
+
+.info-icon{
+
+    font-size:45px;
+}
+
+.info b{
+
+    font-size:21px;
+}
+
+.info span{
+
+    display:block;
+
+    color:#bfc2d6;
+
+    margin-top:6px;
+}
+
+
+/* =========================
+   ALT MENÜ
+========================= */
+
+.bottom{
+
+    position:fixed;
+
+    z-index:20;
+
+    left:50%;
+
+    bottom:10px;
+
+    transform:
+    translateX(-50%);
+
+    width:
+    min(
+        1050px,
+        calc(100% - 30px)
+    );
+
+    height:78px;
+
+    border-radius:25px;
+
+    background:#080b2eee;
+
+    border:
+    1px solid
+    #2b315c;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,1fr);
+
+    align-items:center;
+
+    text-align:center;
+
+    color:#aeb2d0;
+
+    backdrop-filter:blur(15px);
+}
+
+.bottom .active{
+
+    color:white;
+}
+
+.plus{
+
+    width:66px;
+
+    height:66px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:43px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #157dff,
+        #8d17ff
+    );
+
+    box-shadow:
+    0 0 28px
+    #6821ff;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-panel{
+
+    max-width:850px;
+
+    margin:
+    35px
+    auto
+    0;
+
+    padding:30px;
+
+    border:
+    1px solid
+    #3e2b7b;
+
+    border-radius:26px;
+
+    background:#080a26d9;
+
+    box-shadow:
+    0 20px 60px
+    #0005;
+}
+
+.form-panel h1{
+
+    font-size:36px;
+
+    margin:
+    0
+    0
+    8px;
+}
+
+.form-panel > p{
+
+    color:#bfc2d5;
+
+    font-size:18px;
+}
+
+.options{
+
+    display:grid;
+
+    gap:13px;
+
+    margin-top:24px;
+}
+
+.option{
+
+    padding:19px 20px;
+
+    border-radius:17px;
+
+    border:
+    1px solid
+    #30335f;
+
+    background:#0c0f31;
+
+    color:white;
+
+    text-align:left;
+}
+
+.option:hover,
+.option.selected{
+
+    border-color:#a52cff;
+
+    box-shadow:
+    0 0 18px
+    #8421ff33;
+}
+
+.field{
+
+    margin:18px 0;
+}
+
+.field label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#d5d6e2;
+}
+
+.field input,
+.field select{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:
+    1px solid
+    #34375f;
+
+    background:#070923;
+
+    color:white;
+
+    outline:none;
+}
+
+.actions{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.action{
+
+    padding:
+    15px
+    23px;
+
+    border-radius:15px;
+
+    border:
+    1px solid
+    #3b3e6a;
+
+    background:#101338;
+
+    color:white;
+}
+
+.action.primary{
+
+    background:
+    linear-gradient(
+        100deg,
+        #116cf1,
+        #9222f4
+    );
+
+    border:0;
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:
+    7px
+    12px;
+
+    border-radius:20px;
+
+    background:#37106d;
+
+    color:#d6a7ff;
+
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   PLAN
+========================= */
+
+.plan-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:15px;
+
+    margin-top:25px;
+}
+
+.plan-box{
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:#0b0e30;
+
+    border:
+    1px solid
+    #34376a;
+}
+
+.plan-box h3{
+
+    margin:
+    0
+    0
+    8px;
+}
+
+.plan-box p{
+
+    color:#bfc2d4;
+
+    line-height:1.5;
+}
+
+
+/* =========================
+   MOBİL
+========================= */
+
+@media(max-width:700px){
+
+    .app{
+        padding:
+        12px
+        12px
+        100px;
+    }
+
+    .topbar{
+
+        grid-template-columns:
+        50px
+        1fr
+        50px;
+    }
+
+    .icon-btn{
+
+        height:50px;
+
+        font-size:29px;
+    }
+
+    .brand{
+
+        font-size:28px;
+    }
+
+    .coach-title{
+
+        font-size:32px;
+
+        margin:
+        12px
+        0
+        18px;
+    }
+
+    .steps{
+
+        font-size:13px;
+    }
+
+    .step:not(:last-child)::after{
+
+        top:25px;
+    }
+
+    .circle{
+
+        width:50px;
+
+        height:50px;
+    }
+
+    .content{
+
+        margin-top:28px;
+    }
+
+    .hero-row{
+
+        align-items:flex-start;
+    }
+
+    .hero h1{
+
+        font-size:31px;
+    }
+
+    .hero p{
+
+        font-size:17px;
+    }
+
+    .target{
+
+        width:105px;
+
+        height:105px;
+
+        flex-basis:105px;
+
+        font-size:55px;
+    }
+
+    .cards{
+
+        grid-template-columns:
+        1fr 1fr;
+
+        gap:10px;
+    }
+
+    .card,
+    .card:nth-child(n){
+
+        grid-column:span 1;
+
+        min-height:235px;
+
+        padding:15px;
+    }
+
+    .card:nth-child(4),
+    .card:nth-child(5){
+
+        grid-column:span 2;
+    }
+
+    .card h2{
+
+        font-size:26px;
+    }
+
+    .card p{
+
+        font-size:15px;
+    }
+
+    .card .arrow{
+
+        width:43px;
+
+        height:43px;
+
+        font-size:25px;
+    }
+
+    .info{
+
+        padding:16px;
+    }
+
+    .info-icon{
+
+        font-size:35px;
+    }
+
+    .info b{
+
+        font-size:17px;
+    }
+
+    .info span{
+
+        font-size:14px;
+    }
+
+    .bottom{
+
+        height:70px;
+    }
+
+    .plus{
+
+        width:58px;
+
+        height:58px;
+    }
+
+    .form-panel{
+
+        padding:20px;
+
+        margin-top:25px;
+    }
+
+    .form-panel h1{
+
+        font-size:28px;
+    }
+
+    .plan-grid{
+
+        grid-template-columns:1fr;
+    }
+}
+
 </style>
 </head>
 
-<body>
-<div class="app">
 
-<header class="top">
-<div class="topin">
-<div class="brand">KAMPÜS</div>
-<div class="pill" id="examPill">YKS</div>
-</div>
+<body>
+
+
+<!-- =================================
+     GİRİŞ EKRANI
+================================= -->
+
+<section
+    id="login"
+    class="login-screen screen"
+>
+
+    <div class="login-art">
+
+        <!-- Onayladığımız giriş görseli -->
+        <img
+            src="giris.jpg"
+            alt="KAMPÜS giriş ekranı"
+        >
+
+        <!-- Giriş Yap -->
+        <button
+            class="login-hit one"
+            onclick="openCoach()"
+            aria-label="Giriş Yap">
+        </button>
+
+        <!-- Kayıt Ol -->
+        <button
+            class="login-hit two"
+            onclick="openCoach()"
+            aria-label="Kayıt Ol">
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     KOÇLUK UYGULAMASI
+================================= -->
+
+<section
+    id="coach"
+    class="app screen hidden"
+>
+
+
+<header class="topbar">
+
+    <button
+        class="icon-btn"
+        onclick="backLogin()">
+        ←
+    </button>
+
+
+    <div class="brand">
+
+        K
+        <span class="a">A</span>
+        M
+        <span class="p">P</span>
+        ÜS
+
+    </div>
+
+
+    <button class="icon-btn">
+
+        ♧
+
+    </button>
+
 </header>
 
-<main>
 
-<section id="home">
 
-<div class="hero">
-<small id="heroExam">YKS SINAV KOÇUN</small>
-<h1>Hedefine giden yol burada.</h1>
-<p>Planını oluştur, konularını takip et, çalışmanı ölç.</p>
-<button class="btn light" onclick="show('plan')">Planımı oluştur →</button>
-</div>
+<!-- KOÇLUK -->
 
-<div class="stats">
-<div class="card stat">
-<b id="doneStat">0</b>
-<span>Tamamlanan konu</span>
-</div>
-<div class="card stat">
-<b id="hourStat">0s</b>
-<span>Toplam çalışma</span>
-</div>
-<div class="card stat">
-<b id="streakStat">0</b>
-<span>Günlük seri</span>
-</div>
-</div>
+<div class="coach-title">
 
-<div class="section">
-<h2>Sınavını seç</h2>
-</div>
-
-<div class="grid" id="examGrid"></div>
-
-<div class="section">
-<h2>Bugünkü hedef</h2>
-<button class="btn ghost" onclick="show('timer')">Çalışmaya başla</button>
-</div>
-
-<div class="card">
-<div class="row">
-<strong id="todayText">Bugün için hedef belirle</strong>
-<span id="todayPct" style="text-align:right;font-weight:900">0%</span>
-</div>
-<div class="progress" style="margin-top:10px">
-<i id="todayBar"></i>
-</div>
-</div>
-
-</section>
-
-<section id="topics" class="hidden">
-
-<div class="section">
-<h2 id="topicsTitle">Konular</h2>
-<button class="btn ghost" onclick="show('home')">Sınav değiştir</button>
-</div>
-
-<div class="card" id="topicsList"></div>
-
-</section>
-
-<section id="plan" class="hidden">
-
-<div class="section">
-<h2>Çalışma planım</h2>
-<button class="btn ghost" onclick="addPlan()">+ Görev ekle</button>
-</div>
-
-<div class="card">
-
-<div class="row">
-<input class="input" id="planTask" placeholder="Örn. TYT Matematik — Problemler">
-<input class="input" id="planMin" type="number" min="5" value="45" style="max-width:100px">
-<button class="btn" onclick="savePlan()">Ekle</button>
-</div>
-
-<div id="planList"></div>
+    ♕　KOÇLUK　♕
 
 </div>
-</section>
 
-<section id="timer" class="hidden">
 
-<div class="section">
-<h2>Çalışma sayacı</h2>
+
+<!-- ADIMLAR -->
+
+<div class="steps">
+
+    <div
+        class="step active"
+        id="s1">
+
+        <div class="circle">
+            1
+        </div>
+
+        Sınavını Seç
+
+    </div>
+
+
+    <div
+        class="step"
+        id="s2">
+
+        <div class="circle">
+            2
+        </div>
+
+        Hedefini Belirle
+
+    </div>
+
+
+    <div
+        class="step"
+        id="s3">
+
+        <div class="circle">
+            3
+        </div>
+
+        Bilgilerini Gir
+
+    </div>
+
+
+    <div
+        class="step"
+        id="s4">
+
+        <div class="circle">
+            4
+        </div>
+
+        Planını Hazır
+
+    </div>
+
 </div>
 
-<div class="card">
 
-<div class="timer-mode">
-<button id="m25" class="sel" onclick="setTimer(25)">25 dk</button>
-<button id="m50" onclick="setTimer(50)">50 dk</button>
-<button id="mCustom" onclick="setTimerPrompt()">Özel</button>
-</div>
 
-<div class="timer" id="timerDisplay">25:00</div>
+<!-- DİNAMİK İÇERİK -->
 
-<div class="row">
-<button class="btn" id="timerBtn" onclick="toggleTimer()">Başlat</button>
-<button class="btn ghost" onclick="resetTimer()">Sıfırla</button>
-</div>
-
-<p class="muted" style="text-align:center;margin-bottom:0">
-Sayaç tamamlandığında çalışma sürene eklenir.
-</p>
-
-</div>
-</section>
-
-<section id="profile" class="hidden">
-
-<div class="section">
-<h2>Hedefim & ilerlemem</h2>
-</div>
-
-<div class="card">
-
-<label class="muted">Hedef sınav</label>
-
-<select class="input" id="examSelect" onchange="changeExam(this.value)" style="margin:7px 0 16px"></select>
-
-<label class="muted">Günlük konu hedefi</label>
-
-<input class="input" id="dailyGoal" type="number" min="1" max="30" style="margin:7px 0 16px" onchange="saveGoal(this.value)">
-
-<div class="section" style="margin-top:0">
-<h2>Genel ilerleme</h2>
-<b id="overallPct">0%</b>
-</div>
-
-<div class="progress">
-<i id="overallBar"></i>
-</div>
-
-<button class="btn danger" style="margin-top:20px" onclick="resetAll()">
-Tüm ilerlemeyi sıfırla
-</button>
-
-</div>
-</section>
-
+<main
+    id="stepContent"
+    class="content">
 </main>
 
-<nav class="nav">
 
-<button data-page="home" onclick="show('home')">
-<span class="nicon">⌂</span>Ana Sayfa
-</button>
 
-<button data-page="topics" onclick="show('topics')">
-<span class="nicon">✓</span>Konular
-</button>
+<!-- ALT MENÜ -->
 
-<button data-page="plan" onclick="show('plan')">
-<span class="nicon">☷</span>Plan
-</button>
+<nav class="bottom">
 
-<button data-page="profile" onclick="show('profile')">
-<span class="nicon">◎</span>Profil
-</button>
+    <div class="active">
+
+        ⌂
+        <br>
+        Ana Sayfa
+
+    </div>
+
+
+    <div>
+
+        ▧
+        <br>
+        Dersler
+
+    </div>
+
+
+    <div>
+
+        <div class="plus">
+
+            +
+
+        </div>
+
+    </div>
+
+
+    <div>
+
+        ▣
+        <br>
+        Planım
+
+    </div>
+
+
+    <div>
+
+        ◯
+        <br>
+        Profil
+
+    </div>
 
 </nav>
 
-<div class="toast" id="toast"></div>
 
-</div>
+</section>
+
+
 
 <script>
 
-const DATA={
 
-YKS:{
-name:"YKS",
-desc:"Üniversiteye hazırlık",
-subs:{
-"TYT Türkçe":[
-"Sözcükte Anlam",
-"Cümlede Anlam",
-"Paragraf",
-"Dil Bilgisi",
-"Yazım Kuralları",
-"Noktalama"
-],
-"TYT Matematik":[
-"Temel Kavramlar",
-"Sayılar",
-"Bölünebilme",
-"Üslü Sayılar",
-"Köklü Sayılar",
-"Denklem",
-"Problemler",
-"Kümeler",
-"Fonksiyonlar"
-],
-"TYT Fen":[
-"Fizik: Hareket",
-"Fizik: Kuvvet",
-"Kimya: Atom",
-"Kimya: Karışımlar",
-"Biyoloji: Hücre",
-"Biyoloji: Kalıtım"
-],
-"TYT Sosyal":[
-"Tarih: İlk Türk Devletleri",
-"Tarih: Osmanlı",
-"Coğrafya: Harita",
-"Coğrafya: İklim",
-"Felsefe",
-"Din Kültürü"
-],
-"AYT Matematik":[
-"Fonksiyonlar",
-"Polinomlar",
-"İkinci Dereceden Denklemler",
-"Permütasyon-Kombinasyon",
-"Logaritma",
-"Diziler",
-"Limit",
-"Türev",
-"İntegral"
-],
-"AYT Edebiyat":[
-"Şiir Bilgisi",
-"İslamiyet Öncesi",
-"Divan Edebiyatı",
-"Tanzimat",
-"Servetifünun",
-"Milli Edebiyat",
-"Cumhuriyet"
-],
-"AYT Tarih":[
-"Osmanlı Siyaseti",
-"20. Yüzyıl Başları",
-"Milli Mücadele",
-"Atatürk Dönemi",
-"Dünya Savaşı",
-"Çağdaş Türk Dünyası"
-],
-"AYT Coğrafya":[
-"Ekosistem",
-"Nüfus",
-"Ekonomik Faaliyetler",
-"Türkiye'nin Yer Şekilleri",
-"Bölgeler",
-"Küresel Çevre Sorunları"
-]
-}
-},
+/* =================================
+   UYGULAMA VERİLERİ
+================================= */
 
-KPSS:{
-name:"KPSS",
-desc:"Kamu sınavı",
-subs:{
-"Türkçe":[
-"Sözcükte Anlam",
-"Cümlede Anlam",
-"Paragraf",
-"Dil Bilgisi",
-"Anlatım Bozukluğu"
-],
-"Matematik":[
-"Temel Kavramlar",
-"Problemler",
-"Oran-Orantı",
-"Sayısal Mantık",
-"Grafik-Tablo"
-],
-"Tarih":[
-"İslamiyet Öncesi Türk Tarihi",
-"Osmanlı Tarihi",
-"Kurtuluş Savaşı",
-"Atatürk İlkeleri",
-"Çağdaş Türk Tarihi"
-],
-"Coğrafya":[
-"Türkiye'nin Coğrafi Konumu",
-"İklim",
-"Nüfus",
-"Tarım",
-"Ulaşım"
-],
-"Vatandaşlık":[
-"Hukukun Temel Kavramları",
-"Anayasa",
-"Yasama",
-"Yürütme",
-"Yargı"
-]
-}
-},
+const state = {
 
-ALES:{
-name:"ALES",
-desc:"Lisansüstü hazırlık",
-subs:{
-"Sayısal":[
-"Temel Kavramlar",
-"Sayılar",
-"Problemler",
-"Sayısal Mantık",
-"Tablo ve Grafik",
-"Geometri"
-],
-"Sözel":[
-"Sözcükte Anlam",
-"Cümlede Anlam",
-"Paragraf",
-"Sözel Mantık",
-"Anlatım"
-]
-}
-},
+    exam:null,
 
-DGS:{
-name:"DGS",
-desc:"Dikey geçiş",
-subs:{
-"Sayısal":[
-"Temel Kavramlar",
-"Sayı Problemleri",
-"Yaş Problemleri",
-"Oran-Orantı",
-"Sayısal Mantık",
-"Geometri"
-],
-"Sözel":[
-"Sözcükte Anlam",
-"Cümlede Anlam",
-"Paragraf",
-"Sözel Mantık",
-"Anlatım"
-]
-}
-}
+    target:null,
+
+    days:null,
+
+    level:null,
+
+    name:null
 
 };
 
-let S=JSON.parse(localStorage.getItem("kampusState")||"null")||{
-exam:"YKS",
-done:{},
-plans:[],
-seconds:0,
-goal:3,
-days:0,
-lastDay:""
-};
 
-const save=()=>localStorage.setItem("kampusState",JSON.stringify(S));
 
-function toast(t){
-let e=document.getElementById("toast");
-e.textContent=t;
-e.classList.add("show");
-setTimeout(()=>e.classList.remove("show"),1800);
-}
+/* =================================
+   SINAVLAR
+================================= */
 
-function show(page){
+const exams = [
 
-document.querySelectorAll("main>section")
-.forEach(x=>x.classList.add("hidden"));
+    {
+        id:"YKS",
+        icon:"🎓",
+        text:
+        "TYT, AYT ve YDT ile üniversite hayaline bir adım daha yaklaş!"
+    },
 
-document.getElementById(page).classList.remove("hidden");
+    {
+        id:"KPSS",
+        icon:"♙",
+        text:
+        "Kamu kariyerin için doğru hazırlık burada!"
+    },
 
-document.querySelectorAll(".nav button")
-.forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+    {
+        id:"ALES",
+        icon:"📖",
+        text:
+        "Akademik kariyerin için başarıya giden yolu aç!"
+    },
 
-if(page==="topics")renderTopics();
-if(page==="plan")renderPlans();
-if(page==="profile")renderProfile();
+    {
+        id:"DGS",
+        icon:"↗",
+        text:
+        "Önlisans diplomanı lisansa taşımanın en akıllı yolunu planla."
+    },
 
-updateStats();
-scrollTo(0,0);
-}
+    {
+        id:"LGS",
+        icon:"✎",
+        text:
+        "Nitelikli liselere giden yolda sağlam bir başlangıç yap!"
+    }
 
-function setExam(x){
+];
 
-S.exam=x;
-save();
 
-document.getElementById("examPill").textContent=x;
-document.getElementById("heroExam").textContent=x+" SINAV KOÇUN";
 
-renderHome();
-renderProfile();
+/* =================================
+   GİRİŞ → KOÇLUK
+================================= */
 
-toast(x+" seçildi");
-}
+function openCoach(){
 
-function renderHome(){
+    document
+        .getElementById("login")
+        .classList
+        .add("hidden");
 
-let g=document.getElementById("examGrid");
-g.innerHTML="";
+    document
+        .getElementById("coach")
+        .classList
+        .remove("hidden");
 
-Object.entries(DATA).forEach(([k,v])=>{
+    renderStep(1);
 
-let d=document.createElement("button");
-
-d.className="card exam";
-
-d.onclick=()=>{
-setExam(k);
-show("topics");
-};
-
-d.innerHTML=`
-<b>${k}</b>
-<strong>${v.desc}</strong>
-<span>${Object.keys(v.subs).length} ders • Konuları takip et →</span>
-`;
-
-g.appendChild(d);
-
-});
-
-document.getElementById("examPill").textContent=S.exam;
-document.getElementById("heroExam").textContent=S.exam+" SINAV KOÇUN";
+    window.scrollTo(0,0);
 
 }
 
-function renderTopics(){
 
-let d=DATA[S.exam];
-let list=document.getElementById("topicsList");
 
-document.getElementById("topicsTitle").textContent=S.exam+" — Dersler";
+/* =================================
+   KOÇLUK → GİRİŞ
+================================= */
 
-list.innerHTML="";
+function backLogin(){
 
-Object.entries(d.subs).forEach(([sub,topics])=>{
+    document
+        .getElementById("coach")
+        .classList
+        .add("hidden");
 
-let wrap=document.createElement("div");
+    document
+        .getElementById("login")
+        .classList
+        .remove("hidden");
 
-wrap.className="subject";
-wrap.style.marginBottom="8px";
-
-wrap.innerHTML=`
-<div class="ico">${sub[0]}</div>
-<div class="subject-main">
-<b>${sub}</b>
-<div class="progress">
-<i id="p-${sub.replace(/[^a-zA-Z0-9]/g,"")}"></i>
-</div>
-</div>
-`;
-
-list.appendChild(wrap);
-
-topics.forEach(t=>{
-
-let key=S.exam+"|"+sub+"|"+t;
-let checked=!!S.done[key];
-
-let row=document.createElement("div");
-
-row.className="topic "+(checked?"done":"");
-
-row.innerHTML=`
-<input type="checkbox" ${checked?"checked":""}>
-<label>${t}</label>
-<span class="tag">${checked?"Tamam":"Bekliyor"}</span>
-`;
-
-row.querySelector("input").onchange=e=>{
-
-S.done[key]=e.target.checked;
-
-save();
-
-if(e.target.checked){
-S.days=Math.min(S.days+1,9999);
-}
-
-renderTopics();
-updateStats();
-
-};
-
-list.appendChild(row);
-
-});
-
-let done=topics.filter(t=>S.done[S.exam+"|"+sub+"|"+t]).length;
-
-setTimeout(()=>{
-
-let p=document.getElementById(
-"p-"+sub.replace(/[^a-zA-Z0-9]/g,"")
-);
-
-if(p)p.style.width=(done/topics.length*100)+"%";
-
-},0);
-
-});
+    window.scrollTo(0,0);
 
 }
 
-function updateStats(){
 
-let all=0;
-let done=0;
 
-Object.values(DATA).forEach(x=>
-Object.entries(x.subs).forEach(([s,ts])=>
-ts.forEach(t=>{
+/* =================================
+   ADIM GÖSTER
+================================= */
 
-all++;
+function setStep(n){
 
-if(S.done[x.name+"|"+s+"|"+t])done++;
+    for(
+        let i=1;
+        i<=4;
+        i++
+    ){
 
-})
-)
-);
+        document
+            .getElementById("s"+i)
+            .classList
+            .toggle(
+                "active",
+                i===n
+            );
 
-document.getElementById("doneStat").textContent=done;
-
-document.getElementById("hourStat").textContent=
-Math.floor(S.seconds/3600)+"s";
-
-document.getElementById("streakStat").textContent=S.days;
-
-let today=Math.min(done,S.goal);
-
-let pct=Math.round(today/S.goal*100);
-
-document.getElementById("todayPct").textContent=pct+"%";
-
-document.getElementById("todayBar").style.width=pct+"%";
-
-document.getElementById("todayText").textContent=
-`Bugün ${today}/${S.goal} konu tamamlandı`;
-
-let op=Math.round(done/all*100);
-
-document.getElementById("overallPct").textContent=op+"%";
-
-document.getElementById("overallBar").style.width=op+"%";
+    }
 
 }
 
-function renderPlans(){
 
-let l=document.getElementById("planList");
 
-l.innerHTML="";
+/* =================================
+   ADIM YÖNETİMİ
+================================= */
 
-if(!S.plans.length){
+function renderStep(n){
 
-l.innerHTML=
-'<div class="empty">Henüz görev yok. Yukarıdan ilk görevini ekle.</div>';
+    setStep(n);
 
-return;
+    if(n===1){
 
-}
+        step1();
 
-S.plans.forEach((p,i)=>{
+        return;
+    }
 
-let d=document.createElement("div");
+    if(n===2){
 
-d.className="planitem";
+        step2();
 
-d.innerHTML=`
-<div>
-<b>${p.task}</b>
-<small>${p.min} dakika • ${p.done?"Tamamlandı":"Bekliyor"}</small>
-</div>
-<button class="btn ${p.done?"ghost":""}" onclick="togglePlan(${i})">
-${p.done?"Geri al":"Tamamla"}
-</button>
-`;
+        return;
+    }
 
-l.appendChild(d);
+    if(n===3){
 
-});
+        step3();
+
+        return;
+    }
+
+    step4();
 
 }
 
-function savePlan(){
 
-let task=document.getElementById("planTask").value.trim();
 
-let min=+document.getElementById("planMin").value||45;
+/* =================================
+   1 — SINAV SEÇ
+================================= */
 
-if(!task){
-toast("Bir görev yaz ortak 😄");
-return;
-}
+function step1(){
 
-S.plans.push({
-task,
-min,
-done:false
-});
+    document
+        .getElementById("stepContent")
+        .innerHTML = `
 
-save();
+        <div class="hero-row">
 
-document.getElementById("planTask").value="";
+            <div class="hero">
 
-renderPlans();
+                <h1>
 
-toast("Görev eklendi");
+                    Hangi
 
-}
+                    <span class="gradient">
 
-function addPlan(){
+                        sınava hazırlanıyorsun?
 
-document.getElementById("planTask").focus();
+                    </span>
 
-}
+                </h1>
 
-function togglePlan(i){
 
-S.plans[i].done=!S.plans[i].done;
+                <p>
 
-if(S.plans[i].done)
-S.seconds+=S.plans[i].min*60;
+                    Sana özel koçluk planını oluşturmak için
+                    <br>
+                    önce sınavını seçmelisin.
 
-save();
+                </p>
 
-renderPlans();
-updateStats();
+            </div>
 
-}
 
-let timer=1500;
-let interval=null;
-let running=false;
+            <div class="target">
 
-function fmt(s){
+                🎯
 
-return String(Math.floor(s/60)).padStart(2,"0")
-+":"+String(s%60).padStart(2,"0");
+            </div>
 
-}
+        </div>
 
-function setTimer(min){
 
-timer=min*60;
 
-running=false;
+        <div class="cards">
 
-clearInterval(interval);
+            ${
 
-document.getElementById("timerBtn").textContent="Başlat";
+                exams.map(
+                    e => `
 
-document.getElementById("timerDisplay").textContent=fmt(timer);
+                    <button
+                        class="card
+                        ${state.exam===e.id
+                            ? "selected"
+                            : ""}"
 
-["m25","m50","mCustom"].forEach(x=>
-document.getElementById(x).classList.remove("sel")
-);
+                        onclick="
+                            selectExam('${e.id}')
+                        "
+                    >
 
-document.getElementById(min===25?"m25":"m50").classList.add("sel");
+                        <div class="icon">
 
-}
+                            ${e.icon}
 
-function setTimerPrompt(){
+                        </div>
 
-let m=+prompt(
-"Kaç dakika çalışmak istiyorsun?",
-"45"
-);
 
-if(m>0){
+                        <h2>
 
-timer=m*60;
+                            ${e.id}
 
-running=false;
+                        </h2>
 
-clearInterval(interval);
 
-document.getElementById("timerBtn").textContent="Başlat";
+                        <p>
 
-document.getElementById("timerDisplay").textContent=fmt(timer);
+                            ${e.text}
 
-["m25","m50","mCustom"].forEach(x=>
-document.getElementById(x).classList.remove("sel")
-);
+                        </p>
 
-document.getElementById("mCustom").classList.add("sel");
 
-}
+                        <div class="arrow">
 
-}
+                            ›
 
-function toggleTimer(){
+                        </div>
 
-if(running){
+                    </button>
 
-clearInterval(interval);
+                    `
+                ).join("")
 
-running=false;
+            }
 
-document.getElementById("timerBtn").textContent="Devam et";
+        </div>
 
-return;
 
-}
 
-running=true;
+        <div class="info">
 
-document.getElementById("timerBtn").textContent="Durdur";
+            <div class="info-icon">
 
-interval=setInterval(()=>{
+                🛡
 
-timer--;
+            </div>
 
-document.getElementById("timerDisplay").textContent=fmt(timer);
 
-if(timer<=0){
+            <div>
 
-clearInterval(interval);
+                <b>
 
-running=false;
+                    Sınavını seç,
+                    sana özel planın oluşsun!
 
-S.seconds+=1500;
+                </b>
 
-save();
 
-document.getElementById("timerBtn").textContent="Başlat";
+                <span>
 
-timer=1500;
+                    Doğru plan, düzenli çalışma ve
+                    motivasyon ile hedefin sandığından
+                    daha yakın.
 
-document.getElementById("timerDisplay").textContent=fmt(timer);
+                </span>
 
-updateStats();
+            </div>
 
-toast("Çalışma tamamlandı! 🎉");
+        </div>
+
+    `;
 
 }
 
-},1000);
+
+
+/* =================================
+   SINAV SEÇ
+================================= */
+
+function selectExam(id){
+
+    state.exam = id;
+
+    renderStep(2);
 
 }
 
-function resetTimer(){
 
-clearInterval(interval);
 
-running=false;
+/* =================================
+   2 — HEDEF
+================================= */
 
-timer=1500;
+function step2(){
 
-document.getElementById("timerDisplay").textContent="25:00";
+    document
+        .getElementById("stepContent")
+        .innerHTML = `
 
-document.getElementById("timerBtn").textContent="Başlat";
+        <div class="form-panel">
+
+            <span class="badge">
+
+                ${state.exam} seçildi
+
+            </span>
+
+
+            <h1>
+
+                Hedefini belirle
+
+            </h1>
+
+
+            <p>
+
+                Koçluk planını hedefin doğrultusunda
+                kişiselleştirelim.
+
+            </p>
+
+
+
+            <div class="options">
+
+
+                <button
+                    class="option
+                    ${
+                        state.target ===
+                        "Yüksek bir başarı hedefliyorum"
+                        ? "selected"
+                        : ""
+                    }"
+
+                    onclick="
+                        pickTarget(
+                            this,
+                            'Yüksek bir başarı hedefliyorum'
+                        )
+                    "
+                >
+
+                    Yüksek bir başarı hedefliyorum
+
+                </button>
+
+
+
+                <button
+                    class="option
+                    ${
+                        state.target ===
+                        "Gerçekçi ve dengeli bir hedef istiyorum"
+                        ? "selected"
+                        : ""
+                    }"
+
+                    onclick="
+                        pickTarget(
+                            this,
+                            'Gerçekçi ve dengeli bir hedef istiyorum'
+                        )
+                    "
+                >
+
+                    Gerçekçi ve dengeli bir hedef istiyorum
+
+                </button>
+
+
+
+                <button
+                    class="option
+                    ${
+                        state.target ===
+                        "Önceliğim düzenli çalışmaya başlamak"
+                        ? "selected"
+                        : ""
+                    }"
+
+                    onclick="
+                        pickTarget(
+                            this,
+                            'Önceliğim düzenli çalışmaya başlamak'
+                        )
+                    "
+                >
+
+                    Önceliğim düzenli çalışmaya başlamak
+
+                </button>
+
+
+            </div>
+
+
+
+            <div class="actions">
+
+                <button
+                    class="action"
+                    onclick="renderStep(1)"
+                >
+
+                    ← Geri
+
+                </button>
+
+
+                <button
+                    class="action primary"
+                    onclick="renderStep(3)"
+                >
+
+                    Devam Et →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
 
 }
 
-function changeExam(v){
 
-setExam(v);
 
-}
+/* =================================
+   HEDEF SEÇ
+================================= */
 
-function renderProfile(){
+function pickTarget(el,x){
 
-let s=document.getElementById("examSelect");
+    state.target = x;
 
-s.innerHTML=Object.keys(DATA)
-.map(x=>`<option ${x===S.exam?"selected":""}>${x}</option>`)
-.join("");
+    document
+        .querySelectorAll(".option")
+        .forEach(
+            item =>
+            item.classList.remove("selected")
+        );
 
-document.getElementById("dailyGoal").value=S.goal;
-
-}
-
-function saveGoal(v){
-
-S.goal=Math.max(1,+v||3);
-
-save();
-
-updateStats();
-
-toast("Günlük hedef güncellendi");
+    el.classList.add("selected");
 
 }
 
-function resetAll(){
 
-if(confirm("Tüm konu ilerlemesi ve çalışma süresi silinsin mi?")){
 
-S={
-exam:S.exam,
-done:{},
-plans:[],
-seconds:0,
-goal:3,
-days:0,
-lastDay:""
-};
+/* =================================
+   3 — BİLGİLER
+================================= */
 
-save();
+function step3(){
 
-renderTopics();
-renderPlans();
-updateStats();
+    document
+        .getElementById("stepContent")
+        .innerHTML = `
 
-toast("İlerleme sıfırlandı");
+        <div class="form-panel">
+
+            <span class="badge">
+
+                ${state.exam}
+
+            </span>
+
+
+            <h1>
+
+                Bilgilerini gir
+
+            </h1>
+
+
+            <p>
+
+                Planının sana uygun olması için
+                birkaç bilgi yeterli.
+
+            </p>
+
+
+
+            <div class="field">
+
+                <label>
+
+                    Adın
+
+                </label>
+
+
+                <input
+                    id="name"
+                    placeholder="Adını yaz"
+                    value="${state.name || ""}"
+                >
+
+            </div>
+
+
+
+            <div class="field">
+
+                <label>
+
+                    Günlük ayırabileceğin süre
+
+                </label>
+
+
+                <select id="days">
+
+                    <option value="">
+
+                        Seç
+
+                    </option>
+
+
+                    <option>
+
+                        1-2 saat
+
+                    </option>
+
+
+                    <option>
+
+                        2-4 saat
+
+                    </option>
+
+
+                    <option>
+
+                        4-6 saat
+
+                    </option>
+
+
+                    <option>
+
+                        6+ saat
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="field">
+
+                <label>
+
+                    Mevcut seviyen
+
+                </label>
+
+
+                <select id="level">
+
+                    <option value="">
+
+                        Seç
+
+                    </option>
+
+
+                    <option>
+
+                        Başlangıç
+
+                    </option>
+
+
+                    <option>
+
+                        Orta
+
+                    </option>
+
+
+                    <option>
+
+                        İyi
+
+                    </option>
+
+
+                    <option>
+
+                        İleri
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="actions">
+
+                <button
+                    class="action"
+                    onclick="renderStep(2)"
+                >
+
+                    ← Geri
+
+                </button>
+
+
+                <button
+                    class="action primary"
+                    onclick="saveInfo()"
+                >
+
+                    Planımı Oluştur →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    if(state.days){
+
+        document
+            .getElementById("days")
+            .value =
+            state.days;
+
+    }
+
+
+    if(state.level){
+
+        document
+            .getElementById("level")
+            .value =
+            state.level;
+
+    }
 
 }
 
+
+
+/* =================================
+   BİLGİLERİ KAYDET
+================================= */
+
+function saveInfo(){
+
+    state.name =
+        document
+        .getElementById("name")
+        .value
+        .trim()
+        ||
+        "Öğrenci";
+
+
+    state.days =
+        document
+        .getElementById("days")
+        .value
+        ||
+        "2-4 saat";
+
+
+    state.level =
+        document
+        .getElementById("level")
+        .value
+        ||
+        "Orta";
+
+
+    renderStep(4);
+
 }
 
-renderHome();
-renderProfile();
-updateStats();
-show("home");
+
+
+/* =================================
+   4 — PLAN
+================================= */
+
+function step4(){
+
+    document
+        .getElementById("stepContent")
+        .innerHTML = `
+
+        <div class="form-panel">
+
+            <span class="badge">
+
+                ✓ Plan hazır
+
+            </span>
+
+
+            <h1>
+
+                ${state.name},
+                koçluk planın oluşturuldu.
+
+            </h1>
+
+
+            <p>
+
+                ${state.exam}
+                için hedefin ve çalışma düzenin
+                doğrultusunda başlangıç planın hazır.
+
+            </p>
+
+
+
+            <div class="plan-grid">
+
+
+                <div class="plan-box">
+
+                    <h3>
+
+                        🎯 Hedef
+
+                    </h3>
+
+
+                    <p>
+
+                        ${
+                            state.target ||
+                            "Düzenli ve sürdürülebilir çalışma"
+                        }
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="plan-box">
+
+                    <h3>
+
+                        ⏱ Günlük süre
+
+                    </h3>
+
+
+                    <p>
+
+                        ${
+                            state.days ||
+                            "2-4 saat"
+                        }
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="plan-box">
+
+                    <h3>
+
+                        📚 Seviye
+
+                    </h3>
+
+
+                    <p>
+
+                        ${
+                            state.level ||
+                            "Orta"
+                        }
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="plan-box">
+
+                    <h3>
+
+                        🗓 İlk adım
+
+                    </h3>
+
+
+                    <p>
+
+                        Bugünün görevlerini aç
+                        ve çalışmaya başla.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="actions">
+
+                <button
+                    class="action"
+                    onclick="renderStep(3)"
+                >
+
+                    ← Bilgileri Düzenle
+
+                </button>
+
+
+                <button
+                    class="action primary"
+                    onclick="
+                        alert(
+                            'Planım ekranı açılıyor'
+                        )
+                    "
+                >
+
+                    Planımı Gör →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
 
 </script>
+
 </body>
 </html>

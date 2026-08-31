@@ -6,9 +6,7 @@
 
 <meta charset="utf-8">
 
-<meta name="viewport"
-
-content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <meta name="theme-color" content="#3157d5">
 
@@ -42,11 +40,7 @@ content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 }
 
-*{
-
-box-sizing:border-box
-
-}
+*{box-sizing:border-box}
 
 html,body{
 
@@ -60,25 +54,11 @@ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif
 
 }
 
-body{
+body{min-height:100vh}
 
-min-height:100vh
+button,input,select{font:inherit}
 
-}
-
-button,input,select{
-
-font:inherit
-
-}
-
-button{
-
-cursor:pointer;
-
-border:0
-
-}
+button{cursor:pointer;border:0}
 
 .app{
 
@@ -158,11 +138,7 @@ padding:20px 16px
 
 }
 
-.hidden{
-
-display:none!important
-
-}
+.hidden{display:none!important}
 
 .hero{
 
@@ -364,11 +340,7 @@ font-size:13px
 
 }
 
-.muted{
-
-color:var(--muted)
-
-}
+.muted{color:var(--muted)}
 
 .stats{
 
@@ -382,11 +354,7 @@ margin-bottom:18px
 
 }
 
-.stat{
-
-text-align:center
-
-}
+.stat{text-align:center}
 
 .stat b{
 
@@ -404,7 +372,7 @@ color:var(--muted)
 
 }
 
-/* SERİ */
+/* SERİ ATEŞİ */
 
 .fire-card{
 
@@ -448,11 +416,7 @@ flex:none
 
 }
 
-.fire-info{
-
-flex:1
-
-}
+.fire-info{flex:1}
 
 .fire-title{
 
@@ -748,11 +712,7 @@ border-bottom:1px solid var(--line)
 
 }
 
-.topic:last-child{
-
-border:0
-
-}
+.topic:last-child{border:0}
 
 .topic input{
 
@@ -764,11 +724,7 @@ accent-color:var(--primary)
 
 }
 
-.topic label{
-
-flex:1
-
-}
+.topic label{flex:1}
 
 .topic.done label{
 
@@ -834,11 +790,7 @@ font-weight:800
 
 }
 
-.nav button.active{
-
-color:var(--primary)
-
-}
+.nav button.active{color:var(--primary)}
 
 .nav .nicon{
 
@@ -860,11 +812,7 @@ align-items:center
 
 }
 
-.row>*{
-
-flex:1
-
-}
+.row>*{flex:1}
 
 .input{
 
@@ -889,6 +837,8 @@ outline:none
 border-color:var(--primary)
 
 }
+
+/* TIMER */
 
 .timer{
 
@@ -940,247 +890,39 @@ color:#fff
 
 /* PLAN */
 
-.plan-header{
-
-background:linear-gradient(135deg,#eef2ff,#fff);
-
-border:1px solid #dce3ff
-
-}
-
-.active-package{
+.planitem{
 
 display:flex;
 
-align-items:center;
+justify-content:space-between;
 
-gap:12px;
+gap:10px;
 
-margin-bottom:15px
+padding:13px 0;
 
-}
-
-.active-package-icon{
-
-width:50px;
-
-height:50px;
-
-border-radius:15px;
-
-display:grid;
-
-place-items:center;
-
-font-size:26px;
-
-background:#eef2ff
+border-bottom:1px solid var(--line)
 
 }
 
-.active-package-main{
+.planitem:last-child{border:0}
 
-flex:1
-
-}
-
-.active-package-main strong{
+.planitem small{
 
 display:block;
 
-font-size:17px
+color:var(--muted);
+
+margin-top:3px
 
 }
 
-.active-package-main span{
+.empty{
 
-font-size:12px;
+text-align:center;
+
+padding:30px 10px;
 
 color:var(--muted)
-
-}
-
-.change-package{
-
-background:none;
-
-color:var(--primary);
-
-font-size:12px;
-
-font-weight:800
-
-}
-
-/* PAKETLER */
-
-.package-section{
-
-margin-top:5px
-
-}
-
-.package-title{
-
-font-size:24px;
-
-font-weight:900;
-
-margin:0
-
-}
-
-.package-subtitle{
-
-font-size:13px;
-
-color:var(--muted);
-
-margin:6px 0 15px
-
-}
-
-.package-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:13px
-
-}
-
-.package-card{
-
-position:relative;
-
-overflow:hidden;
-
-background:#fff;
-
-border:1px solid var(--line);
-
-border-radius:22px;
-
-padding:20px;
-
-box-shadow:var(--shadow)
-
-}
-
-.package-card.plus{
-
-border:2px solid #cbd5ff
-
-}
-
-.package-card.premium{
-
-border:2px solid var(--primary)
-
-}
-
-.package-badge{
-
-position:absolute;
-
-top:13px;
-
-right:13px;
-
-background:var(--primary);
-
-color:#fff;
-
-font-size:10px;
-
-font-weight:900;
-
-padding:6px 9px;
-
-border-radius:20px
-
-}
-
-.package-icon{
-
-font-size:32px;
-
-margin-bottom:8px
-
-}
-
-.package-card h3{
-
-font-size:20px;
-
-margin:0 0 5px
-
-}
-
-.package-description{
-
-font-size:12px;
-
-color:var(--muted);
-
-line-height:1.45
-
-}
-
-.package-price{
-
-font-size:26px;
-
-font-weight:950;
-
-color:var(--primary);
-
-margin:10px 0
-
-}
-
-.package-price small{
-
-font-size:12px;
-
-color:var(--muted);
-
-font-weight:700
-
-}
-
-.package-list{
-
-padding:0;
-
-margin:15px 0;
-
-list-style:none
-
-}
-
-.package-list li{
-
-padding:7px 0;
-
-font-size:13px;
-
-border-bottom:1px solid #f0f1f5
-
-}
-
-.package-list li:last-child{
-
-border-bottom:0
-
-}
-
-.package-button{
-
-width:100%;
-
-margin-top:5px
 
 }
 
@@ -1256,61 +998,229 @@ margin-top:10px
 
 }
 
-/* PLAN GÖREV */
+/* PAKETLER */
 
-.planitem{
+.package-section{
 
-display:flex;
-
-justify-content:space-between;
-
-gap:10px;
-
-padding:13px 0;
-
-border-bottom:1px solid var(--line)
+margin-top:25px
 
 }
 
-.planitem:last-child{
+.package-title{
 
-border:0
+font-size:22px;
+
+font-weight:900;
+
+margin:0
 
 }
 
-.planitem small{
+.package-subtitle{
 
-display:block;
+font-size:13px;
 
 color:var(--muted);
 
-margin-top:3px
+margin:6px 0 15px
 
 }
 
-.plan-delete{
+.package-grid{
 
-background:#fff0f0;
+display:grid;
 
-color:var(--danger);
+grid-template-columns:repeat(3,1fr);
 
-padding:8px 10px;
-
-border-radius:10px;
-
-font-weight:800
+gap:13px
 
 }
 
-.empty{
+.package-card{
 
-text-align:center;
+position:relative;
 
-padding:30px 10px;
+overflow:hidden;
 
-color:var(--muted)
+background:#fff;
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+padding:20px;
+
+box-shadow:var(--shadow)
 
 }
+
+.package-card.plus{
+
+border:2px solid #d9e1ff
+
+}
+
+.package-card.premium{
+
+border:2px solid var(--primary)
+
+}
+
+.package-card.selected{
+
+box-shadow:0 0 0 3px rgba(49,87,213,.13),var(--shadow)
+
+}
+
+.package-badge{
+
+position:absolute;
+
+top:13px;
+
+right:13px;
+
+background:var(--primary);
+
+color:#fff;
+
+font-size:10px;
+
+font-weight:900;
+
+padding:6px 9px;
+
+border-radius:20px
+
+}
+
+.package-icon{
+
+font-size:32px;
+
+margin-bottom:8px
+
+}
+
+.package-card h3{
+
+font-size:20px;
+
+margin:0 0 5px
+
+}
+
+.package-price{
+
+font-size:26px;
+
+font-weight:950;
+
+color:var(--primary);
+
+margin:10px 0
+
+}
+
+.package-price small{
+
+font-size:12px;
+
+color:var(--muted);
+
+font-weight:700
+
+}
+
+.package-list{
+
+padding:0;
+
+margin:15px 0;
+
+list-style:none
+
+}
+
+.package-list li{
+
+padding:7px 0;
+
+font-size:13px;
+
+border-bottom:1px solid #f0f1f5
+
+}
+
+.package-list li:last-child{
+
+border-bottom:0
+
+}
+
+.package-button{
+
+width:100%;
+
+margin-top:5px
+
+}
+
+.active-package{
+
+background:linear-gradient(135deg,#eef2ff,#fff);
+
+border:1px solid #dce3ff;
+
+margin-bottom:15px
+
+}
+
+.active-package h3{
+
+margin:0 0 6px
+
+}
+
+.active-package p{
+
+margin:0;
+
+color:var(--muted);
+
+font-size:13px
+
+}
+
+.feature-box{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+
+margin-top:14px
+
+}
+
+.feature-mini{
+
+background:#f8f9fd;
+
+border:1px solid var(--line);
+
+padding:13px;
+
+border-radius:14px;
+
+font-size:13px;
+
+font-weight:700
+
+}
+
+/* TOAST */
 
 .toast{
 
@@ -1416,6 +1326,12 @@ flex-direction:column
 
 }
 
+.feature-box{
+
+grid-template-columns:1fr
+
+}
+
 }
 
 </style>
@@ -1430,17 +1346,9 @@ flex-direction:column
 
 <div class="topin">
 
-<div class="brand">
+<div class="brand">KAMPÜS</div>
 
-KAMPÜS
-
-</div>
-
-<div class="pill" id="examPill">
-
-YKS
-
-</div>
+<div class="pill" id="examPill">YKS</div>
 
 </div>
 
@@ -1448,23 +1356,19 @@ YKS
 
 <main>
 
-<!-- ANA SAYFA -->
+<!-- =========================
+
+     ANA SAYFA
+
+========================= -->
 
 <section id="home">
 
 <div class="hero">
 
-<small id="heroExam">
+<small id="heroExam">YKS SINAV KOÇUN</small>
 
-YKS SINAV KOÇUN
-
-</small>
-
-<h1>
-
-Hedefine giden yol Kampüs’ten geçer.
-
-</h1>
+<h1>Hedefine giden yol Kampüs’ten geçer.</h1>
 
 <p>
 
@@ -1474,11 +1378,7 @@ Planını oluştur, konularını takip et,
 
 </p>
 
-<button
-
-class="btn light"
-
-onclick="show('plan')">
+<button class="btn light" onclick="show('plan')">
 
 Planımı oluştur →
 
@@ -1492,11 +1392,7 @@ Planımı oluştur →
 
 <b id="doneStat">0</b>
 
-<span>
-
-Tamamlanan konu
-
-</span>
+<span>Tamamlanan konu</span>
 
 </div>
 
@@ -1504,11 +1400,7 @@ Tamamlanan konu
 
 <b id="hourStat">0s</b>
 
-<span>
-
-Toplam çalışma
-
-</span>
+<span>Toplam çalışma</span>
 
 </div>
 
@@ -1516,23 +1408,17 @@ Toplam çalışma
 
 <b id="streakStat">0</b>
 
-<span>
-
-Günlük seri
-
-</span>
+<span>Günlük seri</span>
 
 </div>
 
 </div>
+
+<!-- SERİ ATEŞİ -->
 
 <div class="section">
 
-<h2>
-
-Seri Ateşi
-
-</h2>
+<h2>Seri Ateşi</h2>
 
 </div>
 
@@ -1540,11 +1426,7 @@ Seri Ateşi
 
 <div class="fire-row">
 
-<div class="fire-icon">
-
-🔥
-
-</div>
+<div class="fire-icon">🔥</div>
 
 <div class="fire-info">
 
@@ -1558,29 +1440,19 @@ Seri Ateşi
 
 <span id="fireStreak">0</span>
 
-<small>
-
-gün
-
-</small>
+<small> gün</small>
 
 </div>
 
 <div class="fire-best">
 
-En uzun seri:
-
-<b id="bestStreak">0</b> gün
+En uzun seri: <b id="bestStreak">0</b> gün
 
 </div>
 
 </div>
 
-<button
-
-class="btn fire"
-
-onclick="show('timer')">
+<button class="btn fire" onclick="show('timer')">
 
 Çalış
 
@@ -1608,29 +1480,19 @@ Bugün çalışarak serini başlat.
 
 </div>
 
+<!-- SORULAR -->
+
 <div class="section">
 
 <div>
 
-<h2>
+<h2>Çözemediğim Sorular</h2>
 
-Çözemediğim Sorular
-
-</h2>
-
-<p>
-
-Takıldığın soruları kaybetme.
-
-</p>
+<p>Takıldığın soruları kaybetme.</p>
 
 </div>
 
-<button
-
-class="btn ghost"
-
-onclick="show('questions')">
+<button class="btn ghost" onclick="show('questions')">
 
 Sorularım
 
@@ -1644,17 +1506,9 @@ Sorularım
 
 <div>
 
-<strong id="questionHomeCount">
+<strong id="questionHomeCount">0 soru</strong>
 
-0 soru
-
-</strong>
-
-<p
-
-class="muted"
-
-style="margin:4px 0 0;font-size:13px">
+<p class="muted" style="margin:4px 0 0;font-size:13px">
 
 Daha sonra tekrar çöz.
 
@@ -1662,11 +1516,7 @@ Daha sonra tekrar çöz.
 
 </div>
 
-<button
-
-class="btn"
-
-onclick="show('questions')">
+<button class="btn" onclick="show('questions')">
 
 Soru ekle
 
@@ -1676,37 +1526,23 @@ Soru ekle
 
 </div>
 
-<div class="section">
-
-<h2>
-
-Sınavını seç
-
-</h2>
-
-</div>
-
-<div
-
-class="grid"
-
-id="examGrid">
-
-</div>
+<!-- SINAV -->
 
 <div class="section">
 
-<h2>
+<h2>Sınavını seç</h2>
 
-Bugünkü hedef
+</div>
 
-</h2>
+<div class="grid" id="examGrid"></div>
 
-<button
+<!-- BUGÜNKÜ HEDEF -->
 
-class="btn ghost"
+<div class="section">
 
-onclick="show('timer')">
+<h2>Bugünkü hedef</h2>
+
+<button class="btn ghost" onclick="show('timer')">
 
 Çalışmaya başla
 
@@ -1724,9 +1560,7 @@ Bugün için hedef belirle
 
 </strong>
 
-<span
-
-id="todayPct"
+<span id="todayPct"
 
 style="text-align:right;font-weight:900">
 
@@ -1736,11 +1570,7 @@ style="text-align:right;font-weight:900">
 
 </div>
 
-<div
-
-class="progress"
-
-style="margin-top:10px">
+<div class="progress" style="margin-top:10px">
 
 <i id="todayBar"></i>
 
@@ -1750,37 +1580,25 @@ style="margin-top:10px">
 
 </section>
 
-<!-- KONULAR -->
+<!-- =========================
 
-<section
+     KONULAR
 
-id="topics"
+========================= -->
 
-class="hidden">
+<section id="topics" class="hidden">
 
 <div class="section">
 
 <div>
 
-<h2 id="topicsTitle">
+<h2 id="topicsTitle">Konular</h2>
 
-Konular
-
-</h2>
-
-<p>
-
-İlerledikçe işaretle.
-
-</p>
+<p>İlerledikçe işaretle.</p>
 
 </div>
 
-<button
-
-class="btn ghost"
-
-onclick="show('home')">
+<button class="btn ghost" onclick="show('home')">
 
 Sınav değiştir
 
@@ -1788,39 +1606,25 @@ Sınav değiştir
 
 </div>
 
-<div
-
-class="card"
-
-id="topicsList">
-
-</div>
+<div class="card" id="topicsList"></div>
 
 </section>
 
-<!-- PLAN -->
+<!-- =========================
 
-<section
+     PLAN / KOÇLUK
 
-id="plan"
+========================= -->
 
-class="hidden">
+<section id="plan" class="hidden">
 
 <div class="section">
 
 <div>
 
-<h2>
+<h2>Kampüs Koçluk</h2>
 
-Koçluk Planım
-
-</h2>
-
-<p>
-
-Paketi seç ve koçluğunu başlat.
-
-</p>
+<p>Önce sana uygun paketi seç.</p>
 
 </div>
 
@@ -1828,21 +1632,17 @@ Paketi seç ve koçluğunu başlat.
 
 <!-- PAKET SEÇİMİ -->
 
-<div
+<div id="packageArea">
 
-id="packageArea"
+<div class="card" style="margin-bottom:15px">
 
-class="package-section">
+<strong>🎓 Koçluk paketini seç</strong>
 
-<div class="package-title">
+<p class="muted" style="margin:6px 0 0;font-size:13px">
 
-🎓 Kampüs Koçluk Paketleri
+Seçtiğin paket aktif olduğunda çalışma planın burada açılacak.
 
-</div>
-
-<div class="package-subtitle">
-
-Hedefine uygun paketi seç. Paketini aldıktan sonra kişisel çalışma planın burada başlayacak.
+</p>
 
 </div>
 
@@ -1850,69 +1650,33 @@ Hedefine uygun paketi seç. Paketini aldıktan sonra kişisel çalışma planın
 
 <!-- ÜCRETSİZ -->
 
-<div class="package-card">
+<div
 
-<div class="package-icon">
+class="package-card"
 
-🆓
+id="packageFree">
 
-</div>
+<div class="package-icon">🆓</div>
 
-<h3>
-
-Ücretsiz
-
-</h3>
-
-<div class="package-description">
-
-Kampüs'ü keşfetmek isteyenler için temel koçluk deneyimi.
-
-</div>
+<h3>Ücretsiz</h3>
 
 <div class="package-price">
 
-₺0
-
-<small>
-
-/ ay
-
-</small>
+₺0 <small>/ ay</small>
 
 </div>
 
 <ul class="package-list">
 
-<li>
+<li>✓ Temel çalışma planı</li>
 
-✓ Konu takip sistemi
+<li>✓ Konu takibi</li>
 
-</li>
+<li>✓ Günlük hedef</li>
 
-<li>
+<li>✓ Seri Ateşi</li>
 
-✓ Günlük hedef
-
-</li>
-
-<li>
-
-✓ Seri Ateşi
-
-</li>
-
-<li>
-
-✓ Çalışma sayacı
-
-</li>
-
-<li>
-
-✓ Çözemediğim Sorular
-
-</li>
+<li>✓ Çözemediğim Sorular</li>
 
 </ul>
 
@@ -1930,69 +1694,35 @@ onclick="selectPackage('Ücretsiz')">
 
 <!-- PLUS -->
 
-<div class="package-card plus">
+<div
 
-<div class="package-icon">
+class="package-card plus"
 
-⭐
+id="packagePlus">
 
-</div>
+<div class="package-icon">⭐</div>
 
-<h3>
-
-Plus
-
-</h3>
-
-<div class="package-description">
-
-Daha düzenli ve planlı çalışmak isteyen öğrenciler için.
-
-</div>
+<h3>Plus</h3>
 
 <div class="package-price">
 
-₺99
-
-<small>
-
-/ ay
-
-</small>
+₺99 <small>/ ay</small>
 
 </div>
 
 <ul class="package-list">
 
-<li>
+<li>✓ Ücretsiz'deki tüm özellikler</li>
 
-✓ Ücretsiz'deki tüm özellikler
+<li>✓ Kişisel çalışma planı</li>
 
-</li>
+<li>✓ Günlük hedef takibi</li>
 
-<li>
+<li>✓ Gelişmiş konu takibi</li>
 
-✓ Kişisel çalışma planı
+<li>✓ Çalışma süresi takibi</li>
 
-</li>
-
-<li>
-
-✓ Günlük görev sistemi
-
-</li>
-
-<li>
-
-✓ Hedef bazlı planlama
-
-</li>
-
-<li>
-
-✓ Gelişmiş çalışma takibi
-
-</li>
+<li>✓ Koçluk planı</li>
 
 </ul>
 
@@ -2010,7 +1740,11 @@ Plus'ı Seç
 
 <!-- PREMIUM -->
 
-<div class="package-card premium">
+<div
+
+class="package-card premium"
+
+id="packagePremium">
 
 <div class="package-badge">
 
@@ -2018,79 +1752,29 @@ EN ÇOK TERCİH EDİLEN
 
 </div>
 
-<div class="package-icon">
+<div class="package-icon">👑</div>
 
-👑
-
-</div>
-
-<h3>
-
-Premium
-
-</h3>
-
-<div class="package-description">
-
-Sınava ciddi şekilde hazırlanan öğrenciler için tam koçluk deneyimi.
-
-</div>
+<h3>Premium</h3>
 
 <div class="package-price">
 
-₺199
-
-<small>
-
-/ ay
-
-</small>
+₺199 <small>/ ay</small>
 
 </div>
 
 <ul class="package-list">
 
-<li>
+<li>✓ Plus'taki tüm özellikler</li>
 
-✓ Plus'taki tüm özellikler
+<li>✓ Gelişmiş çalışma takibi</li>
 
-</li>
+<li>✓ Detaylı ilerleme analizi</li>
 
-<li>
+<li>✓ <b>Deneme analizleri</b></li>
 
-✓ Detaylı çalışma analizi
+<li>✓ Premium koçluk özellikleri</li>
 
-</li>
-
-<li>
-
-✓ Gelişmiş ilerleme analizi
-
-</li>
-
-<li>
-
-✓ Deneme analizleri
-
-</li>
-
-<li>
-
-✓ Deneme sonuçlarını takip et
-
-</li>
-
-<li>
-
-✓ Premium koçluk özellikleri
-
-</li>
-
-<li>
-
-✓ Öncelikli destek
-
-</li>
+<li>✓ Öncelikli destek</li>
 
 </ul>
 
@@ -2110,77 +1794,75 @@ Premium'u Seç
 
 </div>
 
-<!-- AKTİF PLAN -->
+<!-- AKTİF KOÇLUK PLANI -->
 
-<div
+<div id="activePlanArea" class="hidden">
 
-id="activePlanArea"
+<div class="card active-package">
 
-class="hidden">
+<h3 id="activePackageTitle">
 
-<div class="card plan-header">
+🎓 Aktif Paket
 
-<div class="active-package">
+</h3>
 
-<div
+<p id="activePackageDescription">
 
-class="active-package-icon"
+</p>
 
-id="activePackageIcon">
+<div class="feature-box">
 
-⭐
+<div class="feature-mini">
+
+📚 Konu Takibi
 
 </div>
 
-<div class="active-package-main">
+<div class="feature-mini">
 
-<strong id="activePackageName">
+🎯 Günlük Hedef
 
-Plus
+</div>
 
-</strong>
+<div class="feature-mini">
 
-<span>
+🔥 Seri Ateşi
 
-Aktif koçluk paketin
+</div>
 
-</span>
+<div class="feature-mini">
+
+⏱️ Çalışma Takibi
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div>
+
+<h2>Çalışma Planım</h2>
+
+<p>Bugünkü görevlerini oluştur.</p>
 
 </div>
 
 <button
 
-class="change-package"
+class="btn ghost"
 
 onclick="changePackage()">
 
-Paketi değiştir
+Paketi Değiştir
 
 </button>
 
 </div>
 
-<div class="section"
-
-style="margin:10px 0 12px">
-
-<div>
-
-<h2>
-
-Bugünkü görevlerim
-
-</h2>
-
-<p>
-
-Planına görev ekle ve tamamladıkça ilerle.
-
-</p>
-
-</div>
-
-</div>
+<div class="card">
 
 <div class="row">
 
@@ -2206,11 +1888,7 @@ value="45"
 
 style="max-width:100px">
 
-<button
-
-class="btn"
-
-onclick="savePlan()">
+<button class="btn" onclick="savePlan()">
 
 Ekle
 
@@ -2218,13 +1896,7 @@ Ekle
 
 </div>
 
-<div
-
-id="planList"
-
-style="margin-top:10px">
-
-</div>
+<div id="planList"></div>
 
 </div>
 
@@ -2232,37 +1904,25 @@ style="margin-top:10px">
 
 </section>
 
-<!-- SORULAR -->
+<!-- =========================
 
-<section
+     SORULAR
 
-id="questions"
+========================= -->
 
-class="hidden">
+<section id="questions" class="hidden">
 
 <div class="section">
 
 <div>
 
-<h2>
+<h2>Çözemediğim Sorular</h2>
 
-Çözemediğim Sorular
-
-</h2>
-
-<p>
-
-Sorularını kaydet ve sonra tekrar çöz.
-
-</p>
+<p>Sorularını kaydet ve sonra tekrar çöz.</p>
 
 </div>
 
-<span
-
-class="question-count"
-
-id="questionCount">
+<span class="question-count" id="questionCount">
 
 0 soru
 
@@ -2278,17 +1938,9 @@ class="upload-box"
 
 for="questionInput">
 
-<div class="upload-icon">
+<div class="upload-icon">📸</div>
 
-📸
-
-</div>
-
-<strong>
-
-Soru fotoğrafı ekle
-
-</strong>
+<strong>Soru fotoğrafı ekle</strong>
 
 <span>
 
@@ -2324,21 +1976,17 @@ style="margin-top:14px">
 
 </section>
 
-<!-- SAYAÇ -->
+<!-- =========================
 
-<section
+     SAYAÇ
 
-id="timer"
+========================= -->
 
-class="hidden">
+<section id="timer" class="hidden">
 
 <div class="section">
 
-<h2>
-
-Çalışma sayacı
-
-</h2>
+<h2>Çalışma sayacı</h2>
 
 </div>
 
@@ -2380,11 +2028,7 @@ onclick="setTimerPrompt()">
 
 </div>
 
-<div
-
-class="timer"
-
-id="timerDisplay">
+<div class="timer" id="timerDisplay">
 
 25:00
 
@@ -2430,21 +2074,17 @@ Sayaç tamamlandığında çalışma sürene eklenir.
 
 </section>
 
-<!-- PROFİL -->
+<!-- =========================
 
-<section
+     PROFİL
 
-id="profile"
+========================= -->
 
-class="hidden">
+<section id="profile" class="hidden">
 
 <div class="section">
 
-<h2>
-
-Profilim
-
-</h2>
+<h2>Hedefim & ilerlemem</h2>
 
 </div>
 
@@ -2460,7 +2100,7 @@ Profilim
 
 <div class="account-sub">
 
-İlerlemeni ve koçluk planını hesabınla takip et.
+İlerlemeni ve planlarını hesabınla takip et.
 
 </div>
 
@@ -2501,8 +2141,6 @@ class="account-form hidden">
 class="input"
 
 id="accountName"
-
-type="text"
 
 placeholder="Adın">
 
@@ -2560,13 +2198,9 @@ id="loggedInArea"
 
 class="hidden">
 
-<div
+<div style="font-weight:900;font-size:17px">
 
-style="font-weight:900;font-size:18px"
-
-id="profileWelcome">
-
-👋 Hoş geldin!
+👋 Hoş geldin <span id="accountNameText"></span>
 
 </div>
 
@@ -2577,14 +2211,6 @@ id="accountEmailText"
 class="muted"
 
 style="margin-top:5px">
-
-</div>
-
-<div
-
-id="profilePackageText"
-
-class="account-status">
 
 </div>
 
@@ -2604,13 +2230,155 @@ onclick="logoutAccount()">
 
 </div>
 
-<!-- SINAV AYARLARI -->
+<!-- PAKETLER PROFİLDE DE GÖRÜNÜR -->
 
-<div
+<div class="package-section">
 
-class="card"
+<div class="package-title">
 
-style="margin-top:18px">
+🎓 Kampüs Koçluk Paketleri
+
+</div>
+
+<div class="package-subtitle">
+
+Hedefine uygun paketi seç.
+
+</div>
+
+<div class="package-grid">
+
+<div class="package-card">
+
+<div class="package-icon">🆓</div>
+
+<h3>Ücretsiz</h3>
+
+<div class="package-price">
+
+₺0 <small>/ ay</small>
+
+</div>
+
+<ul class="package-list">
+
+<li>✓ Temel çalışma planı</li>
+
+<li>✓ Konu takibi</li>
+
+<li>✓ Günlük hedef</li>
+
+<li>✓ Seri Ateşi</li>
+
+<li>✓ Çözemediğim Sorular</li>
+
+</ul>
+
+<button
+
+class="btn ghost package-button"
+
+onclick="selectPackage('Ücretsiz');show('plan')">
+
+Ücretsiz Başla
+
+</button>
+
+</div>
+
+<div class="package-card plus">
+
+<div class="package-icon">⭐</div>
+
+<h3>Plus</h3>
+
+<div class="package-price">
+
+₺99 <small>/ ay</small>
+
+</div>
+
+<ul class="package-list">
+
+<li>✓ Ücretsiz'deki tüm özellikler</li>
+
+<li>✓ Kişisel çalışma planı</li>
+
+<li>✓ Günlük hedef takibi</li>
+
+<li>✓ Gelişmiş konu takibi</li>
+
+<li>✓ Çalışma süresi takibi</li>
+
+<li>✓ Koçluk planı</li>
+
+</ul>
+
+<button
+
+class="btn ghost package-button"
+
+onclick="selectPackage('Plus');show('plan')">
+
+Plus'ı Seç
+
+</button>
+
+</div>
+
+<div class="package-card premium">
+
+<div class="package-badge">
+
+EN ÇOK TERCİH EDİLEN
+
+</div>
+
+<div class="package-icon">👑</div>
+
+<h3>Premium</h3>
+
+<div class="package-price">
+
+₺199 <small>/ ay</small>
+
+</div>
+
+<ul class="package-list">
+
+<li>✓ Plus'taki tüm özellikler</li>
+
+<li>✓ Gelişmiş çalışma takibi</li>
+
+<li>✓ Detaylı ilerleme analizi</li>
+
+<li>✓ <b>Deneme analizleri</b></li>
+
+<li>✓ Premium koçluk özellikleri</li>
+
+<li>✓ Öncelikli destek</li>
+
+</ul>
+
+<button
+
+class="btn package-button"
+
+onclick="selectPackage('Premium');show('plan')">
+
+Premium'u Seç
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PROFİL AYARLARI -->
+
+<div class="card" style="margin-top:18px">
 
 <label class="muted">
 
@@ -2652,21 +2420,11 @@ style="margin:7px 0 16px"
 
 onchange="saveGoal(this.value)">
 
-<div class="section"
+<div class="section" style="margin-top:0">
 
-style="margin-top:0">
+<h2>Genel ilerleme</h2>
 
-<h2>
-
-Genel ilerleme
-
-</h2>
-
-<b id="overallPct">
-
-0%
-
-</b>
+<b id="overallPct">0%</b>
 
 </div>
 
@@ -2678,11 +2436,7 @@ Genel ilerleme
 
 <div class="section">
 
-<h2>
-
-Seri Ateşi
-
-</h2>
+<h2>Seri Ateşi</h2>
 
 </div>
 
@@ -2690,11 +2444,7 @@ Seri Ateşi
 
 <div class="fire-row">
 
-<div class="fire-icon">
-
-🔥
-
-</div>
+<div class="fire-icon">🔥</div>
 
 <div class="fire-info">
 
@@ -2706,29 +2456,15 @@ MEVCUT SERİ
 
 <div class="fire-number">
 
-<span id="profileStreak">
+<span id="profileStreak">0</span>
 
-0
-
-</span>
-
-<small>
-
-gün
-
-</small>
+<small> gün</small>
 
 </div>
 
 <div class="fire-best">
 
-Rekor:
-
-<b id="profileBest">
-
-0
-
-</b> gün
+Rekor: <b id="profileBest">0</b> gün
 
 </div>
 
@@ -2737,24 +2473,12 @@ Rekor:
 </div>
 
 </div>
-
-<button
-
-class="btn"
-
-style="width:100%;margin-top:20px"
-
-onclick="show('plan')">
-
-🎓 Koçluk Planıma Git
-
-</button>
 
 <button
 
 class="btn danger"
 
-style="margin-top:10px;width:100%"
+style="margin-top:20px"
 
 onclick="resetAll()">
 
@@ -2778,11 +2502,7 @@ data-page="home"
 
 onclick="show('home')">
 
-<span class="nicon">
-
-⌂
-
-</span>
+<span class="nicon">⌂</span>
 
 Ana Sayfa
 
@@ -2794,11 +2514,7 @@ data-page="topics"
 
 onclick="show('topics')">
 
-<span class="nicon">
-
-✓
-
-</span>
+<span class="nicon">✓</span>
 
 Konular
 
@@ -2810,11 +2526,7 @@ data-page="questions"
 
 onclick="show('questions')">
 
-<span class="nicon">
-
-📷
-
-</span>
+<span class="nicon">📷</span>
 
 Sorular
 
@@ -2826,11 +2538,7 @@ data-page="plan"
 
 onclick="show('plan')">
 
-<span class="nicon">
-
-☷
-
-</span>
+<span class="nicon">☷</span>
 
 Plan
 
@@ -2842,11 +2550,7 @@ data-page="profile"
 
 onclick="show('profile')">
 
-<span class="nicon">
-
-◎
-
-</span>
+<span class="nicon">◎</span>
 
 Profil
 
@@ -2854,13 +2558,7 @@ Profil
 
 </nav>
 
-<div
-
-class="toast"
-
-id="toast">
-
-</div>
+<div class="toast" id="toast"></div>
 
 </div>
 
@@ -3346,41 +3044,29 @@ selectedPackage:null
 
 };
 
-if(!Array.isArray(S.questions)){
+if(!Array.isArray(S.questions))
 
 S.questions=[];
 
-}
-
-if(!Array.isArray(S.plans)){
+if(!Array.isArray(S.plans))
 
 S.plans=[];
 
-}
-
-if(typeof S.streak!=="number"){
+if(typeof S.streak!=="number")
 
 S.streak=0;
 
-}
-
-if(typeof S.bestStreak!=="number"){
+if(typeof S.bestStreak!=="number")
 
 S.bestStreak=0;
 
-}
-
-if(!("account" in S)){
+if(!("account" in S))
 
 S.account=null;
 
-}
-
-if(!("selectedPackage" in S)){
+if(!("selectedPackage" in S))
 
 S.selectedPackage=null;
-
-}
 
 const save=()=>{
 
@@ -3428,7 +3114,7 @@ return Math.round(
 
 /* =========================
 
-   SERİ
+   SERİ ATEŞİ
 
 ========================= */
 
@@ -3436,11 +3122,9 @@ function registerStudy(){
 
 let today=todayKey();
 
-if(S.lastStudyDate===today){
+if(S.lastStudyDate===today)
 
 return;
-
-}
 
 if(!S.lastStudyDate){
 
@@ -3470,11 +3154,9 @@ S.streak=1;
 
 S.lastStudyDate=today;
 
-if(S.streak>S.bestStreak){
+if(S.streak>S.bestStreak)
 
 S.bestStreak=S.streak;
-
-}
 
 S.days=S.streak;
 
@@ -3502,11 +3184,9 @@ let best=S.bestStreak||0;
 
 let e=document.getElementById(id);
 
-if(e){
+if(e)
 
 e.textContent=streak;
-
-}
 
 });
 
@@ -3520,11 +3200,9 @@ e.textContent=streak;
 
 let e=document.getElementById(id);
 
-if(e){
+if(e)
 
 e.textContent=best;
-
-}
 
 });
 
@@ -3540,11 +3218,9 @@ let progress=Math.min(
 
 );
 
-if(streak>0 && streak%7===0){
+if(streak>0 && streak%7===0)
 
 progress=100;
-
-}
 
 bar.style.width=progress+"%";
 
@@ -3552,7 +3228,9 @@ bar.style.width=progress+"%";
 
 let msg=document.getElementById("fireMessage");
 
-if(!msg)return;
+if(!msg)
+
+return;
 
 if(!S.lastStudyDate){
 
@@ -3654,29 +3332,21 @@ b.dataset.page===page
 
 );
 
-if(page==="topics"){
+if(page==="topics")
 
 renderTopics();
 
-}
-
-if(page==="plan"){
+if(page==="plan")
 
 renderPlanPage();
 
-}
-
-if(page==="profile"){
+if(page==="profile")
 
 renderProfile();
 
-}
-
-if(page==="questions"){
+if(page==="questions")
 
 renderQuestions();
-
-}
 
 updateStats();
 
@@ -3756,11 +3426,7 @@ d.innerHTML=`
 
 </div>
 
-<strong>
-
-${v.desc}
-
-</strong>
+<strong>${v.desc}</strong>
 
 <span>
 
@@ -3888,11 +3554,7 @@ ${checked?"checked":""}
 
 >
 
-<label>
-
-${t}
-
-</label>
+<label>${t}</label>
 
 <span class="tag">
 
@@ -3902,9 +3564,15 @@ ${checked?"Tamam":"Bekliyor"}
 
 `;
 
-row.querySelector("input").onchange=e=>{
+row.querySelector(
 
-S.done[key]=e.target.checked;
+"input"
+
+).onchange=e=>{
+
+S.done[key]=
+
+e.target.checked;
 
 if(e.target.checked){
 
@@ -3998,11 +3666,9 @@ x.name+"|"+s+"|"+t
 
 ]
 
-){
+)
 
 done++;
-
-}
 
 })
 
@@ -4034,11 +3700,13 @@ Math.min(done,S.goal);
 
 let pct=
 
+S.goal?
+
 Math.round(
 
 today/S.goal*100
 
-);
+):0;
 
 document.getElementById(
 
@@ -4054,7 +3722,7 @@ document.getElementById(
 
 ).style.width=
 
-pct+"%";
+Math.min(pct,100)+"%";
 
 document.getElementById(
 
@@ -4096,43 +3764,7 @@ updateQuestionCount();
 
 /* =========================
 
-   PLAN SAYFASI
-
-========================= */
-
-function renderPlanPage(){
-
-let packageArea=
-
-document.getElementById("packageArea");
-
-let activeArea=
-
-document.getElementById("activePlanArea");
-
-if(S.selectedPackage){
-
-packageArea.classList.add("hidden");
-
-activeArea.classList.remove("hidden");
-
-renderActivePackage();
-
-renderPlans();
-
-}else{
-
-packageArea.classList.remove("hidden");
-
-activeArea.classList.add("hidden");
-
-}
-
-}
-
-/* =========================
-
-   PAKET
+   PAKETLER
 
 ========================= */
 
@@ -4144,15 +3776,15 @@ save();
 
 renderPlanPage();
 
-renderProfile();
-
 toast(
 
 packageName+
 
-" paketin aktif edildi!"
+" paketi aktif edildi"
 
 );
+
+show("plan");
 
 }
 
@@ -4164,59 +3796,73 @@ save();
 
 renderPlanPage();
 
-toast(
-
-"Yeni paketini seç."
-
-);
+window.scrollTo(0,0);
 
 }
 
-/* =========================
-
-   AKTİF PAKET
-
-========================= */
-
-function renderActivePackage(){
-
-let icon=
-
-document.getElementById(
-
-"activePackageIcon"
-
-);
-
-let name=
-
-document.getElementById(
-
-"activePackageName"
-
-);
+function getPackageDescription(){
 
 if(S.selectedPackage==="Ücretsiz"){
 
-icon.textContent="🆓";
-
-name.textContent="Ücretsiz Koçluk";
+return "Temel çalışma planın aktif. Konularını, hedeflerini ve çalışma serini takip edebilirsin.";
 
 }
 
-else if(S.selectedPackage==="Plus"){
+if(S.selectedPackage==="Plus"){
 
-icon.textContent="⭐";
-
-name.textContent="Plus Koçluk";
+return "Plus koçluk paketin aktif. Kişisel çalışma planın ve gelişmiş takip özelliklerin hazır.";
 
 }
 
-else if(S.selectedPackage==="Premium"){
+if(S.selectedPackage==="Premium"){
 
-icon.textContent="👑";
+return "Premium koçluk paketin aktif. Gelişmiş takip, detaylı ilerleme ve deneme analizleri dahil.";
 
-name.textContent="Premium Koçluk";
+}
+
+return "";
+
+}
+
+function renderPlanPage(){
+
+let packageArea=
+
+document.getElementById("packageArea");
+
+let activeArea=
+
+document.getElementById("activePlanArea");
+
+if(!S.selectedPackage){
+
+packageArea.classList.remove("hidden");
+
+activeArea.classList.add("hidden");
+
+}else{
+
+packageArea.classList.add("hidden");
+
+activeArea.classList.remove("hidden");
+
+document.getElementById(
+
+"activePackageTitle"
+
+).textContent=
+
+"🎓 "+S.selectedPackage+" Paket Aktif";
+
+document.getElementById(
+
+"activePackageDescription"
+
+).textContent=
+
+getPackageDescription();
+
+renderPlans();
 
 }
 
@@ -4224,7 +3870,7 @@ name.textContent="Premium Koçluk";
 
 /* =========================
 
-   PLAN GÖREVLERİ
+   PLAN
 
 ========================= */
 
@@ -4234,7 +3880,9 @@ let l=
 
 document.getElementById("planList");
 
-if(!l)return;
+if(!l)
+
+return;
 
 l.innerHTML="";
 
@@ -4260,11 +3908,7 @@ d.innerHTML=`
 
 <div>
 
-<b>
-
-${escapeHTML(p.task)}
-
-</b>
+<b>${escapeHTML(p.task)}</b>
 
 <small>
 
@@ -4276,7 +3920,7 @@ ${p.done?"Tamamlandı":"Bekliyor"}
 
 </div>
 
-<div style="display:flex;gap:7px;align-items:center">
+<div style="display:flex;gap:7px;flex:none">
 
 <button
 
@@ -4290,7 +3934,7 @@ ${p.done?"Geri al":"Tamamla"}
 
 <button
 
-class="plan-delete"
+class="btn danger"
 
 onclick="deletePlan(${i})">
 
@@ -4308,21 +3952,11 @@ l.appendChild(d);
 
 }
 
-/* =========================
-
-   GÖREV EKLE
-
-========================= */
-
 function savePlan(){
 
 if(!S.selectedPackage){
 
-toast(
-
-"Önce bir koçluk paketi seç."
-
-);
+toast("Önce bir koçluk paketi seç.");
 
 return;
 
@@ -4376,13 +4010,11 @@ toast("Görev eklendi");
 
 }
 
-/* =========================
-
-   GÖREV TAMAMLA
-
-========================= */
-
 function togglePlan(i){
+
+if(!S.plans[i])
+
+return;
 
 let wasDone=
 
@@ -4406,6 +4038,10 @@ toast(
 
 );
 
+}else{
+
+toast("Görev tekrar bekliyor");
+
 }
 
 save();
@@ -4416,13 +4052,11 @@ updateStats();
 
 }
 
-/* =========================
-
-   GÖREV SİL
-
-========================= */
-
 function deletePlan(i){
+
+if(!S.plans[i])
+
+return;
 
 if(
 
@@ -4432,11 +4066,9 @@ if(
 
 )
 
-){
+)
 
 return;
-
-}
 
 S.plans.splice(i,1);
 
@@ -4458,7 +4090,9 @@ function addQuestion(input){
 
 let file=input.files[0];
 
-if(!file)return;
+if(!file)
+
+return;
 
 let reader=new FileReader();
 
@@ -4472,9 +4106,7 @@ image:e.target.result,
 
 title:"Çözülecek soru",
 
-date:new Date()
-
-.toLocaleDateString("tr-TR"),
+date:new Date().toLocaleDateString("tr-TR"),
 
 solved:false
 
@@ -4502,31 +4134,21 @@ function renderQuestions(){
 
 let list=
 
-document.getElementById(
+document.getElementById("questionsList");
 
-"questionsList"
+if(!list)
 
-);
-
-if(!list)return;
+return;
 
 list.innerHTML="";
 
 let active=
 
-S.questions.filter(
-
-q=>!q.solved
-
-);
+S.questions.filter(q=>!q.solved);
 
 let solved=
 
-S.questions.filter(
-
-q=>q.solved
-
-);
+S.questions.filter(q=>q.solved);
 
 if(!S.questions.length){
 
@@ -4534,17 +4156,9 @@ list.innerHTML=`
 
 <div class="card empty">
 
-<div style="font-size:35px">
+<div style="font-size:35px">📚</div>
 
-📚
-
-</div>
-
-<strong>
-
-Henüz soru eklemedin.
-
-</strong>
+<strong>Henüz soru eklemedin.</strong>
 
 <div style="margin-top:7px">
 
@@ -4570,11 +4184,7 @@ title.className="section";
 
 title.innerHTML=`
 
-<h2>
-
-Çözülecekler
-
-</h2>
+<h2>Çözülecekler</h2>
 
 <span class="question-count">
 
@@ -4608,11 +4218,7 @@ title.className="section";
 
 title.innerHTML=`
 
-<h2>
-
-Çözülenler
-
-</h2>
+<h2>Çözülenler</h2>
 
 <span class="question-count">
 
@@ -4720,13 +4326,11 @@ function toggleQuestion(id){
 
 let q=
 
-S.questions.find(
+S.questions.find(x=>x.id===id);
 
-x=>x.id===id
+if(!q)
 
-);
-
-if(!q)return;
+return;
 
 q.solved=!q.solved;
 
@@ -4758,11 +4362,9 @@ if(
 
 )
 
-){
+)
 
 return;
-
-}
 
 S.questions=
 
@@ -4804,13 +4406,9 @@ document.getElementById(
 
 );
 
-if(e){
+if(e)
 
-e.textContent=
-
-count+" soru";
-
-}
+e.textContent=count+" soru";
 
 let h=
 
@@ -4820,13 +4418,9 @@ document.getElementById(
 
 );
 
-if(h){
+if(h)
 
-h.textContent=
-
-count+" çözülecek soru";
-
-}
+h.textContent=count+" çözülecek soru";
 
 }
 
@@ -5138,7 +4732,7 @@ Object.keys(DATA)
 
 .map(x=>
 
-`<option ${
+`<option value="${x}" ${
 
 x===S.exam?"selected":""
 
@@ -5254,23 +4848,7 @@ document.getElementById(
 
 if(!email || !password){
 
-toast(
-
-"E-posta ve şifre gir."
-
-);
-
-return;
-
-}
-
-if(accountMode==="register" && !name){
-
-toast(
-
-"Adını da gir."
-
-);
+toast("E-posta ve şifre gir.");
 
 return;
 
@@ -5278,11 +4856,7 @@ return;
 
 if(password.length<4){
 
-toast(
-
-"Şifre en az 4 karakter olsun."
-
-);
+toast("Şifre en az 4 karakter olsun.");
 
 return;
 
@@ -5292,7 +4866,7 @@ if(accountMode==="register"){
 
 S.account={
 
-name:name,
+name:name||"Kampüs Öğrencisi",
 
 email:email
 
@@ -5300,11 +4874,7 @@ email:email
 
 save();
 
-toast(
-
-"Kayıt oluşturuldu"
-
-);
+toast("Kayıt oluşturuldu");
 
 }else{
 
@@ -5316,21 +4886,13 @@ S.account.email===email
 
 ){
 
-toast(
-
-"Giriş başarılı"
-
-);
+toast("Giriş başarılı");
 
 }else{
 
 S.account={
 
-name:
-
-S.account?.name||
-
-email.split("@")[0],
+name:name||"Kampüs Öğrencisi",
 
 email:email
 
@@ -5338,11 +4900,7 @@ email:email
 
 save();
 
-toast(
-
-"Giriş yapıldı"
-
-);
+toast("Giriş yapıldı");
 
 }
 
@@ -5388,7 +4946,9 @@ document.getElementById(
 
 );
 
-if(!out || !logged)return;
+if(!out || !logged)
+
+return;
 
 if(S.account){
 
@@ -5398,13 +4958,11 @@ logged.classList.remove("hidden");
 
 document.getElementById(
 
-"profileWelcome"
+"accountNameText"
 
 ).textContent=
 
-"👋 Hoş geldin, "+
-
-(S.account.name||"Kampüs öğrencisi")+"!";
+S.account.name||"";
 
 document.getElementById(
 
@@ -5413,30 +4971,6 @@ document.getElementById(
 ).textContent=
 
 S.account.email;
-
-let packageText=
-
-document.getElementById(
-
-"profilePackageText"
-
-);
-
-if(S.selectedPackage){
-
-packageText.textContent=
-
-"🎓 Aktif paket: "+
-
-S.selectedPackage;
-
-}else{
-
-packageText.textContent=
-
-"Henüz koçluk paketi seçmedin.";
-
-}
 
 }else{
 
@@ -5456,11 +4990,7 @@ save();
 
 renderAccount();
 
-toast(
-
-"Çıkış yapıldı"
-
-);
+toast("Çıkış yapıldı");
 
 }
 
@@ -5518,9 +5048,13 @@ confirm(
 
 ){
 
+let oldExam=S.exam;
+
+let oldAccount=S.account;
+
 S={
 
-exam:S.exam,
+exam:oldExam,
 
 done:{},
 
@@ -5540,7 +5074,7 @@ days:0,
 
 questions:[],
 
-account:null,
+account:oldAccount,
 
 selectedPackage:null
 
@@ -5552,11 +5086,13 @@ renderHome();
 
 renderTopics();
 
-renderPlanPage();
+renderPlans();
 
 renderProfile();
 
 renderQuestions();
+
+renderPlanPage();
 
 updateStats();
 
@@ -5583,6 +5119,8 @@ renderHome();
 renderProfile();
 
 renderQuestions();
+
+renderPlanPage();
 
 updateStats();
 
